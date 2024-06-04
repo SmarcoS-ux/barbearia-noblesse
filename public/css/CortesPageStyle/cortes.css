@@ -13,7 +13,7 @@
         }
     }
     
-    & .carousel {
+    & .carousel-principal {
         width: 100%;
         position: relative;
 
@@ -314,6 +314,9 @@
         & #btn-prev:hover, #btn-next:hover {
             cursor: pointer;
         } 
+    }
 
+    & .carousel-secundary {
+        
     }
 }
