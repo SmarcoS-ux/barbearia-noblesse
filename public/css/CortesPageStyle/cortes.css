@@ -1,0 +1,319 @@
+.container-cortes {
+
+    & .container-title-cortes {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+
+        & h1 {
+            font-family: "Oxanium", sans-serif;
+            border: 1px solid rgb(197, 197, 197);
+            padding: 0 50px;
+            border-radius: 10px;
+        }
+    }
+    
+    & .carousel {
+        width: 100%;
+        position: relative;
+
+        & .slider {
+            margin: 0 auto;
+            padding-top: 10px;
+            width: 1200px;
+            height: 650px;
+            overflow: hidden;
+            border-radius: 10px;
+            border: 1px solid rgb(59, 59, 59);
+            box-shadow: 2px 2px 10px rgb(128, 128, 128);
+            display: flex;
+
+            & .slides {
+                width: 600%;
+                height: 550px;
+                display: flex;
+
+                & #radio1:checked ~ .first {
+                    margin-left: 370px;
+                }
+                & #radio2:checked ~ .first {
+                    margin-left: 50px;
+                }
+                & #radio3:checked ~ .first {
+                    margin-left: -260px;
+                }
+                & #radio4:checked ~ .first {
+                    margin-left: -570px;
+                }
+                & #radio5:checked ~ .first {
+                    margin-left: -885px;
+                }
+                & #radio6:checked ~ .first {
+                    margin-left: -1200px;
+                }
+                & #radio7:checked ~ .first {
+                    margin-left: -1515px;
+                }
+
+
+
+                & .slide {
+                    transition: 0.5s;
+                    border-radius: 15px;
+                    border: 2px solid rgb(100, 100, 100);
+                    box-shadow: 3px 3px 10px black;
+                    
+                    & .background-text {
+                        display: flex;
+                        flex-direction: row;
+                        align-items: flex-end;
+                        justify-content: center;
+                        padding-bottom: 50px;
+                        width: 100%;
+                        height: calc(100% - 50px);
+                        border-radius: 15px;
+                        font-size: 20px;
+                        color: #fff;
+                        font-family: Verdana, Geneva, Tahoma, sans-serif;
+                        font-weight: 600;
+                        background-image: linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), rgba(0,0,0,0.8));
+                        position: relative;
+
+                        & .likes {
+                            position: absolute;
+                            top: 0;
+                            right: 0;
+                            display: flex;
+                            flex-direction: row;
+                            align-items: center;
+                            margin-right: 20px;
+                            margin-top: 5px;
+
+                            & #likes-users {
+                                font-size: 16px;
+                            }
+
+                            & .btn-like {
+                                background-color: transparent;
+                                border: none;
+                                outline: none;
+
+                                & img {
+                                    width: 25px;
+                                    height: 25px;
+                                    margin-left: 10px;
+                                }
+                            }
+                            & .btn-like:hover {
+                                cursor: pointer;
+                            }
+                            
+                        }
+
+                    }
+                }
+                & .slide:not(:last-child) {
+                    margin-right: 10px;
+                }
+
+                & .slide1 {
+                    background-image: url("../../img/cortes-de-cabelo/corte-Militar.jpg");
+                    background-size: cover;
+                    width: 300px;
+                    height: 400px;
+                }
+                & .slide2 {
+                    background-image: url("../../img/cortes-de-cabelo/corte-Disfarcado.jpg");
+                    background-size: cover;
+                    width: 300px;
+                    height: 400px;
+                }
+                & .slide3 {
+                    background-image: url("../../img/cortes-de-cabelo/corte-Pompadour.jpg");
+                    background-size: cover;
+                    width: 300px;
+                    height: 400px;
+                }
+                & .slide4 {
+                    background-image: url("../../img/cortes-de-cabelo/corte-Moicano.jpg");
+                    background-size: cover;
+                    width: 300px;
+                    height: 400px;
+                }
+                & .slide5 {
+                    background-image: url("../../img/cortes-de-cabelo/corte-Top-knot.jpg");
+                    background-size: cover;
+                    width: 300px;
+                    height: 400px;
+                }
+                & .slide6 {
+                    background-image: url("../../img/cortes-de-cabelo/corte-Undercut.jpg");
+                    background-size: cover;
+                    width: 300px;
+                    height: 400px;
+                }
+                & .slide7 {
+                    background-image: url("../../img/cortes-de-cabelo/corte-social.jpg");
+                    background-size: cover;
+                    width: 300px;
+                    height: 400px;
+                }
+                
+                
+
+                & #radio1:checked ~ .navigate-auto .auto-btn1 {
+                    background-color: #ffffff;
+                }
+                & #radio2:checked ~ .navigate-auto .auto-btn2 {
+                    background-color: #ffffff;
+                }
+                & #radio3:checked ~ .navigate-auto .auto-btn3 {
+                    background-color: #ffffff;
+                }
+                & #radio4:checked ~ .navigate-auto .auto-btn4 {
+                    background-color: #ffffff;
+                }
+                & #radio5:checked ~ .navigate-auto .auto-btn5 {
+                    background-color: #ffffff;
+                }
+                & #radio6:checked ~ .navigate-auto .auto-btn6 {
+                    background-color: #ffffff;
+                }
+                & #radio7:checked ~ .navigate-auto .auto-btn7 {
+                    background-color: #ffffff;
+                }
+
+                & #radio1:checked ~ .slide1 {
+                    border: 2px solid rgb(75, 75, 75);
+                    margin-top: 40px;
+                    width: calc(450px);
+                    height: 550px;
+                }
+                & #radio2:checked ~ .slide2 {
+                    border: 2px solid rgb(75, 75, 75);
+                    margin-top: 40px;
+                    width: calc(450px);
+                    height: 550px;
+                }
+                & #radio3:checked ~ .slide3 {
+                    border: 2px solid rgb(75, 75, 75);
+                    margin-top: 40px;
+                    width: calc(450px);
+                    height: 550px;
+                }
+                & #radio4:checked ~ .slide4 {
+                    border: 2px solid rgb(75, 75, 75);
+                    margin-top: 40px;
+                    width: calc(450px);
+                    height: 550px;
+                }
+                & #radio5:checked ~ .slide5 {
+                    border: 2px solid rgb(75, 75, 75);
+                    margin-top: 40px;
+                    width: calc(450px);
+                    height: 550px;
+                }
+                & #radio6:checked ~ .slide6 {
+                    border: 2px solid rgb(75, 75, 75);
+                    margin-top: 40px;
+                    width: calc(450px);
+                    height: 550px;
+                }
+                & #radio7:checked ~ .slide7 {
+                    border: 2px solid rgb(75, 75, 75);
+                    margin-top: 40px;
+                    width: calc(450px);
+                    height: 550px;
+                }
+
+
+                & input {
+                    display: none;
+                }
+
+
+                & .navigate-auto {
+                    position: absolute;
+                    top: 580px;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    display: flex;
+                    justify-content: center;
+                }
+
+                & .navigate-auto div {
+                    border: 2px solid #fff;
+                    padding: 5px;
+                    border-radius: 10px;
+                    cursor: pointer;
+                    transition: 0.6s;
+                }
+
+                & .navigate-auto div:not(:last-child) {
+                    margin-right: 20px;
+                }
+            }
+
+            & .manual-navigation {
+                position: absolute;
+                top: 580px;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                display: flex;
+                
+
+                & .manual-btn {
+                    border: 2px solid #ffffff;
+                    padding: 5px;
+                    border-radius: 10px;
+                    cursor: pointer;
+                    transition: 0.6s;
+                }
+
+                & .manual-btn:not(:last-child) {
+                    margin-right: 20px;
+                }
+
+                & .manual-btn:hover {
+                    background-color: #ffffff;
+                }
+            }
+        }
+
+        & #btn-prev {
+            position: absolute;
+            left: 80px;
+            top: 50%;
+            background-color: transparent;
+            border: none;
+            outline: none;
+            height: 80px;
+            width: 80px;
+
+            & img {
+                width: 40px;
+                transform: rotate(180deg);
+            }
+        }
+
+        & #btn-next {
+            position: absolute;
+            right: 80px;
+            top: 50%;
+            background-color: transparent;
+            border: none;
+            outline: none;
+            height: 80px;
+            width: 80px;
+
+            & img {
+                width: 40px;
+            }
+        }
+
+        & #btn-prev:hover, #btn-next:hover {
+            cursor: pointer;
+        } 
+
+    }
+}

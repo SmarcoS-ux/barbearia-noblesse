@@ -1,0 +1,324 @@
+*, html {
+    scroll-behavior: smooth !important;
+}
+
+.area-contato-main {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    & .banner-contact {
+        display: flex;
+        flex-direction: row-reverse;
+        height: 400px;
+        width: 100%;
+        background-image: url("../../img/contents/atendimento.jpg");
+        background-size: cover;
+        box-shadow: 4px 4px 10px rgb(122, 122, 122);
+
+        & #title-contact {
+            margin-right: 140px;
+            font-size: 50px;
+        }
+    }
+
+    & .div-buttons-social-media {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        width: 100%;
+        margin-top: 50px;
+
+        & .area-social-media {
+            width: 200px;
+            height: 200px;          
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            border-radius: 50%;
+            transition-delay: 200ms;
+            transition: 1s;
+
+            & .button-active {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                background-color: rgb(53, 171, 250);
+                padding: 25px;
+                height: 50px;
+                width: 50px;
+                text-align: center;
+                border-radius: 100%;
+                font-family: Arial, Helvetica, sans-serif;
+                font-weight: 600;
+                color: #fff;
+                border: 1px solid rgb(2, 44, 83);
+                box-shadow: 2px 2px 10px rgb(97, 97, 97);
+            }
+
+            .icons-social-media {
+                visibility: hidden;
+                
+               
+                & .btns-contacts {
+                    transition-duration: 0.2s;
+                    background-color: transparent;
+                    border: none;
+                    position: absolute;
+                    
+                    
+                    & img {
+                        width: 40px;
+                    }
+                }
+            
+                & #btn-whatsapp {
+                    transform: translate(-50%, -50%);
+                    left: 50%;
+                    top: 50%;
+                }
+            
+                & #btn-facebook {
+                    transform: translate(-50%, -50%);
+                    left: 50%;
+                    top: 50%;
+                }
+            
+                & #btn-instagram {
+                    transform: translate(-50%, -50%);
+                    left: 50%;
+                    top: 50%;
+                }
+            
+                & #btn-email {
+                    transform: translate(-50%, -50%);
+                    left: 50%;
+                    top: 50%;
+
+                
+                }
+            }
+        
+        }  
+
+        & .area-social-media:hover {
+            border: 1px solid rgb(233, 233, 233);
+        }
+        & .area-social-media:hover .icons-social-media {
+            cursor: pointer;
+            visibility: visible;
+
+            & .btns-contacts {
+                background-color: transparent;
+                border: none;
+                position: absolute;
+                
+                
+                & img {
+                    width: 50px;
+                    border-radius: 50%;
+                    border: 1px solid rgb(189, 189, 189);
+                    padding: 5px;
+                }
+            }
+
+            /*& #btn-whatsapp, #btn-facebook, #btn-instagram, #btn-email {
+                border: 1px solid rgb(100, 100, 100);
+            }*/
+        
+            & #btn-whatsapp {
+                transform: translate(0%, 0%);
+                left: 1%;
+                top: 1%;
+            }
+        
+            & #btn-facebook {
+                transform: translate(0%, 0%);
+                top: 0;
+                right: -10%;
+            }
+        
+            & #btn-instagram {
+                transform: translate(0%, 0%);
+                left: 2%;
+                bottom: -20%;
+            }
+        
+            & #btn-email {
+                transform: translate(0%, 0%);
+                right: -15%;
+                bottom: -20%;
+
+            
+            }
+        }
+    }
+
+    
+
+    & .area-email {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 50px;
+        padding-top: 10px;
+        
+
+        & .form-email {
+            background-color: rgb(179, 179, 179);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: calc(40% - 80px);
+            padding: 40px;
+            border-radius: 10px;
+
+            & .title-form {
+                display: flex;
+                flex-direction: row;
+                align-items: flex-end;
+
+                & img {
+                    width: 50px;
+                }
+
+                & h4 {
+                    font-family: Arial, Helvetica, sans-serif;
+                    font-size: 20px;
+                    margin: 0;
+                }
+            }
+
+            & .div-form-email {
+               width: 100%;
+               margin-top: 30px;
+
+                & .nome, .email, .assunto, .textarea-email {
+                    display: flex;
+                    flex-direction: row;
+                    position: relative;
+
+                    & label {
+                        position: absolute;
+                        top: 7px;
+                        left: 10px;
+                        color: #aaaaaa;
+                        font-family: Arial, Helvetica, sans-serif;
+                        font-size: 15px;
+                        transition: 0.2s;
+                    }
+
+                    & #nome, #email, #assunto {
+                        width: 100%;
+                        height: 30px;
+                        margin-bottom: 25px;
+                        border: none;
+                        outline: none;
+                        padding-left: 10px;
+                        border-radius: 5px;
+                        border: 1px solid #aaaaaa;
+                        
+                    }
+                    & #nome:focus ~ label {
+                        top: -20px;
+                        left: 0;
+                        color: #fff;
+                        font-size: 15px;
+                        font-weight: 600;
+                        font-family: Arial, Helvetica, sans-serif;
+                    }
+                    & #nome:not(:focus):valid ~ label{
+                        top: -20px;
+                        left: 0;
+                        color: #fff;
+                        font-size: 15px;
+                        font-weight: 600;
+                        font-family: Arial, Helvetica, sans-serif;
+                    }
+                    & #email:focus ~ label {
+                        top: -20px;
+                        left: 0;
+                        color: #fff;
+                        font-size: 15px;
+                        font-weight: 600;
+                        font-family: Arial, Helvetica, sans-serif;
+                    }
+                    & #email:not(:focus):valid ~ label {
+                        top: -20px;
+                        left: 0;
+                        color: #fff;
+                        font-size: 15px;
+                        font-weight: 600;
+                        font-family: Arial, Helvetica, sans-serif;
+                    }
+                    & #assunto:focus ~ label {
+                        top: -20px;
+                        left: 0;
+                        color: #fff;
+                        font-size: 15px;
+                        font-weight: 600;
+                        font-family: Arial, Helvetica, sans-serif;
+                    }
+                    & #assunto:not(:focus):valid ~ label {
+                        top: -20px;
+                        left: 0;
+                        color: #fff;
+                        font-size: 15px;
+                        font-weight: 600;
+                        font-family: Arial, Helvetica, sans-serif;
+                    }
+
+                    & #textarea-email {
+                        width: 100%;
+                        height: 150px;
+                        resize: none;
+                        margin-bottom: 15px;
+                        border: none;
+                        outline: none;
+                        padding-left: 10px;
+                        padding-top: 5px;
+                        border-radius: 5px;
+                        border: 1px solid #aaaaaa;;
+                    }   
+                }
+                
+                & .div-btn-submit {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: flex-end;
+                    width: 100%;
+
+                    & #btn-enviar {
+                        height: 35px;
+                        width: 150px;
+                        background-color: rgb(5, 175, 5);
+                        border: none;
+                        border: 1px solid rgb(5, 143, 5);
+                        border-radius: 10px;
+                        outline: none;
+                        color: rgb(5, 78, 5);
+                        font-size: 15px;
+                        font-weight: 600;         
+                        transition: 0.2s;              
+                    }
+                    & #btn-enviar:hover {
+                        background-color: rgb(20, 138, 20);
+                        cursor: pointer;
+                        box-shadow: 1px 1px 10px rgb(117, 117, 117);
+                        color: #fff;
+                        border: 1px solid rgb(3, 97, 3);
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+
+

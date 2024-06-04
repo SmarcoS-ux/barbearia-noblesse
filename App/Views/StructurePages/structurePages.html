@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+    <html lang="pt-br">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="description" content="Página Home">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link rel="stylesheet" href="public/css/HomePageStyle/home.css">
+            <link rel="stylesheet" href="public/css/SobrePageStyle/sobre.css">
+            <link rel="stylesheet" href="public/css/ContatoPageStyle/contato.css">
+            <link rel="stylesheet" href="public/css/CortesPageStyle/cortes.css">
+            <link rel="stylesheet" href="public/css/StructurePagesStyle/structure.css">
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=Monoton&family=Oxanium:wght@200..800&display=swap" rel="stylesheet">
+            <title>{{titulo_document}}</title>
+        </head>
+        <body id="body" class="body-style-light">
+            <header>
+                <nav>
+                    <div id="links" 
+                            class="links_light">
+                        <div id="logo">
+                            <a href="http://localhost/Barbearia-Noblesse/">
+                                <img src="public/img/logo-barbearia.png" 
+                                        alt="Barbearia Shop">
+                            </a>                                   
+                        </div>
+                        <div id="buttons-top">
+                            <div class="navigation">
+                                <a href="http://localhost/Barbearia-Noblesse/?page=sobre">Sobre</a>
+                                <a href="http://localhost/Barbearia-Noblesse/?page=cortes">Cortes</a>
+                                <a href="http://localhost/Barbearia-Noblesse/?page=contato">Contato</a>
+                            </div>
+                            <button id="light-dark-theme"
+                                    onclick="themeColorHome()">                               
+                                <img id="icon-theme" 
+                                        src="public/img/lua.png" 
+                                        alt="Mudar Tema">                              
+                            </button>
+                            <button id="user-profile">
+                                <img id="img-user-profile" src="public/img/user-black.png" 
+                                        alt="Área do Usuário">
+                            </button>
+                        </div>
+                    </div>
+                </nav>
+            </header>
+            {{content_dinamic}}
+            <footer>
+                <div id="footer" 
+                     class="footer-light">
+                    <div class="logo-barbearia">
+                        <img id="barber-simbol" src="public/img/barber-simbol.png" alt="Símbolo da Barbearia">
+                        <p id="name-barber" class="name-barber-light">Barber Shop Noblesse</p>
+                    </div>
+                    <p>© Copyright Barber-Shop Noblesse</p>
+                </div>
+            </footer>
+            <script src="public/js/scripts.js"></script>   
+        </body>
+    </html>
