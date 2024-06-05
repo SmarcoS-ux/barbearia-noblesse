@@ -114,8 +114,39 @@ function slider(direction){
     }
 }
 
+function slider2(direction){
+    let slide = "inp10";
+    slide = document.querySelector("input[name='radio-buttons-2']:checked").value;
+
+    let localeInpNext = parseInt(slide.substring(3)) + 1;
+    if(direction == 1){
+        if(localeInpNext <= 20){
+            let nextSlide = document.getElementById("radio2-" + localeInpNext);
+            nextSlide.checked = "checked";
+
+        } else{
+            let nextSlide = document.getElementById("radio2-" + 1);
+            nextSlide.checked = "checked";
+        }
+    }
+
+    let localeInpPrev = parseInt(slide.substring(3)) - 1;
+    if(direction == -1){
+    
+        if(localeInpPrev < 1){
+            localeInpPrev = 20;
+            let prevSlide = document.getElementById("radio2-" + localeInpPrev);
+            prevSlide.checked = "checked";
+        }
+
+        let prevSlide = document.getElementById("radio2-" + localeInpPrev);
+        prevSlide.checked = "checked";
+    }
+}
+
 setInterval(function(){
     nextImageAutomatic();
+    nextImageAutomatic2();
 }, 6000);
 
 let count = 4;
@@ -127,4 +158,15 @@ function nextImageAutomatic(){
     }
 
     document.getElementById("radio"+count).checked = true;
+}
+
+let count2 = 10;
+function nextImageAutomatic2(){
+    count2++;
+
+    if(count2 > 20){
+        count2 = 1;
+    }
+
+    document.getElementById("radio2-"+count2).checked = true;
 }

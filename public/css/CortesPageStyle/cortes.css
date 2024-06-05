@@ -282,8 +282,8 @@
 
         & #btn-prev {
             position: absolute;
-            left: 80px;
-            top: 50%;
+            left: 320px;
+            bottom:  50px;
             background-color: transparent;
             border: none;
             outline: none;
@@ -298,8 +298,8 @@
 
         & #btn-next {
             position: absolute;
-            right: 80px;
-            top: 50%;
+            right: 320px;
+            bottom: 50px;
             background-color: transparent;
             border: none;
             outline: none;
@@ -339,6 +339,7 @@
 
             & #list-cortes li {
                 margin-bottom: 30px;
+                text-align: justify;
                 font-family: Arial, Helvetica, sans-serif;
             }
         }
@@ -803,6 +804,41 @@
                 }
             }          
         }
+
+        & #btn-prev2 {
+            position: absolute;
+            left: 320px;
+            bottom:  50px;
+            background-color: transparent;
+            border: none;
+            outline: none;
+            height: 80px;
+            width: 80px;
+
+            & img {
+                width: 40px;
+                transform: rotate(180deg);
+            }
+        }
+
+        & #btn-next2 {
+            position: absolute;
+            right: 320px;
+            bottom: 50px;
+            background-color: transparent;
+            border: none;
+            outline: none;
+            height: 80px;
+            width: 80px;
+
+            & img {
+                width: 40px;
+            }
+        }
+
+        & #btn-prev2:hover, #btn-next2:hover {
+            cursor: pointer;
+        } 
     }
 
     & .consideracoes {

@@ -4,6 +4,8 @@
     include_once("App/Controllers/SobreController/sobreController.php");
     include_once("App/Controllers/ContatoController/contatoController.php");
     include_once("App/Controllers/CortesController/cortesController.php");
+    include_once("App/Controllers/LoginController/loginController.php");
+    include_once("App/Controllers/RegisterController/registerController.php");
 
     include_once("App/Core/core.php");
 
