@@ -116,7 +116,7 @@ function slider(direction){
 
 setInterval(function(){
     nextImageAutomatic();
-}, 50000);
+}, 6000);
 
 let count = 4;
 function nextImageAutomatic(){
