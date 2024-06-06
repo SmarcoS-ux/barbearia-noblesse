@@ -10,17 +10,17 @@
                 <form action="">
                     <h1>Login</h1>
                     <div class ="container-email">
-                        <input id="inp-email" type="email" name="email"/>
+                        <input id="inp-email" type="email" name="email" required/>
                         <label for="inp-email">E-mail</label>
                     </div>
                     <div class="container-senha">
-                        <input id="inp-senha" type="senha" name="senha"/>
+                        <input id="inp-senha" type="password" name="senha" required/>
                         <label for="inp-senha">Senha</label>
                     </div>
                     <input id="conectado" type="checkbox">
-                    <label for="conectado">Manter conectado</label>
+                    <label id="label-conectado" for="conectado">Manter conectado</label>
                     <div class="container-btn-entrar">
-                        <button>Entrar</button>
+                        <button id="btn-entrar">Entrar</button>
                     </div>
                 </form>
                 <div class="reset-senha">
@@ -28,8 +28,8 @@
                 </div>
                 <div class="link-cadastro">
                     <p>Não possui cadastro? 
-                        <a href="#">Cadastre-se aqui</a>
-                    </p>
+                        <a href="http://localhost/Barbearia-Noblesse/?page=register">Cadastre-se aqui</a>
+                    </p> 
                 </div>
             </div>
         </div>
