@@ -6,6 +6,7 @@
     include_once("App/Controllers/CortesController/cortesController.php");
     include_once("App/Controllers/LoginController/loginController.php");
     include_once("App/Controllers/RegisterController/registerController.php");
+    include_once("App/Controllers/ProfileController/profileController.php");
 
     include_once("App/Core/core.php");
 

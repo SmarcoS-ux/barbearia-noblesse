@@ -116,18 +116,27 @@
                 }
             }
 
-            & #conectado {
-                margin-top: 20px;
-                width: 17px;
-                height: 17px;
-            }
-            & #label-conectado {
-                color: #fff;
-                font-size: 14px;
+            & .conectado {
+                width: 100%;
+                height: 40px;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                margin-top: 10px;
+
+                & #conectado {
+                    width: 16px;
+                    height: 16px;
+                }
+                & #label-conectado {
+                    color: #fff;
+                    font-size: 14px;
+                }
             }
 
+            
             & .container-btn-entrar {
-                margin-top: 20px;
+                margin-top: 10px;
 
                 & #btn-entrar {
                     width: 100%;

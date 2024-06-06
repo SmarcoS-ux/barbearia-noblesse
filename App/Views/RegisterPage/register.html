@@ -2,56 +2,60 @@
     <div class="container-register">
         <div class="image-background-profile">
             <div class="img-profile">
-                <img src="" alt="">
-                <button id="edit-img">
-                    <img src="" alt="">
+                <img id="img-user" src="public/img/user-black.png" alt="Usuário" title="Usuário">
+                <button id="edit-img"> 
+                    <img src="public/img/lapis-color.png" alt="Editar" title="Editar">
                 </button>
             </div>
         </div>
         <div class="container-title">
-            <h1>Area de Cadastro</h1>
+            <div class="title">
+                <h1>Área de Cadastro</h1>
+            </div>          
         </div>
         <div class="container-form-register">
             <div class="form-register">
                 <form action="">
                     <div class="container-nome-dt-nascimento">
                         <div class="container-nome">
-                            <input id="inp-nome" type="text" required/>
-                            <label for="inp-nome">Nome</label>
+                            <label for="inp-nome">Nome:</label>
+                            <input id="inp-nome" type="text" required/>                      
                         </div>
                         <div class="container-dt-nascimento">
-                            <input id="dt-nascimento" type="date" required/>
-                            <label for="dt-nascimento">Data de Nascimento</label>
+                            <label for="dt-nascimento">Nascimento:</label>
+                            <input id="dt-nascimento" type="date" required/>                           
                         </div>
                     </div>
-                    <div class="container-email1">
-                        <input id="inp-email1" type="email" required/>
-                        <label for="inp-email1">E-mail</label>
-                    </div>
-                    <div class="container-email2">
-                        <input id="inp-email2" type="email" required/>
-                        <label for="inp-email2">Confirme o e-mail</label>
-                    </div>
-                    <div class="container-senha">
+                    <div class="container-emails">
+                        <div class="container-email1">
+                            <label for="inp-email1">E-mail:</label>
+                            <input id="inp-email1" type="email" required/>
+                        </div>
+                        <div class="container-email2">
+                            <label for="inp-email2">Confirme o e-mail:</label>
+                            <input id="inp-email2" type="email" required/>                    
+                        </div>
+                    </div>                
+                    <div class="container-senhas">
                         <div class="container-senha1">
-                            <input id="senha1" type="password" required/>
-                            <label for="senha1">Senha</label>
+                            <label for="senha1">Senha:</label>
+                            <input id="senha1" type="password" required/>                         
                         </div>
                         <div class="container-senha2">
-                            <input id="senha2" type="password" required/>
-                            <label for="senha2">Confirme a senha</label>
+                            <label for="senha2">Confirme a senha:</label>
+                            <input id="senha2" type="password" required/>                        
                         </div>
                     </div>
                     <div class="info-emails">
                         <input id="info" type="checkbox">
-                        <label for="info">Desejo receber informações e promoções por e-mail</label>
+                        <label for="info">Desejo receber informações e promoções por e-mail.</label>
                     </div>
                     <div class="container-btns">
                         <div class="btn-cancel">
-                            <button id="btn-cancel">Cancelar</button>
+                            <a id="btn-cancel" href="http://localhost/Barbearia-Noblesse/?page=login">Cancelar</a>
                         </div>
                         <div class="btn-clean-register">
-                            <button id="btn-clean">Limpar</button>
+                            <button id="btn-clean" type="reset">Limpar</button>
                             <button id="btn-register">Cadastrar</button>
                         </div>
                     </div>

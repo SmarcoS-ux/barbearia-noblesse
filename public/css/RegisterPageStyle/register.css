@@ -1,4 +1,4 @@
-.container-profile {
+.container-register {
     font-family: Arial, Helvetica, sans-serif;
     width: 100%;
 
@@ -179,13 +179,42 @@
                 flex-direction: row;
                 margin-top: 20px;
 
-                
+                & .btn-cancel, .btn-clean-register {
+                    width: 50%;
+                }
+
+                & .btn-cancel {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: flex-start;
+
+                    & #btn-cancel {
+                        width: 150px;
+                        padding: 10px 5px;
+                        text-align: center;
+                        border-radius: 20px;
+                        border: none;
+                        color: #660202;
+                        font-weight: 600;
+                        font-size: 14px;
+                        background-color: rgb(252, 111, 111);    
+                        border: 1px solid rgb(158, 2, 2);                 
+                        outline: none;
+                        text-decoration: none;
+                    }
+                    & #btn-cancel:hover {
+                        cursor: pointer;
+                        background-color: rgb(201, 72, 72);
+                        box-shadow: 1px 1px 5px rgb(238, 88, 88);
+                        color: #fff;
+                    }
+                }
+
                 & .btn-clean-register {
                     display: flex;
                     flex-direction: row;
                     justify-content: flex-end;
-                    width: 100%;
-                }
+                    }
 
                     & #btn-clean {
                         width: 150px;
@@ -200,7 +229,7 @@
                         outline: none;
                         margin-right: 20px;
                     }
-                    & #btn-clean:not(:disabled):hover {
+                    & #btn-clean:hover {
                         cursor: pointer;
                         background-color: rgb(189, 153, 55);
                         box-shadow: 1px 1px 5px rgb(218, 178, 70);
