@@ -17,7 +17,7 @@
                 width: 100px;
             }
 
-            & #edit-img {
+            & #edit-img { 
                 border: none;
                 outline: none;
                 position: absolute;
@@ -44,6 +44,10 @@
         & .title {
             width: 1000px;
             padding: 0 50px;
+
+            & h1 {
+                font-size: 25px;
+            }
             
         }
     }
@@ -75,6 +79,48 @@
 
             & label {
                 color: #fff;
+            }
+
+            & .message-hidden {
+                display: none;
+            }
+            & .message-success {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                color: #fff;
+                background-color: rgb(219, 255, 216);
+                border-radius: 10px;
+                padding: 5px 0 5px 10px;
+                margin-bottom: 10px;
+
+                & img {
+                    width: 25px;
+                    margin-right: 10px;
+                }
+                & p {
+                    color: rgb(6, 121, 6);
+                    margin: 0;
+                }
+            }
+            & .message-error {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                color: #fff;
+                background-color: rgb(255, 151, 151);
+                border-radius: 10px;
+                padding: 5px 0 5px 10px;
+                margin-bottom: 10px;
+
+                & img {
+                    width: 25px;
+                    margin-right: 10px;
+                }
+                & p {
+                    color: rgb(124, 12, 12);
+                    margin: 0;
+                }
             }
 
             & .container-nome-dt-nascimento {
@@ -192,22 +238,47 @@
                         height: 40px;
                         border-radius: 20px;
                         border: none;
-                        color: rgb(112, 77, 2);
+                        color: rgb(99, 99, 99);
                         font-weight: 600;
                         font-size: 14px;
-                        background-color: rgb(240, 200, 91);    
-                        border: 1px solid rgb(112, 77, 2);                 
+                        background-color: rgb(77, 76, 76);    
+                        border: 1px solid rgb(83, 83, 83);                 
                         outline: none;
                         margin-right: 20px;
                     }
+                    & #btn-clean:not(:disabled) {
+                        background-color: rgb(253, 188, 126);
+                        border: 1px solid rgb(138, 90, 0);
+                        color: rgb(134, 93, 17)
+                    }
                     & #btn-clean:not(:disabled):hover {
                         cursor: pointer;
-                        background-color: rgb(189, 153, 55);
+                        background-color: rgb(226, 163, 103);
                         box-shadow: 1px 1px 5px rgb(218, 178, 70);
                         color: #fff;
                     }
 
-                    & #btn-register {
+                    & .btn-edit {
+                        width: 150px;
+                        height: 40px;
+                        border-radius: 20px;
+                        border: none;
+                        font-weight: 600;
+                        font-size: 14px;
+                        background-color: rgb(253, 188, 126);
+                        border: 1px solid rgb(138, 90, 0);
+                        color: rgb(134, 93, 17);              
+                        outline: none;
+                    }
+                    & .btn-edit:hover {
+                        cursor: pointer;
+                        background-color: rgb(226, 163, 103);
+                        box-shadow: 1px 1px 5px rgb(218, 178, 70);
+                        color: #fff;
+                    }
+
+                    /*Estilo do botão Salvar*/
+                    & .btn-salvar {
                         width: 150px;
                         height: 40px;
                         border-radius: 20px;
@@ -219,7 +290,7 @@
                         border: 1px solid rgb(13, 87, 3);                 
                         outline: none;
                     }
-                    & #btn-register:hover {
+                    & .btn-salvar:hover {
                         cursor: pointer;
                         background-color: rgb(33, 197, 33);
                         box-shadow: 1px 1px 5px rgb(97, 253, 97);

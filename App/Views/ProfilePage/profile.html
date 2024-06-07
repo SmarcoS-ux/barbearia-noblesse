@@ -10,20 +10,24 @@
         </div>
         <div class="container-title">
             <div class="title">
-                <h1>Área de Cadastro</h1>
+                <h1>Bem-vindo Sr(a): Nome</h1>
             </div>          
         </div>
         <div class="container-form-register">
             <div class="form-register">
-                <form action="">
+                <form id="form-edit-userdata">
+                    <div class="message-hidden">
+                        <img src="public/img/verify.png" alt="Ok">
+                        <p>Dados alterados com sucesso.</p>
+                    </div>
                     <div class="container-nome-dt-nascimento">
                         <div class="container-nome">
                             <label for="inp-nome">Nome:</label>
-                            <input id="inp-nome" type="text" required disabled/>                      
+                            <input id="inp-nome" type="text" required disabled="disabled">                      
                         </div>
                         <div class="container-dt-nascimento">
                             <label for="dt-nascimento">Nascimento:</label>
-                            <input id="dt-nascimento" type="date" required disabled/>                           
+                            <input id="dt-nascimento" type="date" required disabled>                           
                         </div>
                     </div>
                     <div class="container-emails">
@@ -47,13 +51,13 @@
                         </div>
                     </div>
                     <div class="info-emails">
-                        <input id="info" type="checkbox" disabled>
+                        <input id="info" type="checkbox" disabled/>
                         <label for="info">Desejo receber informações e promoções por e-mail.</label>
                     </div>
                     <div class="container-btns">
                         <div class="btn-clean-register">
                             <button id="btn-clean" type="reset" disabled>Limpar</button>
-                            <button id="btn-register">Editar</button>
+                            <button id="btn-edit" class="btn-edit" onclick="editUserData()" onload="defaultAttributesFormEditUserData()">Editar</button>
                         </div>
                     </div>
                 </form>

@@ -127,7 +127,12 @@
                 & #conectado {
                     width: 16px;
                     height: 16px;
+                    accent-color: rgb(28, 253, 77);
                 }
+                & #conectado:focus {
+                    box-shadow: 1px 1px 10px #fff;
+                }
+
                 & #label-conectado {
                     color: #fff;
                     font-size: 14px;
