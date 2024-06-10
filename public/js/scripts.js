@@ -59,17 +59,35 @@ function themeColorHome(){
     if(link_sobre != null){
         link_sobre.classList.toggle("link-sobre-dark");    
     }
-    
-    //Estilo do nome da BArbearia no Footer
-    const name_barber = document.getElementById("name-barber");
-    if(name_barber != null){
-        name_barber.classList.toggle("name-barber-dark");    
-    }
 
     //Titulo da Página Sobre
     const title_h1 = document.getElementById("title-sobre");
     if(title_h1 != null){
         title_h1.classList.toggle("title-sobre-dark");
+    }
+
+    //Estilo Light Dark do Titulo da página Cortes
+    const title_page_cortes = document.getElementById("title-cortes");
+    if(title_page_cortes != null){
+        title_page_cortes.classList.toggle("container-title-cortes-dark");    
+    }
+
+    //Estilo Light Dark do Subtitulo da Página Cortes
+    const subtitle_page_cortes = document.getElementById("subtitle-cortes");
+    if(subtitle_page_cortes != null){
+        subtitle_page_cortes.classList.toggle("container-subtitle-dark");    
+    }
+
+    //Estilo Light Dark dos Textos da Page Cortes
+    const text_page_cortes = document.getElementById("text-cortes");
+    if(text_page_cortes != null){
+        text_page_cortes.classList.toggle("text-dark");    
+    }
+
+    //Estilo do nome da Barbearia no Footer
+    const name_barber = document.getElementById("name-barber");
+    if(name_barber != null){
+        name_barber.classList.toggle("name-barber-dark");    
     }
     
     //Área da primeira imagem da View Sobre
