@@ -17,7 +17,8 @@
             <link href="https://fonts.googleapis.com/css2?family=Monoton&family=Oxanium:wght@200..800&display=swap" rel="stylesheet">
             <title>{{titulo_document}}</title>
         </head>
-        <body id="body" class="body-style-light">
+        <body id="body" 
+              class="body-style-light">
             <header>
                 <nav>
                     <div id="links" 
@@ -47,27 +48,38 @@
                                         alt="Área do Usuário">
                                 </a>                           
                             </button>
-                            <button id="btn-open-menu" class="open-menu">
-                                <img src="public/img/menu-black.png" alt="Menu">
+                            <button id="btn-open-menu" 
+                                    class="open-menu" 
+                                    onclick="openMenu()">
+                                <img id="icon-menu-sandwich" 
+                                     src="public/img/menu-black.png" 
+                                     alt="Menu"
+                                >
                             </button>
-                            <div class="sandwich">
+                            <div id="menu-sandwich" 
+                                 class="sandwich-hidden">
                                 <div id="menu-structure" 
                                      class="menu-structure">
                                     <button id="light-dark-theme2"
                                             onclick="themeColorHome()">                               
-                                        <img id="icon-theme" 
+                                        <img id="icon-theme2" 
                                             src="public/img/lua.png" 
                                             alt="Mudar Tema"
                                         /> 
-                                    <label for="light-dark-theme" class="p-tema">Tema</label>                            
+                                        <label for="icon-theme" 
+                                               class="p-tema">Tema</label>                            
                                     </button>
                                     <button id="user-profile2">
-                                        <a id="link-user" href="http://localhost/Barbearia-Noblesse/?page=login">
-                                            <img id="img-user-profile" 
+                                        <a id="link-user" 
+                                           href="http://localhost/Barbearia-Noblesse/?page=login">
+                                            <img id="img-user-profile2" 
                                                  src="public/img/user-black.png" 
                                                  alt="Área do Usuário">
                                         </a>  
-                                        <label for="link-user" class="p-perfil">Perfil</label>                         
+                                        <label for="link-user" 
+                                               class="p-perfil">
+                                               Perfil
+                                        </label>                         
                                     </button>
                                 </div>
                             </div>
@@ -80,10 +92,13 @@
                 <div id="footer" 
                      class="footer-light">
                     <div class="logo-barbearia">
-                        <img id="barber-simbol" src="public/img/barber-simbol.png" alt="Símbolo da Barbearia">
-                        <p id="name-barber" class="name-barber-light">Barber Shop Noblesse</p>
+                        <img id="barber-simbol" 
+                             src="public/img/barber-simbol.png" 
+                             alt="Símbolo da Barbearia">
+                        <p id="name-barber" 
+                           class="name-barber-light">Barber Shop Noblesse</p>
                     </div>
-                    <p>© Copyright Barber-Shop Noblesse</p>
+                    <p id="copyright">© Copyright Barber-Shop Noblesse</p>
                 </div>
             </footer>
             <script src="public/js/jquery.js"></script>

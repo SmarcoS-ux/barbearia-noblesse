@@ -1,850 +1,2588 @@
-.container-cortes {
-
-    & .container-title-cortes {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-
-        & h1 {
-            font-family: "Oxanium", sans-serif;
-            border: 1px solid rgb(197, 197, 197);
-            padding: 0 50px;
-            border-radius: 10px;
-        }
-    }
-    
-    & .carousel-principal {
-        width: 100%;
-        position: relative;
-
-        & .slider {
-            margin: 0 auto;
-            padding-top: 10px;
-            width: 1200px;
-            height: 650px;
-            overflow: hidden;
-            border-radius: 10px;
-            border: 1px solid rgb(59, 59, 59);
-            box-shadow: 2px 2px 10px rgb(128, 128, 128);
+@media screen and (min-width: 1025px){
+    .container-cortes {
+        & .container-title-cortes {
             display: flex;
-
-            & .slides {
-                width: 600%;
-                height: 550px;
+            flex-direction: row;
+            justify-content: center;
+    
+            & h1 {
+                font-family: "Oxanium", sans-serif;
+                border: 1px solid rgb(197, 197, 197);
+                padding: 0 50px;
+                border-radius: 10px;
+            }
+        }
+        
+        & .carousel-principal {
+            width: 100%;
+            position: relative;
+    
+            & .slider {
+                margin: 0 auto;
+                padding-top: 10px;
+                width: 1200px;
+                min-width: 1100px;
+                height: 650px;
+                overflow: hidden;
+                border-radius: 10px;
+                border: 1px solid rgb(59, 59, 59);
+                box-shadow: 2px 2px 10px rgb(128, 128, 128);
                 display: flex;
-
-                & #radio1:checked ~ .first {
-                    margin-left: 370px;
-                }
-                & #radio2:checked ~ .first {
-                    margin-left: 50px;
-                }
-                & #radio3:checked ~ .first {
-                    margin-left: -260px;
-                }
-                & #radio4:checked ~ .first {
-                    margin-left: -570px;
-                }
-                & #radio5:checked ~ .first {
-                    margin-left: -885px;
-                }
-                & #radio6:checked ~ .first {
-                    margin-left: -1200px;
-                }
-                & #radio7:checked ~ .first {
-                    margin-left: -1515px;
-                }
-
-
-
-                & .slide {
-                    transition: 0.5s;
-                    border-radius: 15px;
-                    border: 2px solid rgb(100, 100, 100);
-                    box-shadow: 3px 3px 10px black;
-                    
-                    & .background-text {
-                        display: flex;
-                        flex-direction: row;
-                        align-items: flex-end;
-                        justify-content: center;
-                        padding-bottom: 50px;
-                        width: 100%;
-                        height: calc(100% - 50px);
+    
+                & .slides {
+                    width: 600%;
+                    height: 550px;
+                    display: flex;
+    
+                    & #radio1:checked ~ .first {
+                        margin-left: 370px;
+                    }
+                    & #radio2:checked ~ .first {
+                        margin-left: 50px;
+                    }
+                    & #radio3:checked ~ .first {
+                        margin-left: -260px;
+                    }
+                    & #radio4:checked ~ .first {
+                        margin-left: -570px;
+                    }
+                    & #radio5:checked ~ .first {
+                        margin-left: -885px;
+                    }
+                    & #radio6:checked ~ .first {
+                        margin-left: -1200px;
+                    }
+                    & #radio7:checked ~ .first {
+                        margin-left: -1515px;
+                    }
+    
+    
+    
+                    & .slide {
+                        transition: 0.5s;
                         border-radius: 15px;
-                        font-size: 20px;
-                        color: #fff;
-                        font-family: Verdana, Geneva, Tahoma, sans-serif;
-                        font-weight: 600;
-                        background-image: linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), rgba(0,0,0,0.8));
-                        position: relative;
-
-                        & .likes {
-                            position: absolute;
-                            top: 0;
-                            right: 0;
+                        border: 2px solid rgb(100, 100, 100);
+                        box-shadow: 3px 3px 10px black;
+                        
+                        & .background-text {
                             display: flex;
                             flex-direction: row;
-                            align-items: center;
-                            margin-right: 20px;
-                            margin-top: 5px;
-
-                            & #likes-users {
-                                font-size: 16px;
-                            }
-
-                            & .btn-like {
-                                background-color: transparent;
-                                border: none;
-                                outline: none;
-
-                                & img {
-                                    width: 25px;
-                                    height: 25px;
-                                    margin-left: 10px;
+                            align-items: flex-end;
+                            justify-content: center;
+                            padding-bottom: 50px;
+                            width: 100%;
+                            height: calc(100% - 50px);
+                            border-radius: 15px;
+                            font-size: 20px;
+                            color: #fff;
+                            font-family: Verdana, Geneva, Tahoma, sans-serif;
+                            font-weight: 600;
+                            background-image: linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), rgba(0,0,0,0.8));
+                            position: relative;
+    
+                            & .likes {
+                                position: absolute;
+                                top: 0;
+                                right: 0;
+                                display: flex;
+                                flex-direction: row;
+                                align-items: center;
+                                margin-right: 20px;
+                                margin-top: 5px;
+    
+                                & #likes-users {
+                                    font-size: 16px;
                                 }
+    
+                                & .btn-like {
+                                    background-color: transparent;
+                                    border: none;
+                                    outline: none;
+    
+                                    & img {
+                                        width: 25px;
+                                        height: 25px;
+                                        margin-left: 10px;
+                                    }
+                                }
+                                & .btn-like:hover {
+                                    cursor: pointer;
+                                }
+                                
                             }
-                            & .btn-like:hover {
-                                cursor: pointer;
-                            }
-                            
+    
                         }
-
+                    }
+                    & .slide:not(:last-child) {
+                        margin-right: 10px;
+                    }
+    
+                    & .slide1 {
+                        background-image: url("../../img/cortes-de-cabelo/corte-Militar.jpg");
+                        background-size: cover;
+                        width: 300px;
+                        height: 400px;
+                    }
+                    & .slide2 {
+                        background-image: url("../../img/cortes-de-cabelo/corte-Disfarcado.jpg");
+                        background-size: cover;
+                        width: 300px;
+                        height: 400px;
+                    }
+                    & .slide3 {
+                        background-image: url("../../img/cortes-de-cabelo/corte-Pompadour.jpg");
+                        background-size: cover;
+                        width: 300px;
+                        height: 400px;
+                    }
+                    & .slide4 {
+                        background-image: url("../../img/cortes-de-cabelo/corte-Moicano.jpg");
+                        background-size: cover;
+                        width: 300px;
+                        height: 400px;
+                    }
+                    & .slide5 {
+                        background-image: url("../../img/cortes-de-cabelo/corte-Top-knot.jpg");
+                        background-size: cover;
+                        width: 300px;
+                        height: 400px;
+                    }
+                    & .slide6 {
+                        background-image: url("../../img/cortes-de-cabelo/corte-Undercut.jpg");
+                        background-size: cover;
+                        width: 300px;
+                        height: 400px;
+                    }
+                    & .slide7 {
+                        background-image: url("../../img/cortes-de-cabelo/corte-social.jpg");
+                        background-size: cover;
+                        width: 300px;
+                        height: 400px;
+                    }
+                    
+                    
+    
+                    & #radio1:checked ~ .navigate-auto .auto-btn1 {
+                        background-color: #ffffff;
+                    }
+                    & #radio2:checked ~ .navigate-auto .auto-btn2 {
+                        background-color: #ffffff;
+                    }
+                    & #radio3:checked ~ .navigate-auto .auto-btn3 {
+                        background-color: #ffffff;
+                    }
+                    & #radio4:checked ~ .navigate-auto .auto-btn4 {
+                        background-color: #ffffff;
+                    }
+                    & #radio5:checked ~ .navigate-auto .auto-btn5 {
+                        background-color: #ffffff;
+                    }
+                    & #radio6:checked ~ .navigate-auto .auto-btn6 {
+                        background-color: #ffffff;
+                    }
+                    & #radio7:checked ~ .navigate-auto .auto-btn7 {
+                        background-color: #ffffff;
+                    }
+    
+                    & #radio1:checked ~ .slide1 {
+                        border: 2px solid rgb(75, 75, 75);
+                        margin-top: 40px;
+                        width: calc(450px);
+                        height: 550px;
+                    }
+                    & #radio2:checked ~ .slide2 {
+                        border: 2px solid rgb(75, 75, 75);
+                        margin-top: 40px;
+                        width: calc(450px);
+                        height: 550px;
+                    }
+                    & #radio3:checked ~ .slide3 {
+                        border: 2px solid rgb(75, 75, 75);
+                        margin-top: 40px;
+                        width: calc(450px);
+                        height: 550px;
+                    }
+                    & #radio4:checked ~ .slide4 {
+                        border: 2px solid rgb(75, 75, 75);
+                        margin-top: 40px;
+                        width: calc(450px);
+                        height: 550px;
+                    }
+                    & #radio5:checked ~ .slide5 {
+                        border: 2px solid rgb(75, 75, 75);
+                        margin-top: 40px;
+                        width: calc(450px);
+                        height: 550px;
+                    }
+                    & #radio6:checked ~ .slide6 {
+                        border: 2px solid rgb(75, 75, 75);
+                        margin-top: 40px;
+                        width: calc(450px);
+                        height: 550px;
+                    }
+                    & #radio7:checked ~ .slide7 {
+                        border: 2px solid rgb(75, 75, 75);
+                        margin-top: 40px;
+                        width: calc(450px);
+                        height: 550px;
+                    }
+    
+    
+                    & input {
+                        display: none;
+                    }
+    
+    
+                    & .navigate-auto {
+                        position: absolute;
+                        top: 580px;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        display: flex;
+                        justify-content: center;
+                    }
+    
+                    & .navigate-auto div {
+                        border: 2px solid #fff;
+                        padding: 5px;
+                        border-radius: 10px;
+                        cursor: pointer;
+                        transition: 0.6s;
+                    }
+    
+                    & .navigate-auto div:not(:last-child) {
+                        margin-right: 20px;
                     }
                 }
-                & .slide:not(:last-child) {
-                    margin-right: 10px;
-                }
-
-                & .slide1 {
-                    background-image: url("../../img/cortes-de-cabelo/corte-Militar.jpg");
-                    background-size: cover;
-                    width: 300px;
-                    height: 400px;
-                }
-                & .slide2 {
-                    background-image: url("../../img/cortes-de-cabelo/corte-Disfarcado.jpg");
-                    background-size: cover;
-                    width: 300px;
-                    height: 400px;
-                }
-                & .slide3 {
-                    background-image: url("../../img/cortes-de-cabelo/corte-Pompadour.jpg");
-                    background-size: cover;
-                    width: 300px;
-                    height: 400px;
-                }
-                & .slide4 {
-                    background-image: url("../../img/cortes-de-cabelo/corte-Moicano.jpg");
-                    background-size: cover;
-                    width: 300px;
-                    height: 400px;
-                }
-                & .slide5 {
-                    background-image: url("../../img/cortes-de-cabelo/corte-Top-knot.jpg");
-                    background-size: cover;
-                    width: 300px;
-                    height: 400px;
-                }
-                & .slide6 {
-                    background-image: url("../../img/cortes-de-cabelo/corte-Undercut.jpg");
-                    background-size: cover;
-                    width: 300px;
-                    height: 400px;
-                }
-                & .slide7 {
-                    background-image: url("../../img/cortes-de-cabelo/corte-social.jpg");
-                    background-size: cover;
-                    width: 300px;
-                    height: 400px;
-                }
-                
-                
-
-                & #radio1:checked ~ .navigate-auto .auto-btn1 {
-                    background-color: #ffffff;
-                }
-                & #radio2:checked ~ .navigate-auto .auto-btn2 {
-                    background-color: #ffffff;
-                }
-                & #radio3:checked ~ .navigate-auto .auto-btn3 {
-                    background-color: #ffffff;
-                }
-                & #radio4:checked ~ .navigate-auto .auto-btn4 {
-                    background-color: #ffffff;
-                }
-                & #radio5:checked ~ .navigate-auto .auto-btn5 {
-                    background-color: #ffffff;
-                }
-                & #radio6:checked ~ .navigate-auto .auto-btn6 {
-                    background-color: #ffffff;
-                }
-                & #radio7:checked ~ .navigate-auto .auto-btn7 {
-                    background-color: #ffffff;
-                }
-
-                & #radio1:checked ~ .slide1 {
-                    border: 2px solid rgb(75, 75, 75);
-                    margin-top: 40px;
-                    width: calc(450px);
-                    height: 550px;
-                }
-                & #radio2:checked ~ .slide2 {
-                    border: 2px solid rgb(75, 75, 75);
-                    margin-top: 40px;
-                    width: calc(450px);
-                    height: 550px;
-                }
-                & #radio3:checked ~ .slide3 {
-                    border: 2px solid rgb(75, 75, 75);
-                    margin-top: 40px;
-                    width: calc(450px);
-                    height: 550px;
-                }
-                & #radio4:checked ~ .slide4 {
-                    border: 2px solid rgb(75, 75, 75);
-                    margin-top: 40px;
-                    width: calc(450px);
-                    height: 550px;
-                }
-                & #radio5:checked ~ .slide5 {
-                    border: 2px solid rgb(75, 75, 75);
-                    margin-top: 40px;
-                    width: calc(450px);
-                    height: 550px;
-                }
-                & #radio6:checked ~ .slide6 {
-                    border: 2px solid rgb(75, 75, 75);
-                    margin-top: 40px;
-                    width: calc(450px);
-                    height: 550px;
-                }
-                & #radio7:checked ~ .slide7 {
-                    border: 2px solid rgb(75, 75, 75);
-                    margin-top: 40px;
-                    width: calc(450px);
-                    height: 550px;
-                }
-
-
-                & input {
-                    display: none;
-                }
-
-
-                & .navigate-auto {
+    
+                & .manual-navigation {
                     position: absolute;
                     top: 580px;
                     left: 50%;
                     transform: translate(-50%, -50%);
                     display: flex;
-                    justify-content: center;
-                }
-
-                & .navigate-auto div {
-                    border: 2px solid #fff;
-                    padding: 5px;
-                    border-radius: 10px;
-                    cursor: pointer;
-                    transition: 0.6s;
-                }
-
-                & .navigate-auto div:not(:last-child) {
-                    margin-right: 20px;
+                    
+    
+                    & .manual-btn {
+                        border: 2px solid #ffffff;
+                        padding: 5px;
+                        border-radius: 10px;
+                        cursor: pointer;
+                        transition: 0.6s;
+                    }
+    
+                    & .manual-btn:not(:last-child) {
+                        margin-right: 20px;
+                    }
+    
+                    & .manual-btn:hover {
+                        background-color: #ffffff;
+                    }
                 }
             }
-
-            & .manual-navigation {
+    
+            & #btn-prev {
                 position: absolute;
-                top: 580px;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                display: flex;
+                left: 20%;
+                bottom:  50px;
+                background-color: transparent;
+                border: none;
+                outline: none;
+                height: 80px;
+                width: 80px;
+    
+                & img {
+                    width: 40px;
+                    transform: rotate(180deg);
+                }
+            }
+    
+            & #btn-next {
+                position: absolute;
+                right: 20%;
+                bottom: 50px;
+                background-color: transparent;
+                border: none;
+                outline: none;
+                height: 80px;
+                width: 80px;
+    
+                & img {
+                    width: 40px;
+                }
+            }
+    
+            & #btn-prev:hover, #btn-next:hover {
+                cursor: pointer;
+            } 
+        }
+    
+    
+        & .stripe-division {
+            width: calc(100% - 100px);
+            height: 1px;
+            background-color: #cacaca;
+            margin: 80px 50px 50px 50px;
+        }
+    
+        & .text-personalizados {
+            width: calc(100%);
+            display: flex;
+            justify-content: center;
+            
+            & .text {
+                width: 1200px;
+    
+                & h4 {
+                    font-size: 18px;
+                    font-family: Verdana, Geneva, Tahoma, sans-serif;
+                }
+    
+                & #list-cortes li {
+                    margin-bottom: 30px;
+                    text-align: justify;
+                    font-family: Arial, Helvetica, sans-serif;
+                }
+            }
+        }
+    
+        /*Segundo Carousel*/
+        & .container-subtitle {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+    
+            & h5 {
+                font-family: "Oxanium", sans-serif;
+                border: 1px solid rgb(197, 197, 197);
+                padding: 10px 50px;
+                border-radius: 10px;
+                font-size: 25px;
+            }
+        }
+    
+        & .carousel-secundary {
+            width: 100%;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            
+            & .slider {
+                width: 1200px;
+                height: 650px;
+                overflow: hidden;
+                border-radius: 10px;
+                border: 1px solid rgb(59, 59, 59);
+                box-shadow: 2px 2px 10px rgb(128, 128, 128);
+                overflow-x: hidden;
+    
+                & .slides {
+                    width: calc(6000px + 726px); /*200px de bordas right nas imagens*/
+                    height: 550px;
+                    display: flex;
+                    flex-direction: row;
+    
+                    & input[type='radio'] {
+                        display: none;
+                    }
+    
+                    & .slide {
+                        margin-top: 10px;
+                        transition: 0.5s;
+                        box-shadow: 3px 3px 10px black;
+                        border-radius: 15px;
+                        border: 2px solid rgb(100, 100, 100);
+                    }
+                    & .slide:not(:last-child) {
+                        margin-right: 10px;
+                    }
+    
+                    & .slide2-1 {
+                        background-image: url("../../img/cortes-de-cabelo/cortes-personalizados/corte-personalizado-1.jpg");
+                        background-size: cover;
+                        background-position: 50%;
+                        width: 300px;
+                        height: 400px;
+                    }
+                    & .slide2-2 {
+                        background-image: url("../../img/cortes-de-cabelo/cortes-personalizados/corte-personalizado-10.jpg");
+                        background-size: cover;
+                        background-position: 20%;
+                        width: 300px;
+                        height: 400px;
+                    }
+                    & .slide2-3 {
+                        background-image: url("../../img/cortes-de-cabelo/cortes-personalizados/corte-personalizado-11.jpg");
+                        background-size: cover;
+                        background-position: 30%;
+                        width: 300px;
+                        height: 400px;
+                    }
+                    & .slide2-4 {
+                        background-image: url("../../img/cortes-de-cabelo/cortes-personalizados/corte-personalizado-12.jpg");
+                        background-size: cover;
+                        background-position: 60%;
+                        width: 300px;
+                        height: 400px;
+                    }
+                    & .slide2-5 {
+                        background-image: url("../../img/cortes-de-cabelo/cortes-personalizados/corte-personalizado-13.jpg");
+                        background-size: cover;
+                        background-position: 30%;
+                        width: 300px;
+                        height: 400px;
+                    }
+                    & .slide2-6 {
+                        background-image: url("../../img/cortes-de-cabelo/cortes-personalizados/corte-personalizado-14.jpg");
+                        background-size: cover;
+                        /*background-position: 30%;*/
+                        width: 300px;
+                        height: 400px;
+                    }
+                    & .slide2-7 {
+                        background-image: url("../../img/cortes-de-cabelo/cortes-personalizados/corte-personalizado-15.jpg");
+                        background-size: cover;
+                        /*background-position: 30%;*/
+                        width: 300px;
+                        height: 400px;
+                    }
+                    & .slide2-8 {
+                        background-image: url("../../img/cortes-de-cabelo/cortes-personalizados/corte-personalizado-16.jpg");
+                        background-size: cover;
+                        background-position: 30%;
+                        width: 300px;
+                        height: 400px;
+                    }
+                    & .slide2-9 {
+                        background-image: url("../../img/cortes-de-cabelo/cortes-personalizados/corte-personalizado-17.jpg");
+                        background-size: cover;
+                        background-position: 60%;
+                        width: 300px;
+                        height: 400px;
+                    }
+                    & .slide2-10 {
+                        background-image: url("../../img/cortes-de-cabelo/cortes-personalizados/corte-personalizado-18.jpg");
+                        background-size: cover;
+                        background-position: 40%;
+                        width: 300px;
+                        height: 400px;
+                    }
+                    & .slide2-11 {
+                        background-image: url("../../img/cortes-de-cabelo/cortes-personalizados/corte-personalizado-19.jpg");
+                        background-size: cover;
+                        background-position: 30%;
+                        width: 300px;
+                        height: 400px;
+                    }
+                    & .slide2-12 {
+                        background-image: url("../../img/cortes-de-cabelo/cortes-personalizados/corte-personalizado-2.jpg");
+                        background-size: cover;
+                        background-position: 30%;
+                        width: 300px;
+                        height: 400px;
+                    }
+                    & .slide2-13 {
+                        background-image: url("../../img/cortes-de-cabelo/cortes-personalizados/corte-personalizado-20.jpg");
+                        background-size: cover;
+                        /*background-position: 30%;*/
+                        width: 300px;
+                        height: 400px;
+                    }
+                    & .slide2-14 {
+                        background-image: url("../../img/cortes-de-cabelo/cortes-personalizados/corte-personalizado-3.webp");
+                        background-size: cover;
+                        background-position: 10%;
+                        width: 300px;
+                        height: 400px;
+                    }
+                    & .slide2-15 {
+                        background-image: url("../../img/cortes-de-cabelo/cortes-personalizados/corte-personalizado-4.jpg");
+                        background-size: cover;
+                        background-position: 30%;
+                        width: 300px;
+                        height: 400px;
+                    }
+                    & .slide2-16 {
+                        background-image: url("../../img/cortes-de-cabelo/cortes-personalizados/corte-personalizado-5.jpg");
+                        background-size: cover;
+                        background-position: 40%;
+                        width: 300px;
+                        height: 400px;
+                    }
+                    & .slide2-17 {
+                        background-image: url("../../img/cortes-de-cabelo/cortes-personalizados/corte-personalizado-6.jpg");
+                        background-size: cover;
+                        background-position: 30%;
+                        width: 300px;
+                        height: 400px;
+                    }
+                    & .slide2-18 {
+                        background-image: url("../../img/cortes-de-cabelo/cortes-personalizados/corte-personalizado-7.jpg");
+                        background-size: cover;
+                        background-position: 30%;
+                        width: 300px;
+                        height: 400px;
+                    }
+                    & .slide2-19 {
+                        background-image: url("../../img/cortes-de-cabelo/cortes-personalizados/corte-personalizado-8.jpg");
+                        background-size: cover;
+                        background-position: 70%;
+                        width: 300px;
+                        height: 400px;
+                    }
+                    & .slide2-20 {
+                        background-image: url("../../img/cortes-de-cabelo/cortes-personalizados/corte-personalizado-9.jpg");
+                        background-size: cover;
+                        background-position: 50%;
+                        width: 300px;
+                        height: 400px;
+                    }
+    
+                    & #radio2-1:checked ~ .slide2-1 {
+                        width: 450px;
+                        height: 550px;
+                        margin-top: 50px;
+                    }
+                    & #radio2-2:checked ~ .slide2-2 {
+                        width: 450px;
+                        height: 550px;
+                        margin-top: 50px;
+                    }
+                    & #radio2-3:checked ~ .slide2-3 {
+                        width: 450px;
+                        height: 550px;
+                        margin-top: 50px;
+                    }
+                    & #radio2-4:checked ~ .slide2-4 {
+                        width: 450px;
+                        height: 550px;
+                        margin-top: 50px;
+                    }
+                    & #radio2-5:checked ~ .slide2-5 {
+                        width: 450px;
+                        height: 550px;
+                        margin-top: 50px;
+                    }
+                    & #radio2-6:checked ~ .slide2-6 {
+                        width: 450px;
+                        height: 550px;
+                        margin-top: 50px;
+                    }
+                    & #radio2-7:checked ~ .slide2-7 {
+                        width: 450px;
+                        height: 550px;
+                        margin-top: 50px;
+                    }
+                    & #radio2-8:checked ~ .slide2-8 {
+                        width: 450px;
+                        height: 550px;
+                        margin-top: 50px;
+                    }
+                    & #radio2-9:checked ~ .slide2-9 {
+                        width: 450px;
+                        height: 550px;
+                        margin-top: 50px;
+                    }
+                    & #radio2-10:checked ~ .slide2-10 {
+                        width: 450px;
+                        height: 550px;
+                        margin-top: 50px;
+                    }
+                    & #radio2-11:checked ~ .slide2-11 {
+                        width: 450px;
+                        height: 550px;
+                        margin-top: 50px;
+                    }
+                    & #radio2-12:checked ~ .slide2-12 {
+                        width: 450px;
+                        height: 550px;
+                        margin-top: 50px;
+                    }
+                    & #radio2-13:checked ~ .slide2-13 {
+                        width: 450px;
+                        height: 550px;
+                        margin-top: 50px;
+                    }
+                    & #radio2-14:checked ~ .slide2-14 {
+                        width: 450px;
+                        height: 550px;
+                        margin-top: 50px;
+                    }
+                    & #radio2-15:checked ~ .slide2-15 {
+                        width: 450px;
+                        height: 550px;
+                        margin-top: 50px;
+                    }
+                    & #radio2-16:checked ~ .slide2-16 {
+                        width: 450px;
+                        height: 550px;
+                        margin-top: 50px;
+                    }
+                    & #radio2-17:checked ~ .slide2-17 {
+                        width: 450px;
+                        height: 550px;
+                        margin-top: 50px;
+                    }
+                    & #radio2-18:checked ~ .slide2-18 {
+                        width: 450px;
+                        height: 550px;
+                        margin-top: 50px;
+                    }
+                    & #radio2-19:checked ~ .slide2-19 {
+                        width: 450px;
+                        height: 550px;
+                        margin-top: 50px;
+                    }
+                    & #radio2-20:checked ~ .slide2-20 {
+                        width: 450px;
+                        height: 550px;
+                        margin-top: 50px;
+                    }
+    
+    
+                    & #radio2-1:checked ~ .first2 {
+                        margin-left: 376px;
+                    }
+                    & #radio2-2:checked ~ .first2 {
+                        margin-left: 60px;
+                    }
+                    & #radio2-3:checked ~ .first2 {
+                        margin-left: -254px;
+                    }
+                    & #radio2-4:checked ~ .first2 {
+                        margin-left: -568px;
+                    }
+                    & #radio2-5:checked ~ .first2 {
+                        margin-left: -882px;
+                    }
+                    & #radio2-6:checked ~ .first2 {
+                        margin-left: -1196px;
+                    }
+                    & #radio2-7:checked ~ .first2 {
+                        margin-left: -1512px;
+                    }
+                    & #radio2-8:checked ~ .first2 {
+                        margin-left: -1828px;
+                    }
+                    & #radio2-9:checked ~ .first2 {
+                        margin-left: -2138px;
+                    }
+                    & #radio2-10:checked ~ .first2 {
+                        margin-left: -2452px;
+                    }
+                    & #radio2-11:checked ~ .first2 {
+                        margin-left: -2768px;
+                    }
+                    & #radio2-12:checked ~ .first2 {
+                        margin-left: -3080px;
+                    }
+                    & #radio2-13:checked ~ .first2 {
+                        margin-left: -3396px;
+                    }
+                    & #radio2-14:checked ~ .first2 {
+                        margin-left: -3710px;
+                    }
+                    & #radio2-15:checked ~ .first2 {
+                        margin-left: -4022px;
+                    }
+                    & #radio2-16:checked ~ .first2 {
+                        margin-left: -4336px;
+                    }
+                    & #radio2-17:checked ~ .first2 {
+                        margin-left: -4650px;
+                    }
+                    & #radio2-18:checked ~ .first2 {
+                        margin-left: -4968px;
+                    }
+                    & #radio2-19:checked ~ .first2 {
+                        margin-left: -5280px;
+                    }
+                    & #radio2-20:checked ~ .first2 {
+                        margin-left: -5594px;
+                    }
+                    
+    
+                    & #radio2-1:checked ~ .auto-navigation .btn-auto1 {
+                        background-color: #858585;
+                    }
+                    & #radio2-2:checked ~ .auto-navigation .btn-auto2 {
+                        background-color: #858585;
+                    }
+                    & #radio2-3:checked ~ .auto-navigation .btn-auto3 {
+                        background-color: #858585;
+                    }
+                    & #radio2-4:checked ~ .auto-navigation .btn-auto4 {
+                        background-color: #858585;
+                    }
+                    & #radio2-5:checked ~ .auto-navigation .btn-auto5 {
+                        background-color: #858585;
+                    }
+                    & #radio2-6:checked ~ .auto-navigation .btn-auto6 {
+                        background-color: #858585;
+                    }
+                    & #radio2-7:checked ~ .auto-navigation .btn-auto7 {
+                        background-color: #858585;
+                    }
+                    & #radio2-8:checked ~ .auto-navigation .btn-auto8 {
+                        background-color: #858585;
+                    }
+                    & #radio2-9:checked ~ .auto-navigation .btn-auto9 {
+                        background-color: #858585;
+                    }
+                    & #radio2-10:checked ~ .auto-navigation .btn-auto10 {
+                        background-color: #858585;
+                    }
+                    & #radio2-11:checked ~ .auto-navigation .btn-auto11 {
+                        background-color: #858585;
+                    }
+                    & #radio2-12:checked ~ .auto-navigation .btn-auto12 {
+                        background-color: #858585;
+                    }
+                    & #radio2-13:checked ~ .auto-navigation .btn-auto13 {
+                        background-color: #858585;
+                    }
+                    & #radio2-14:checked ~ .auto-navigation .btn-auto14 {
+                        background-color: #858585;
+                    }
+                    & #radio2-15:checked ~ .auto-navigation .btn-auto15 {
+                        background-color: #858585;
+                    }
+                    & #radio2-16:checked ~ .auto-navigation .btn-auto16 {
+                        background-color: #858585;
+                    }
+                    & #radio2-17:checked ~ .auto-navigation .btn-auto17 {
+                        background-color: #858585;
+                    }
+                    & #radio2-18:checked ~ .auto-navigation .btn-auto18 {
+                        background-color: #858585;
+                    }
+                    & #radio2-19:checked ~ .auto-navigation .btn-auto19 {
+                        background-color: #858585;
+                    }
+                    & #radio2-20:checked ~ .auto-navigation .btn-auto20 {
+                        background-color: #858585;
+                    }
+                    
+    
+    
+                    & .auto-navigation {
+                        position: absolute;
+                        bottom: 10px;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        display: flex;
+                        justify-content: center;
+                        width: 100%;
+                    }
+                    & .auto-navigation div {
+                        border: 2px solid #ffffff00;
+                        border-radius: 20px;
+                        padding: 5px;
+                        transition: 0.5s;
+                    }
+                    & .auto-navigation div:not(:last-child){
+                        margin-right: 10px;
+                    }
+                }   
                 
-
-                & .manual-btn {
-                    border: 2px solid #ffffff;
-                    padding: 5px;
-                    border-radius: 10px;
-                    cursor: pointer;
-                    transition: 0.6s;
-                }
-
-                & .manual-btn:not(:last-child) {
-                    margin-right: 20px;
-                }
-
-                & .manual-btn:hover {
-                    background-color: #ffffff;
-                }
-            }
-        }
-
-        & #btn-prev {
-            position: absolute;
-            left: 320px;
-            bottom:  50px;
-            background-color: transparent;
-            border: none;
-            outline: none;
-            height: 80px;
-            width: 80px;
-
-            & img {
-                width: 40px;
-                transform: rotate(180deg);
-            }
-        }
-
-        & #btn-next {
-            position: absolute;
-            right: 320px;
-            bottom: 50px;
-            background-color: transparent;
-            border: none;
-            outline: none;
-            height: 80px;
-            width: 80px;
-
-            & img {
-                width: 40px;
-            }
-        }
-
-        & #btn-prev:hover, #btn-next:hover {
-            cursor: pointer;
-        } 
-    }
-
-
-    & .stripe-division {
-        width: calc(100% - 100px);
-        height: 1px;
-        background-color: #cacaca;
-        margin: 80px 50px 50px 50px;
-    }
-
-    & .text-personalizados {
-        width: calc(100%);
-        display: flex;
-        justify-content: center;
-        
-        & .text {
-            width: 1200px;
-
-            & h4 {
-                font-size: 18px;
-                font-family: Verdana, Geneva, Tahoma, sans-serif;
-            }
-
-            & #list-cortes li {
-                margin-bottom: 30px;
-                text-align: justify;
-                font-family: Arial, Helvetica, sans-serif;
-            }
-        }
-    }
-
-    /*Segundo Carousel*/
-    & .container-subtitle {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-
-        & h5 {
-            font-family: "Oxanium", sans-serif;
-            border: 1px solid rgb(197, 197, 197);
-            padding: 10px 50px;
-            border-radius: 10px;
-            font-size: 25px;
-        }
-    }
-
-    & .carousel-secundary {
-        width: 100%;
-        position: relative;
-        display: flex;
-        justify-content: center;
-        
-        & .slider {
-            width: 1200px;
-            height: 650px;
-            overflow: hidden;
-            border-radius: 10px;
-            border: 1px solid rgb(59, 59, 59);
-            box-shadow: 2px 2px 10px rgb(128, 128, 128);
-            overflow-x: hidden;
-
-            & .slides {
-                width: calc(6000px + 726px); /*200px de bordas right nas imagens*/
-                height: 550px;
-                display: flex;
-                flex-direction: row;
-
-                & input[type='radio'] {
-                    display: none;
-                }
-
-                & .slide {
-                    margin-top: 10px;
-                    transition: 0.5s;
-                    box-shadow: 3px 3px 10px black;
-                    border-radius: 15px;
-                    border: 2px solid rgb(100, 100, 100);
-                }
-                & .slide:not(:last-child) {
-                    margin-right: 10px;
-                }
-
-                & .slide2-1 {
-                    background-image: url("../../img/cortes-de-cabelo/cortes-personalizados/corte-personalizado-1.jpg");
-                    background-size: cover;
-                    background-position: 50%;
-                    width: 300px;
-                    height: 400px;
-                }
-                & .slide2-2 {
-                    background-image: url("../../img/cortes-de-cabelo/cortes-personalizados/corte-personalizado-10.jpg");
-                    background-size: cover;
-                    background-position: 20%;
-                    width: 300px;
-                    height: 400px;
-                }
-                & .slide2-3 {
-                    background-image: url("../../img/cortes-de-cabelo/cortes-personalizados/corte-personalizado-11.jpg");
-                    background-size: cover;
-                    background-position: 30%;
-                    width: 300px;
-                    height: 400px;
-                }
-                & .slide2-4 {
-                    background-image: url("../../img/cortes-de-cabelo/cortes-personalizados/corte-personalizado-12.jpg");
-                    background-size: cover;
-                    background-position: 60%;
-                    width: 300px;
-                    height: 400px;
-                }
-                & .slide2-5 {
-                    background-image: url("../../img/cortes-de-cabelo/cortes-personalizados/corte-personalizado-13.jpg");
-                    background-size: cover;
-                    background-position: 30%;
-                    width: 300px;
-                    height: 400px;
-                }
-                & .slide2-6 {
-                    background-image: url("../../img/cortes-de-cabelo/cortes-personalizados/corte-personalizado-14.jpg");
-                    background-size: cover;
-                    /*background-position: 30%;*/
-                    width: 300px;
-                    height: 400px;
-                }
-                & .slide2-7 {
-                    background-image: url("../../img/cortes-de-cabelo/cortes-personalizados/corte-personalizado-15.jpg");
-                    background-size: cover;
-                    /*background-position: 30%;*/
-                    width: 300px;
-                    height: 400px;
-                }
-                & .slide2-8 {
-                    background-image: url("../../img/cortes-de-cabelo/cortes-personalizados/corte-personalizado-16.jpg");
-                    background-size: cover;
-                    background-position: 30%;
-                    width: 300px;
-                    height: 400px;
-                }
-                & .slide2-9 {
-                    background-image: url("../../img/cortes-de-cabelo/cortes-personalizados/corte-personalizado-17.jpg");
-                    background-size: cover;
-                    background-position: 60%;
-                    width: 300px;
-                    height: 400px;
-                }
-                & .slide2-10 {
-                    background-image: url("../../img/cortes-de-cabelo/cortes-personalizados/corte-personalizado-18.jpg");
-                    background-size: cover;
-                    background-position: 40%;
-                    width: 300px;
-                    height: 400px;
-                }
-                & .slide2-11 {
-                    background-image: url("../../img/cortes-de-cabelo/cortes-personalizados/corte-personalizado-19.jpg");
-                    background-size: cover;
-                    background-position: 30%;
-                    width: 300px;
-                    height: 400px;
-                }
-                & .slide2-12 {
-                    background-image: url("../../img/cortes-de-cabelo/cortes-personalizados/corte-personalizado-2.jpg");
-                    background-size: cover;
-                    background-position: 30%;
-                    width: 300px;
-                    height: 400px;
-                }
-                & .slide2-13 {
-                    background-image: url("../../img/cortes-de-cabelo/cortes-personalizados/corte-personalizado-20.jpg");
-                    background-size: cover;
-                    /*background-position: 30%;*/
-                    width: 300px;
-                    height: 400px;
-                }
-                & .slide2-14 {
-                    background-image: url("../../img/cortes-de-cabelo/cortes-personalizados/corte-personalizado-3.webp");
-                    background-size: cover;
-                    background-position: 10%;
-                    width: 300px;
-                    height: 400px;
-                }
-                & .slide2-15 {
-                    background-image: url("../../img/cortes-de-cabelo/cortes-personalizados/corte-personalizado-4.jpg");
-                    background-size: cover;
-                    background-position: 30%;
-                    width: 300px;
-                    height: 400px;
-                }
-                & .slide2-16 {
-                    background-image: url("../../img/cortes-de-cabelo/cortes-personalizados/corte-personalizado-5.jpg");
-                    background-size: cover;
-                    background-position: 40%;
-                    width: 300px;
-                    height: 400px;
-                }
-                & .slide2-17 {
-                    background-image: url("../../img/cortes-de-cabelo/cortes-personalizados/corte-personalizado-6.jpg");
-                    background-size: cover;
-                    background-position: 30%;
-                    width: 300px;
-                    height: 400px;
-                }
-                & .slide2-18 {
-                    background-image: url("../../img/cortes-de-cabelo/cortes-personalizados/corte-personalizado-7.jpg");
-                    background-size: cover;
-                    background-position: 30%;
-                    width: 300px;
-                    height: 400px;
-                }
-                & .slide2-19 {
-                    background-image: url("../../img/cortes-de-cabelo/cortes-personalizados/corte-personalizado-8.jpg");
-                    background-size: cover;
-                    background-position: 70%;
-                    width: 300px;
-                    height: 400px;
-                }
-                & .slide2-20 {
-                    background-image: url("../../img/cortes-de-cabelo/cortes-personalizados/corte-personalizado-9.jpg");
-                    background-size: cover;
-                    background-position: 50%;
-                    width: 300px;
-                    height: 400px;
-                }
-
-                & #radio2-1:checked ~ .slide2-1 {
-                    width: 450px;
-                    height: 550px;
-                    margin-top: 50px;
-                }
-                & #radio2-2:checked ~ .slide2-2 {
-                    width: 450px;
-                    height: 550px;
-                    margin-top: 50px;
-                }
-                & #radio2-3:checked ~ .slide2-3 {
-                    width: 450px;
-                    height: 550px;
-                    margin-top: 50px;
-                }
-                & #radio2-4:checked ~ .slide2-4 {
-                    width: 450px;
-                    height: 550px;
-                    margin-top: 50px;
-                }
-                & #radio2-5:checked ~ .slide2-5 {
-                    width: 450px;
-                    height: 550px;
-                    margin-top: 50px;
-                }
-                & #radio2-6:checked ~ .slide2-6 {
-                    width: 450px;
-                    height: 550px;
-                    margin-top: 50px;
-                }
-                & #radio2-7:checked ~ .slide2-7 {
-                    width: 450px;
-                    height: 550px;
-                    margin-top: 50px;
-                }
-                & #radio2-8:checked ~ .slide2-8 {
-                    width: 450px;
-                    height: 550px;
-                    margin-top: 50px;
-                }
-                & #radio2-9:checked ~ .slide2-9 {
-                    width: 450px;
-                    height: 550px;
-                    margin-top: 50px;
-                }
-                & #radio2-10:checked ~ .slide2-10 {
-                    width: 450px;
-                    height: 550px;
-                    margin-top: 50px;
-                }
-                & #radio2-11:checked ~ .slide2-11 {
-                    width: 450px;
-                    height: 550px;
-                    margin-top: 50px;
-                }
-                & #radio2-12:checked ~ .slide2-12 {
-                    width: 450px;
-                    height: 550px;
-                    margin-top: 50px;
-                }
-                & #radio2-13:checked ~ .slide2-13 {
-                    width: 450px;
-                    height: 550px;
-                    margin-top: 50px;
-                }
-                & #radio2-14:checked ~ .slide2-14 {
-                    width: 450px;
-                    height: 550px;
-                    margin-top: 50px;
-                }
-                & #radio2-15:checked ~ .slide2-15 {
-                    width: 450px;
-                    height: 550px;
-                    margin-top: 50px;
-                }
-                & #radio2-16:checked ~ .slide2-16 {
-                    width: 450px;
-                    height: 550px;
-                    margin-top: 50px;
-                }
-                & #radio2-17:checked ~ .slide2-17 {
-                    width: 450px;
-                    height: 550px;
-                    margin-top: 50px;
-                }
-                & #radio2-18:checked ~ .slide2-18 {
-                    width: 450px;
-                    height: 550px;
-                    margin-top: 50px;
-                }
-                & #radio2-19:checked ~ .slide2-19 {
-                    width: 450px;
-                    height: 550px;
-                    margin-top: 50px;
-                }
-                & #radio2-20:checked ~ .slide2-20 {
-                    width: 450px;
-                    height: 550px;
-                    margin-top: 50px;
-                }
-
-
-                & #radio2-1:checked ~ .first2 {
-                    margin-left: 376px;
-                }
-                & #radio2-2:checked ~ .first2 {
-                    margin-left: 60px;
-                }
-                & #radio2-3:checked ~ .first2 {
-                    margin-left: -254px;
-                }
-                & #radio2-4:checked ~ .first2 {
-                    margin-left: -568px;
-                }
-                & #radio2-5:checked ~ .first2 {
-                    margin-left: -882px;
-                }
-                & #radio2-6:checked ~ .first2 {
-                    margin-left: -1196px;
-                }
-                & #radio2-7:checked ~ .first2 {
-                    margin-left: -1512px;
-                }
-                & #radio2-8:checked ~ .first2 {
-                    margin-left: -1828px;
-                }
-                & #radio2-9:checked ~ .first2 {
-                    margin-left: -2138px;
-                }
-                & #radio2-10:checked ~ .first2 {
-                    margin-left: -2452px;
-                }
-                & #radio2-11:checked ~ .first2 {
-                    margin-left: -2768px;
-                }
-                & #radio2-12:checked ~ .first2 {
-                    margin-left: -3080px;
-                }
-                & #radio2-13:checked ~ .first2 {
-                    margin-left: -3396px;
-                }
-                & #radio2-14:checked ~ .first2 {
-                    margin-left: -3710px;
-                }
-                & #radio2-15:checked ~ .first2 {
-                    margin-left: -4022px;
-                }
-                & #radio2-16:checked ~ .first2 {
-                    margin-left: -4336px;
-                }
-                & #radio2-17:checked ~ .first2 {
-                    margin-left: -4650px;
-                }
-                & #radio2-18:checked ~ .first2 {
-                    margin-left: -4968px;
-                }
-                & #radio2-19:checked ~ .first2 {
-                    margin-left: -5280px;
-                }
-                & #radio2-20:checked ~ .first2 {
-                    margin-left: -5594px;
-                }
-                
-
-                & #radio2-1:checked ~ .auto-navigation .btn-auto1 {
-                    background-color: #858585;
-                }
-                & #radio2-2:checked ~ .auto-navigation .btn-auto2 {
-                    background-color: #858585;
-                }
-                & #radio2-3:checked ~ .auto-navigation .btn-auto3 {
-                    background-color: #858585;
-                }
-                & #radio2-4:checked ~ .auto-navigation .btn-auto4 {
-                    background-color: #858585;
-                }
-                & #radio2-5:checked ~ .auto-navigation .btn-auto5 {
-                    background-color: #858585;
-                }
-                & #radio2-6:checked ~ .auto-navigation .btn-auto6 {
-                    background-color: #858585;
-                }
-                & #radio2-7:checked ~ .auto-navigation .btn-auto7 {
-                    background-color: #858585;
-                }
-                & #radio2-8:checked ~ .auto-navigation .btn-auto8 {
-                    background-color: #858585;
-                }
-                & #radio2-9:checked ~ .auto-navigation .btn-auto9 {
-                    background-color: #858585;
-                }
-                & #radio2-10:checked ~ .auto-navigation .btn-auto10 {
-                    background-color: #858585;
-                }
-                & #radio2-11:checked ~ .auto-navigation .btn-auto11 {
-                    background-color: #858585;
-                }
-                & #radio2-12:checked ~ .auto-navigation .btn-auto12 {
-                    background-color: #858585;
-                }
-                & #radio2-13:checked ~ .auto-navigation .btn-auto13 {
-                    background-color: #858585;
-                }
-                & #radio2-14:checked ~ .auto-navigation .btn-auto14 {
-                    background-color: #858585;
-                }
-                & #radio2-15:checked ~ .auto-navigation .btn-auto15 {
-                    background-color: #858585;
-                }
-                & #radio2-16:checked ~ .auto-navigation .btn-auto16 {
-                    background-color: #858585;
-                }
-                & #radio2-17:checked ~ .auto-navigation .btn-auto17 {
-                    background-color: #858585;
-                }
-                & #radio2-18:checked ~ .auto-navigation .btn-auto18 {
-                    background-color: #858585;
-                }
-                & #radio2-19:checked ~ .auto-navigation .btn-auto19 {
-                    background-color: #858585;
-                }
-                & #radio2-20:checked ~ .auto-navigation .btn-auto20 {
-                    background-color: #858585;
-                }
-                
-
-
-                & .auto-navigation {
-                    position: absolute;
-                    bottom: 10px;
-                    left: 50%;
-                    transform: translate(-50%, -50%);
+                & .manual-navigation {
+                    position: relative;
+                    margin-top: 70px;
                     display: flex;
                     justify-content: center;
                     width: 100%;
-                }
-                & .auto-navigation div {
-                    border: 2px solid #ffffff00;
-                    border-radius: 20px;
-                    padding: 5px;
-                    transition: 0.5s;
-                }
-                & .auto-navigation div:not(:last-child){
-                    margin-right: 10px;
-                }
-            }   
-            
-            & .manual-navigation {
-                position: relative;
-                margin-top: 70px;
-                display: flex;
-                justify-content: center;
-                width: 100%;
-
-                & .manual-btn2 {
-                    border: 2px solid #7e7e7e;
-                    padding: 5px;
-                    border-radius: 20px;
-                }
-                & .manual-btn2:not(:last-child) {
-                    margin-right: 10px;
-                }
-                & .manual-btn2:hover {
-                    cursor: pointer;
-                }
-            }          
-        }
-
-        & #btn-prev2 {
-            position: absolute;
-            left: 320px;
-            bottom:  50px;
-            background-color: transparent;
-            border: none;
-            outline: none;
-            height: 80px;
-            width: 80px;
-
-            & img {
-                width: 40px;
-                transform: rotate(180deg);
+    
+                    & .manual-btn2 {
+                        border: 2px solid #7e7e7e;
+                        padding: 5px;
+                        border-radius: 20px;
+                    }
+                    & .manual-btn2:not(:last-child) {
+                        margin-right: 10px;
+                    }
+                    & .manual-btn2:hover {
+                        cursor: pointer;
+                    }
+                }          
             }
-        }
-
-        & #btn-next2 {
-            position: absolute;
-            right: 320px;
-            bottom: 50px;
-            background-color: transparent;
-            border: none;
-            outline: none;
-            height: 80px;
-            width: 80px;
-
-            & img {
-                width: 40px;
+    
+            & #btn-prev2 {
+                position: absolute;
+                left: 10%;
+                bottom:  50px;
+                background-color: transparent;
+                border: none;
+                outline: none;
+                height: 80px;
+                width: 80px;
+    
+                & img {
+                    width: 40px;
+                    transform: rotate(180deg);
+                }
             }
+    
+            & #btn-next2 {
+                position: absolute;
+                right: 10%;
+                bottom: 50px;
+                background-color: transparent;
+                border: none;
+                outline: none;
+                height: 80px;
+                width: 80px;
+    
+                & img {
+                    width: 40px;
+                }
+            }
+    
+            & #btn-prev2:hover, #btn-next2:hover {
+                cursor: pointer;
+            } 
         }
-
-        & #btn-prev2:hover, #btn-next2:hover {
-            cursor: pointer;
-        } 
-    }
-
-    & .consideracoes {
-        text-align: center;
-        width: calc(100% -100px);
-        margin: 50px 50px 0 50px;
-        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    
+        & .consideracoes {
+            text-align: center;
+            width: calc(100% -100px);
+            margin: 50px 50px 0 50px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
     }
 }
+
+
+
+@media screen and (min-width: 551px) and (max-width: 1024px) {
+    .container-cortes {
+        & .container-title-cortes {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+    
+            & h1 {
+                font-family: "Oxanium", sans-serif;
+                border: 1px solid rgb(197, 197, 197);
+                padding: 0 50px;
+                border-radius: 10px;
+            }
+        }
+        
+        & .carousel-principal {
+            width: 100%;
+            position: relative;
+    
+            & .slider {
+                margin: 0 auto;
+                padding-top: 10px;
+                width: 530px;
+                /*width: 100%;*/
+                height: 450px;
+                overflow: hidden;
+                border-radius: 10px;
+                border: 1px solid rgb(59, 59, 59);
+                box-shadow: 2px 2px 10px rgb(128, 128, 128);
+                display: flex;
+    
+                & .slides {
+                    width: 700%;
+                    height: 550px;
+                    display: flex;
+                    flex-shrink: 0;
+    
+                    & #radio1:checked ~ .first {
+                        margin-left: 135px;
+                    }
+                    & #radio2:checked ~ .first {
+                        margin-left: -125px;
+                    }
+                    & #radio3:checked ~ .first {
+                        margin-left: -390px;
+                    }
+                    & #radio4:checked ~ .first {
+                        margin-left: -655px;
+                    }
+                    & #radio5:checked ~ .first {
+                        margin-left: -920px;
+                    }
+                    & #radio6:checked ~ .first {
+                        margin-left: -1180px;
+                    }
+                    & #radio7:checked ~ .first {
+                        margin-left: -1445px;
+                    }
+    
+    
+    
+                    & .slide {
+                        transition: 0.5s;
+                        border-radius: 15px;
+                        border: 2px solid rgb(100, 100, 100);
+                        box-shadow: 3px 3px 10px black;
+                        
+                        & .background-text {
+                            display: flex;
+                            flex-direction: row;
+                            align-items: flex-end;
+                            justify-content: center;
+                            padding-bottom: 50px;
+                            width: 100%;
+                            height: calc(100% - 50px);
+                            border-radius: 15px;
+                            font-size: 20px;
+                            color: #fff;
+                            font-family: Verdana, Geneva, Tahoma, sans-serif;
+                            font-weight: 600;
+                            background-image: linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), rgba(0,0,0,0.8));
+                            position: relative;
+    
+                            & .likes {
+                                position: absolute;
+                                top: 0;
+                                right: 0;
+                                display: flex;
+                                flex-direction: row;
+                                align-items: center;
+                                margin-right: 20px;
+                                margin-top: 5px;
+    
+                                & #likes-users {
+                                    font-size: 16px;
+                                }
+    
+                                & .btn-like {
+                                    background-color: transparent;
+                                    border: none;
+                                    outline: none;
+    
+                                    & img {
+                                        width: 25px;
+                                        height: 25px;
+                                        margin-left: 10px;
+                                    }
+                                }
+                                & .btn-like:hover {
+                                    cursor: pointer;
+                                }
+                                
+                            }
+    
+                        }
+                    }
+                    & .slide:not(:last-child) {
+                        margin-right: 10px;
+                    }
+    
+                    & .slide1 {
+                        background-image: url("../../img/cortes-de-cabelo/corte-Militar.jpg");
+                        background-size: cover;
+                        width: 250px;
+                        height: 300px;
+                    }
+                    & .slide2 {
+                        background-image: url("../../img/cortes-de-cabelo/corte-Disfarcado.jpg");
+                        background-size: cover;
+                        width: 250px;
+                        height: 300px;
+                    }
+                    & .slide3 {
+                        background-image: url("../../img/cortes-de-cabelo/corte-Pompadour.jpg");
+                        background-size: cover;
+                        width: 250px;
+                        height: 300px;
+                    }
+                    & .slide4 {
+                        background-image: url("../../img/cortes-de-cabelo/corte-Moicano.jpg");
+                        background-size: cover;
+                        width: 250px;
+                        height: 300px;
+                    }
+                    & .slide5 {
+                        background-image: url("../../img/cortes-de-cabelo/corte-Top-knot.jpg");
+                        background-size: cover;
+                        width: 250px;
+                        height: 300px;
+                    }
+                    & .slide6 {
+                        background-image: url("../../img/cortes-de-cabelo/corte-Undercut.jpg");
+                        background-size: cover;
+                        width: 250px;
+                        height: 300px;
+                    }
+                    & .slide7 {
+                        background-image: url("../../img/cortes-de-cabelo/corte-social.jpg");
+                        background-size: cover;
+                        width: 250px;
+                        height: 300px;
+                    }
+                    
+                    
+    
+                    & #radio1:checked ~ .navigate-auto .auto-btn1 {
+                        background-color: #969696;
+                    }
+                    & #radio2:checked ~ .navigate-auto .auto-btn2 {
+                        background-color: #969696;
+                    }
+                    & #radio3:checked ~ .navigate-auto .auto-btn3 {
+                        background-color: #969696;
+                    }
+                    & #radio4:checked ~ .navigate-auto .auto-btn4 {
+                        background-color: #969696;
+                    }
+                    & #radio5:checked ~ .navigate-auto .auto-btn5 {
+                        background-color: #969696;
+                    }
+                    & #radio6:checked ~ .navigate-auto .auto-btn6 {
+                        background-color: #969696;
+                    }
+                    & #radio7:checked ~ .navigate-auto .auto-btn7 {
+                        background-color: #969696;
+                    }
+    
+                    & #radio1:checked ~ .slide1 {
+                        border: 2px solid rgb(75, 75, 75);
+                        margin-top: 40px;
+                        min-width: 250px;
+                        width: 250px;
+                        height: 300px;
+                    }
+                    & #radio2:checked ~ .slide2 {
+                        border: 2px solid rgb(75, 75, 75);
+                        margin-top: 40px;
+                        min-width: 250px;
+                        width: 250px;
+                        height: 300px;
+                    }
+                    & #radio3:checked ~ .slide3 {
+                        border: 2px solid rgb(75, 75, 75);
+                        margin-top: 40px;
+                        min-width: 250px;
+                        width: 250px;
+                        height: 300px;
+                    }
+                    & #radio4:checked ~ .slide4 {
+                        border: 2px solid rgb(75, 75, 75);
+                        margin-top: 40px;
+                        min-width: 250px;
+                        width: 250px;
+                        height: 300px;
+                    }
+                    & #radio5:checked ~ .slide5 {
+                        border: 2px solid rgb(75, 75, 75);
+                        margin-top: 40px;
+                        min-width: 250px;
+                        width: 250px;
+                        height: 300px;
+                    }
+                    & #radio6:checked ~ .slide6 {
+                        border: 2px solid rgb(75, 75, 75);
+                        margin-top: 40px;
+                        min-width: 250px;
+                        width: 250px;
+                        height: 300px;
+                    }
+                    & #radio7:checked ~ .slide7 {
+                        border: 2px solid rgb(75, 75, 75);
+                        margin-top: 40px;
+                        min-width: 250px;
+                        width: 250px;
+                        height: 300px;
+                    }
+    
+    
+                    & input {
+                        display: none;
+                    }
+    
+    
+                    & .navigate-auto {
+                        position: absolute;
+                        top: 370px;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        display: flex;
+                        justify-content: center;
+                    }
+    
+                    & .navigate-auto div {
+                        border: 2px solid #6b6b6b;
+                        padding: 5px;
+                        border-radius: 10px;
+                        cursor: pointer;
+                        transition: 0.6s;
+                    }
+    
+                    & .navigate-auto div:not(:last-child) {
+                        margin-right: 20px;
+                    }
+                }
+    
+                & .manual-navigation {
+                    position: absolute;
+                    top: 370px;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    display: flex;
+                    
+    
+                    & .manual-btn {
+                        border: 2px solid #747474;
+                        padding: 5px;
+                        border-radius: 10px;
+                        cursor: pointer;
+                        transition: 0.6s;
+                    }
+    
+                    & .manual-btn:not(:last-child) {
+                        margin-right: 20px;
+                    }
+    
+                    & .manual-btn:hover {
+                        background-color: #ffffff;
+                    }
+                }
+            }
+    
+            & #btn-prev {
+                position: absolute;
+                left: 30%;
+                bottom:  0px;
+                background-color: transparent;
+                border: none;
+                outline: none;
+                height: 80px;
+                width: 80px;
+    
+                & img {
+                    width: 40px;
+                    transform: rotate(180deg);
+                }
+            }
+    
+            & #btn-next {
+                position: absolute;
+                right: 30%;
+                bottom: 0px;
+                background-color: transparent;
+                border: none;
+                outline: none;
+                height: 80px;
+                width: 80px;
+    
+                & img {
+                    width: 40px;
+                }
+            }
+    
+            & #btn-prev:hover, #btn-next:hover {
+                cursor: pointer;
+            } 
+        }
+    
+    
+        & .stripe-division {
+            width: calc(100% - 100px);
+            height: 1px;
+            background-color: #cacaca;
+            margin: 80px 50px 50px 50px;
+        }
+    
+        & .text-personalizados {
+            width: calc(100%);
+            display: flex;
+            justify-content: center;
+            
+            & .text {
+                width: 1200px;
+    
+                & h4 {
+                    font-size: 18px;
+                    font-family: Verdana, Geneva, Tahoma, sans-serif;
+                }
+    
+                & #list-cortes li {
+                    margin-bottom: 30px;
+                    text-align: justify;
+                    font-family: Arial, Helvetica, sans-serif;
+                }
+            }
+        }
+    
+        /*Segundo Carousel*/
+        & .container-subtitle {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+    
+            & h5 {
+                font-family: "Oxanium", sans-serif;
+                border: 1px solid rgb(197, 197, 197);
+                padding: 10px 50px;
+                border-radius: 10px;
+                font-size: 25px;
+            }
+        }
+    
+        & .carousel-secundary {
+            width: 100%;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            
+            & .slider {
+                width: 1200px;
+                height: 650px;
+                overflow: hidden;
+                border-radius: 10px;
+                border: 1px solid rgb(59, 59, 59);
+                box-shadow: 2px 2px 10px rgb(128, 128, 128);
+                overflow-x: hidden;
+    
+                & .slides {
+                    width: calc(6000px + 726px); /*200px de bordas right nas imagens*/
+                    height: 550px;
+                    display: flex;
+                    flex-direction: row;
+    
+                    & input[type='radio'] {
+                        display: none;
+                    }
+    
+                    & .slide {
+                        margin-top: 10px;
+                        transition: 0.5s;
+                        box-shadow: 3px 3px 10px black;
+                        border-radius: 15px;
+                        border: 2px solid rgb(100, 100, 100);
+                    }
+                    & .slide:not(:last-child) {
+                        margin-right: 10px;
+                    }
+    
+                    & .slide2-1 {
+                        background-image: url("../../img/cortes-de-cabelo/cortes-personalizados/corte-personalizado-1.jpg");
+                        background-size: cover;
+                        background-position: 50%;
+                        width: 300px;
+                        height: 400px;
+                    }
+                    & .slide2-2 {
+                        background-image: url("../../img/cortes-de-cabelo/cortes-personalizados/corte-personalizado-10.jpg");
+                        background-size: cover;
+                        background-position: 20%;
+                        width: 300px;
+                        height: 400px;
+                    }
+                    & .slide2-3 {
+                        background-image: url("../../img/cortes-de-cabelo/cortes-personalizados/corte-personalizado-11.jpg");
+                        background-size: cover;
+                        background-position: 30%;
+                        width: 300px;
+                        height: 400px;
+                    }
+                    & .slide2-4 {
+                        background-image: url("../../img/cortes-de-cabelo/cortes-personalizados/corte-personalizado-12.jpg");
+                        background-size: cover;
+                        background-position: 60%;
+                        width: 300px;
+                        height: 400px;
+                    }
+                    & .slide2-5 {
+                        background-image: url("../../img/cortes-de-cabelo/cortes-personalizados/corte-personalizado-13.jpg");
+                        background-size: cover;
+                        background-position: 30%;
+                        width: 300px;
+                        height: 400px;
+                    }
+                    & .slide2-6 {
+                        background-image: url("../../img/cortes-de-cabelo/cortes-personalizados/corte-personalizado-14.jpg");
+                        background-size: cover;
+                        /*background-position: 30%;*/
+                        width: 300px;
+                        height: 400px;
+                    }
+                    & .slide2-7 {
+                        background-image: url("../../img/cortes-de-cabelo/cortes-personalizados/corte-personalizado-15.jpg");
+                        background-size: cover;
+                        /*background-position: 30%;*/
+                        width: 300px;
+                        height: 400px;
+                    }
+                    & .slide2-8 {
+                        background-image: url("../../img/cortes-de-cabelo/cortes-personalizados/corte-personalizado-16.jpg");
+                        background-size: cover;
+                        background-position: 30%;
+                        width: 300px;
+                        height: 400px;
+                    }
+                    & .slide2-9 {
+                        background-image: url("../../img/cortes-de-cabelo/cortes-personalizados/corte-personalizado-17.jpg");
+                        background-size: cover;
+                        background-position: 60%;
+                        width: 300px;
+                        height: 400px;
+                    }
+                    & .slide2-10 {
+                        background-image: url("../../img/cortes-de-cabelo/cortes-personalizados/corte-personalizado-18.jpg");
+                        background-size: cover;
+                        background-position: 40%;
+                        width: 300px;
+                        height: 400px;
+                    }
+                    & .slide2-11 {
+                        background-image: url("../../img/cortes-de-cabelo/cortes-personalizados/corte-personalizado-19.jpg");
+                        background-size: cover;
+                        background-position: 30%;
+                        width: 300px;
+                        height: 400px;
+                    }
+                    & .slide2-12 {
+                        background-image: url("../../img/cortes-de-cabelo/cortes-personalizados/corte-personalizado-2.jpg");
+                        background-size: cover;
+                        background-position: 30%;
+                        width: 300px;
+                        height: 400px;
+                    }
+                    & .slide2-13 {
+                        background-image: url("../../img/cortes-de-cabelo/cortes-personalizados/corte-personalizado-20.jpg");
+                        background-size: cover;
+                        /*background-position: 30%;*/
+                        width: 300px;
+                        height: 400px;
+                    }
+                    & .slide2-14 {
+                        background-image: url("../../img/cortes-de-cabelo/cortes-personalizados/corte-personalizado-3.webp");
+                        background-size: cover;
+                        background-position: 10%;
+                        width: 300px;
+                        height: 400px;
+                    }
+                    & .slide2-15 {
+                        background-image: url("../../img/cortes-de-cabelo/cortes-personalizados/corte-personalizado-4.jpg");
+                        background-size: cover;
+                        background-position: 30%;
+                        width: 300px;
+                        height: 400px;
+                    }
+                    & .slide2-16 {
+                        background-image: url("../../img/cortes-de-cabelo/cortes-personalizados/corte-personalizado-5.jpg");
+                        background-size: cover;
+                        background-position: 40%;
+                        width: 300px;
+                        height: 400px;
+                    }
+                    & .slide2-17 {
+                        background-image: url("../../img/cortes-de-cabelo/cortes-personalizados/corte-personalizado-6.jpg");
+                        background-size: cover;
+                        background-position: 30%;
+                        width: 300px;
+                        height: 400px;
+                    }
+                    & .slide2-18 {
+                        background-image: url("../../img/cortes-de-cabelo/cortes-personalizados/corte-personalizado-7.jpg");
+                        background-size: cover;
+                        background-position: 30%;
+                        width: 300px;
+                        height: 400px;
+                    }
+                    & .slide2-19 {
+                        background-image: url("../../img/cortes-de-cabelo/cortes-personalizados/corte-personalizado-8.jpg");
+                        background-size: cover;
+                        background-position: 70%;
+                        width: 300px;
+                        height: 400px;
+                    }
+                    & .slide2-20 {
+                        background-image: url("../../img/cortes-de-cabelo/cortes-personalizados/corte-personalizado-9.jpg");
+                        background-size: cover;
+                        background-position: 50%;
+                        width: 300px;
+                        height: 400px;
+                    }
+    
+                    & #radio2-1:checked ~ .slide2-1 {
+                        width: 450px;
+                        height: 550px;
+                        margin-top: 50px;
+                    }
+                    & #radio2-2:checked ~ .slide2-2 {
+                        width: 450px;
+                        height: 550px;
+                        margin-top: 50px;
+                    }
+                    & #radio2-3:checked ~ .slide2-3 {
+                        width: 450px;
+                        height: 550px;
+                        margin-top: 50px;
+                    }
+                    & #radio2-4:checked ~ .slide2-4 {
+                        width: 450px;
+                        height: 550px;
+                        margin-top: 50px;
+                    }
+                    & #radio2-5:checked ~ .slide2-5 {
+                        width: 450px;
+                        height: 550px;
+                        margin-top: 50px;
+                    }
+                    & #radio2-6:checked ~ .slide2-6 {
+                        width: 450px;
+                        height: 550px;
+                        margin-top: 50px;
+                    }
+                    & #radio2-7:checked ~ .slide2-7 {
+                        width: 450px;
+                        height: 550px;
+                        margin-top: 50px;
+                    }
+                    & #radio2-8:checked ~ .slide2-8 {
+                        width: 450px;
+                        height: 550px;
+                        margin-top: 50px;
+                    }
+                    & #radio2-9:checked ~ .slide2-9 {
+                        width: 450px;
+                        height: 550px;
+                        margin-top: 50px;
+                    }
+                    & #radio2-10:checked ~ .slide2-10 {
+                        width: 450px;
+                        height: 550px;
+                        margin-top: 50px;
+                    }
+                    & #radio2-11:checked ~ .slide2-11 {
+                        width: 450px;
+                        height: 550px;
+                        margin-top: 50px;
+                    }
+                    & #radio2-12:checked ~ .slide2-12 {
+                        width: 450px;
+                        height: 550px;
+                        margin-top: 50px;
+                    }
+                    & #radio2-13:checked ~ .slide2-13 {
+                        width: 450px;
+                        height: 550px;
+                        margin-top: 50px;
+                    }
+                    & #radio2-14:checked ~ .slide2-14 {
+                        width: 450px;
+                        height: 550px;
+                        margin-top: 50px;
+                    }
+                    & #radio2-15:checked ~ .slide2-15 {
+                        width: 450px;
+                        height: 550px;
+                        margin-top: 50px;
+                    }
+                    & #radio2-16:checked ~ .slide2-16 {
+                        width: 450px;
+                        height: 550px;
+                        margin-top: 50px;
+                    }
+                    & #radio2-17:checked ~ .slide2-17 {
+                        width: 450px;
+                        height: 550px;
+                        margin-top: 50px;
+                    }
+                    & #radio2-18:checked ~ .slide2-18 {
+                        width: 450px;
+                        height: 550px;
+                        margin-top: 50px;
+                    }
+                    & #radio2-19:checked ~ .slide2-19 {
+                        width: 450px;
+                        height: 550px;
+                        margin-top: 50px;
+                    }
+                    & #radio2-20:checked ~ .slide2-20 {
+                        width: 450px;
+                        height: 550px;
+                        margin-top: 50px;
+                    }
+    
+    
+                    & #radio2-1:checked ~ .first2 {
+                        margin-left: 376px;
+                    }
+                    & #radio2-2:checked ~ .first2 {
+                        margin-left: 60px;
+                    }
+                    & #radio2-3:checked ~ .first2 {
+                        margin-left: -254px;
+                    }
+                    & #radio2-4:checked ~ .first2 {
+                        margin-left: -568px;
+                    }
+                    & #radio2-5:checked ~ .first2 {
+                        margin-left: -882px;
+                    }
+                    & #radio2-6:checked ~ .first2 {
+                        margin-left: -1196px;
+                    }
+                    & #radio2-7:checked ~ .first2 {
+                        margin-left: -1512px;
+                    }
+                    & #radio2-8:checked ~ .first2 {
+                        margin-left: -1828px;
+                    }
+                    & #radio2-9:checked ~ .first2 {
+                        margin-left: -2138px;
+                    }
+                    & #radio2-10:checked ~ .first2 {
+                        margin-left: -2452px;
+                    }
+                    & #radio2-11:checked ~ .first2 {
+                        margin-left: -2768px;
+                    }
+                    & #radio2-12:checked ~ .first2 {
+                        margin-left: -3080px;
+                    }
+                    & #radio2-13:checked ~ .first2 {
+                        margin-left: -3396px;
+                    }
+                    & #radio2-14:checked ~ .first2 {
+                        margin-left: -3710px;
+                    }
+                    & #radio2-15:checked ~ .first2 {
+                        margin-left: -4022px;
+                    }
+                    & #radio2-16:checked ~ .first2 {
+                        margin-left: -4336px;
+                    }
+                    & #radio2-17:checked ~ .first2 {
+                        margin-left: -4650px;
+                    }
+                    & #radio2-18:checked ~ .first2 {
+                        margin-left: -4968px;
+                    }
+                    & #radio2-19:checked ~ .first2 {
+                        margin-left: -5280px;
+                    }
+                    & #radio2-20:checked ~ .first2 {
+                        margin-left: -5594px;
+                    }
+                    
+    
+                    & #radio2-1:checked ~ .auto-navigation .btn-auto1 {
+                        background-color: #858585;
+                    }
+                    & #radio2-2:checked ~ .auto-navigation .btn-auto2 {
+                        background-color: #858585;
+                    }
+                    & #radio2-3:checked ~ .auto-navigation .btn-auto3 {
+                        background-color: #858585;
+                    }
+                    & #radio2-4:checked ~ .auto-navigation .btn-auto4 {
+                        background-color: #858585;
+                    }
+                    & #radio2-5:checked ~ .auto-navigation .btn-auto5 {
+                        background-color: #858585;
+                    }
+                    & #radio2-6:checked ~ .auto-navigation .btn-auto6 {
+                        background-color: #858585;
+                    }
+                    & #radio2-7:checked ~ .auto-navigation .btn-auto7 {
+                        background-color: #858585;
+                    }
+                    & #radio2-8:checked ~ .auto-navigation .btn-auto8 {
+                        background-color: #858585;
+                    }
+                    & #radio2-9:checked ~ .auto-navigation .btn-auto9 {
+                        background-color: #858585;
+                    }
+                    & #radio2-10:checked ~ .auto-navigation .btn-auto10 {
+                        background-color: #858585;
+                    }
+                    & #radio2-11:checked ~ .auto-navigation .btn-auto11 {
+                        background-color: #858585;
+                    }
+                    & #radio2-12:checked ~ .auto-navigation .btn-auto12 {
+                        background-color: #858585;
+                    }
+                    & #radio2-13:checked ~ .auto-navigation .btn-auto13 {
+                        background-color: #858585;
+                    }
+                    & #radio2-14:checked ~ .auto-navigation .btn-auto14 {
+                        background-color: #858585;
+                    }
+                    & #radio2-15:checked ~ .auto-navigation .btn-auto15 {
+                        background-color: #858585;
+                    }
+                    & #radio2-16:checked ~ .auto-navigation .btn-auto16 {
+                        background-color: #858585;
+                    }
+                    & #radio2-17:checked ~ .auto-navigation .btn-auto17 {
+                        background-color: #858585;
+                    }
+                    & #radio2-18:checked ~ .auto-navigation .btn-auto18 {
+                        background-color: #858585;
+                    }
+                    & #radio2-19:checked ~ .auto-navigation .btn-auto19 {
+                        background-color: #858585;
+                    }
+                    & #radio2-20:checked ~ .auto-navigation .btn-auto20 {
+                        background-color: #858585;
+                    }
+                    
+    
+    
+                    & .auto-navigation {
+                        position: absolute;
+                        bottom: 10px;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        display: flex;
+                        justify-content: center;
+                        width: 100%;
+                    }
+                    & .auto-navigation div {
+                        border: 2px solid #ffffff00;
+                        border-radius: 20px;
+                        padding: 5px;
+                        transition: 0.5s;
+                    }
+                    & .auto-navigation div:not(:last-child){
+                        margin-right: 10px;
+                    }
+                }   
+                
+                & .manual-navigation {
+                    position: relative;
+                    margin-top: 70px;
+                    display: flex;
+                    justify-content: center;
+                    width: 100%;
+    
+                    & .manual-btn2 {
+                        border: 2px solid #7e7e7e;
+                        padding: 5px;
+                        border-radius: 20px;
+                    }
+                    & .manual-btn2:not(:last-child) {
+                        margin-right: 10px;
+                    }
+                    & .manual-btn2:hover {
+                        cursor: pointer;
+                    }
+                }          
+            }
+    
+            & #btn-prev2 {
+                position: absolute;
+                left: 320px;
+                bottom:  50px;
+                background-color: transparent;
+                border: none;
+                outline: none;
+                height: 80px;
+                width: 80px;
+    
+                & img {
+                    width: 40px;
+                    transform: rotate(180deg);
+                }
+            }
+    
+            & #btn-next2 {
+                position: absolute;
+                right: 320px;
+                bottom: 50px;
+                background-color: transparent;
+                border: none;
+                outline: none;
+                height: 80px;
+                width: 80px;
+    
+                & img {
+                    width: 40px;
+                }
+            }
+    
+            & #btn-prev2:hover, #btn-next2:hover {
+                cursor: pointer;
+            } 
+        }
+    
+        & .consideracoes {
+            text-align: center;
+            width: calc(100% -100px);
+            margin: 50px 50px 0 50px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+    }
+}
+
+
+
+@media screen and (max-width: 550px) {
+    .container-cortes {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        & .container-title-cortes {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+    
+            & h1 {
+                font-family: "Oxanium", sans-serif;
+                border: 1px solid rgb(197, 197, 197);
+                padding: 0 50px;
+                border-radius: 10px;
+            }
+        }
+        
+        & .carousel-principal {
+            width: 350px;
+            position: relative;
+    
+            & .slider {
+                margin: 0 auto;
+                padding-top: 10px;
+                width: 100%;
+                height: 400px;
+                overflow: hidden;
+                border-radius: 10px;
+                border: 1px solid rgb(59, 59, 59);
+                box-shadow: 2px 2px 10px rgb(128, 128, 128);
+                display: flex;
+    
+                & .slides {
+                    width: 1500px;
+                    height: 400px;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+    
+                    & #radio1:checked ~ .first {
+                        margin-left: 80px;
+                    }
+                    & #radio2:checked ~ .first {
+                        margin-left: -110px;
+                    }
+                    & #radio3:checked ~ .first {
+                        margin-left: -305px;
+                    }
+                    & #radio4:checked ~ .first {
+                        margin-left: -500px;
+                    }
+                    & #radio5:checked ~ .first {
+                        margin-left: -695px;
+                    }
+                    & #radio6:checked ~ .first {
+                        margin-left: -890px;
+                    }
+                    & #radio7:checked ~ .first {
+                        margin-left: -1155px;
+                    }
+    
+    
+    
+                    & .slide {
+                        transition: 0.5s;
+                        border-radius: 15px;
+                        border: 2px solid rgb(100, 100, 100);
+                        box-shadow: 3px 3px 10px black;
+                        
+                        & .background-text {
+                            display: flex;
+                            flex-direction: row;
+                            align-items: flex-end;
+                            justify-content: center;
+                            padding-bottom: 15px;
+                            width: 100%;
+                            height: calc(100% - 15px);
+                            border-radius: 15px;
+                            font-size: 20px;
+                            color: #fff;
+                            font-family: Verdana, Geneva, Tahoma, sans-serif;
+                            font-weight: 600;
+                            background-image: linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), rgba(0,0,0,0.8));
+                            position: relative;
+    
+                            & .likes {
+                                position: absolute;
+                                top: 0;
+                                right: 0;
+                                display: flex;
+                                flex-direction: row;
+                                align-items: center;
+                                margin-right: 10px;
+                                margin-top: 0px;
+    
+                                & #likes-users {
+                                    font-size: 16px;
+                                }
+    
+                                & .btn-like {
+                                    background-color: transparent;
+                                    border: none;
+                                    outline: none;
+    
+                                    & img {
+                                        width: 20px;
+                                        height: 20px;
+                                        margin-left: 5px;
+                                    }
+                                }
+                                & .btn-like:hover {
+                                    cursor: pointer;
+                                }
+                                
+                            }
+    
+                        }
+                    }
+                    & .slide:not(:last-child) {
+                        margin-right: 10px;
+                    }
+    
+                    & .slide1 {
+                        background-image: url("../../img/cortes-de-cabelo/corte-Militar.jpg");
+                        background-size: cover;
+                        min-width: 180px;
+                        width: 180px;
+                        height: 240px;
+                    }
+                    & .slide2 {
+                        background-image: url("../../img/cortes-de-cabelo/corte-Disfarcado.jpg");
+                        background-size: cover;
+                        min-width: 180px;
+                        width: 180px;
+                        height: 240px;
+                    }
+                    & .slide3 {
+                        background-image: url("../../img/cortes-de-cabelo/corte-Pompadour.jpg");
+                        background-size: cover;
+                        min-width: 180px;
+                        width: 180px;
+                        height: 240px;
+                    }
+                    & .slide4 {
+                        background-image: url("../../img/cortes-de-cabelo/corte-Moicano.jpg");
+                        background-size: cover;
+                        min-width: 180px;
+                        width: 180px;
+                        height: 240px;
+                    }
+                    & .slide5 {
+                        background-image: url("../../img/cortes-de-cabelo/corte-Top-knot.jpg");
+                        background-size: cover;
+                        min-width: 180px;
+                        width: 180px;
+                        height: 240px;
+                    }
+                    & .slide6 {
+                        background-image: url("../../img/cortes-de-cabelo/corte-Undercut.jpg");
+                        background-size: cover;
+                        min-width: 180px;
+                        width: 180px;
+                        height: 240px;
+                    }
+                    & .slide7 {
+                        background-image: url("../../img/cortes-de-cabelo/corte-social.jpg");
+                        background-size: cover;
+                        min-width: 180px;
+                        width: 180px;
+                        height: 240px;
+                    }
+                    
+                    
+    
+                    & #radio1:checked ~ .navigate-auto .auto-btn1 {
+                        background-color: #979797;
+                    }
+                    & #radio2:checked ~ .navigate-auto .auto-btn2 {
+                        background-color: #979797;
+                    }
+                    & #radio3:checked ~ .navigate-auto .auto-btn3 {
+                        background-color: #979797;
+                    }
+                    & #radio4:checked ~ .navigate-auto .auto-btn4 {
+                        background-color: #979797;
+                    }
+                    & #radio5:checked ~ .navigate-auto .auto-btn5 {
+                        background-color: #979797;
+                    }
+                    & #radio6:checked ~ .navigate-auto .auto-btn6 {
+                        background-color: #979797;
+                    }
+                    & #radio7:checked ~ .navigate-auto .auto-btn7 {
+                        background-color: #979797;
+                    }
+    
+                    & #radio1:checked ~ .slide1 {
+                        border: 2px solid rgb(75, 75, 75);
+                        margin-top: 40px;
+                        width: 180px;
+                        height: 240px;
+                    }
+                    & #radio2:checked ~ .slide2 {
+                        border: 2px solid rgb(75, 75, 75);
+                        margin-top: 40px;
+                        width: 180px;
+                        height: 240px;
+                    }
+                    & #radio3:checked ~ .slide3 {
+                        border: 2px solid rgb(75, 75, 75);
+                        margin-top: 40px;
+                        width: 180px;
+                        height: 240px;
+                    }
+                    & #radio4:checked ~ .slide4 {
+                        border: 2px solid rgb(75, 75, 75);
+                        margin-top: 40px;
+                        width: 180px;
+                        height: 240px;
+                    }
+                    & #radio5:checked ~ .slide5 {
+                        border: 2px solid rgb(75, 75, 75);
+                        margin-top: 40px;
+                        width: 180px;
+                        height: 240px;
+                    }
+                    & #radio6:checked ~ .slide6 {
+                        border: 2px solid rgb(75, 75, 75);
+                        margin-top: 40px;
+                        width: 180px;
+                        height: 240px;
+                    }
+                    & #radio7:checked ~ .slide7 {
+                        border: 2px solid rgb(75, 75, 75);
+                        margin-top: 40px;
+                        width: 180px;
+                        height: 240px;
+                    }
+    
+    
+                    & input {
+                        display: none;
+                    }
+    
+    
+                    & .navigate-auto {
+                        position: absolute;
+                        top: 390px;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        display: flex;
+                        justify-content: center;
+                    }
+    
+                    & .navigate-auto div {
+                        border: 2px solid #696969;
+                        padding: 5px;
+                        border-radius: 10px;
+                        cursor: pointer;
+                        transition: 0.6s;
+                    }
+    
+                    & .navigate-auto div:not(:last-child) {
+                        margin-right: 20px;
+                    }
+                }
+    
+                & .manual-navigation {
+                    position: absolute;
+                    top: 390px;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    display: flex;
+                    
+    
+                    & .manual-btn {
+                        border: 2px solid #858585;
+                        padding: 5px;
+                        border-radius: 10px;
+                        cursor: pointer;
+                        transition: 0.6s;
+                    }
+    
+                    & .manual-btn:not(:last-child) {
+                        margin-right: 20px;
+                    }
+    
+                    & .manual-btn:hover {
+                        background-color: #ffffff;
+                    }
+                }
+            }
+    
+            & #btn-prev {
+                position: absolute;
+                left: 0px;
+                bottom:  20px;
+                background-color: transparent;
+                border: none;
+                outline: none;
+                height: 80px;
+                width: 80px;
+    
+                & img {
+                    width: 40px;
+                    transform: rotate(180deg);
+                }
+            }
+    
+            & #btn-next {
+                position: absolute;
+                right: 0px;
+                bottom: 20px;
+                background-color: transparent;
+                border: none;
+                outline: none;
+                height: 80px;
+                width: 80px;
+    
+                & img {
+                    width: 40px;
+                }
+            }
+    
+            & #btn-prev:hover, #btn-next:hover {
+                cursor: pointer;
+            } 
+        }
+    
+    
+        & .stripe-division {
+            width: calc(100% - 40px);
+            height: 1px;
+            background-color: #cacaca;
+            margin: 80px 20px 50px 20px;
+        }
+    
+        & .text-personalizados {
+            width: calc(100%);
+            display: flex;
+            justify-content: center;
+            
+            & .text {
+                width: calc(100% - 40px);
+                padding: 0 20px;
+    
+                & h4 {
+                    font-size: 18px;
+                    font-family: Verdana, Geneva, Tahoma, sans-serif;
+                }
+    
+                & #list-cortes li {
+                    margin-bottom: 30px;
+                    text-align: justify;
+                    font-family: Arial, Helvetica, sans-serif;
+                }
+            }
+        }
+
+
+    
+        /*Segundo Carousel*/
+        & .container-subtitle {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+    
+            & h5 {
+                font-family: "Oxanium", sans-serif;
+                border: 1px solid rgb(197, 197, 197);
+                padding: 10px 20px;
+                border-radius: 10px;
+                font-size: 25px;
+            }
+        }
+    
+        & .carousel-secundary {
+            width: 350px;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            
+            & .slider {
+                width: 100%;
+                height: 430px;
+                overflow: hidden;
+                border-radius: 10px;
+                border: 1px solid rgb(59, 59, 59);
+                box-shadow: 2px 2px 10px rgb(128, 128, 128);
+                overflow-x: hidden;
+    
+                & .slides {
+                    width: 4000px;
+                    height: 430px;
+                    display: flex;
+                    flex-direction: row;
+    
+                    & input[type='radio'] {
+                        display: none;
+                    }
+    
+                    & .slide {
+                        margin-top: 10px;
+                        transition: 0.5s;
+                        box-shadow: 3px 3px 10px black;
+                        border-radius: 15px;
+                        border: 2px solid rgb(100, 100, 100);
+                    }
+                    & .slide:not(:last-child) {
+                        margin-right: 10px;
+                    }
+    
+                    & .slide2-1 {
+                        background-image: url("../../img/cortes-de-cabelo/cortes-personalizados/corte-personalizado-1.jpg");
+                        background-size: cover;
+                        background-position: 50%;
+                        width: 180px;
+                        height: 240px;
+                    }
+                    & .slide2-2 {
+                        background-image: url("../../img/cortes-de-cabelo/cortes-personalizados/corte-personalizado-10.jpg");
+                        background-size: cover;
+                        background-position: 20%;
+                        width: 180px;
+                        height: 240px;
+                    }
+                    & .slide2-3 {
+                        background-image: url("../../img/cortes-de-cabelo/cortes-personalizados/corte-personalizado-11.jpg");
+                        background-size: cover;
+                        background-position: 30%;
+                        width: 180px;
+                        height: 240px;
+                    }
+                    & .slide2-4 {
+                        background-image: url("../../img/cortes-de-cabelo/cortes-personalizados/corte-personalizado-12.jpg");
+                        background-size: cover;
+                        background-position: 60%;
+                        width: 180px;
+                        height: 240px;
+                    }
+                    & .slide2-5 {
+                        background-image: url("../../img/cortes-de-cabelo/cortes-personalizados/corte-personalizado-13.jpg");
+                        background-size: cover;
+                        background-position: 30%;
+                        width: 180px;
+                        height: 240px;
+                    }
+                    & .slide2-6 {
+                        background-image: url("../../img/cortes-de-cabelo/cortes-personalizados/corte-personalizado-14.jpg");
+                        background-size: cover;
+                        /*background-position: 30%;*/
+                        width: 180px;
+                        height: 240px;
+                    }
+                    & .slide2-7 {
+                        background-image: url("../../img/cortes-de-cabelo/cortes-personalizados/corte-personalizado-15.jpg");
+                        background-size: cover;
+                        /*background-position: 30%;*/
+                        width: 180px;
+                        height: 240px;
+                    }
+                    & .slide2-8 {
+                        background-image: url("../../img/cortes-de-cabelo/cortes-personalizados/corte-personalizado-16.jpg");
+                        background-size: cover;
+                        background-position: 30%;
+                        width: 180px;
+                        height: 240px;
+                    }
+                    & .slide2-9 {
+                        background-image: url("../../img/cortes-de-cabelo/cortes-personalizados/corte-personalizado-17.jpg");
+                        background-size: cover;
+                        background-position: 60%;
+                        width: 180px;
+                        height: 240px;
+                    }
+                    & .slide2-10 {
+                        background-image: url("../../img/cortes-de-cabelo/cortes-personalizados/corte-personalizado-18.jpg");
+                        background-size: cover;
+                        background-position: 40%;
+                        width: 180px;
+                        height: 240px;
+                    }
+                    & .slide2-11 {
+                        background-image: url("../../img/cortes-de-cabelo/cortes-personalizados/corte-personalizado-19.jpg");
+                        background-size: cover;
+                        background-position: 30%;
+                        width: 180px;
+                        height: 240px;
+                    }
+                    & .slide2-12 {
+                        background-image: url("../../img/cortes-de-cabelo/cortes-personalizados/corte-personalizado-2.jpg");
+                        background-size: cover;
+                        background-position: 30%;
+                        width: 180px;
+                        height: 240px;
+                    }
+                    & .slide2-13 {
+                        background-image: url("../../img/cortes-de-cabelo/cortes-personalizados/corte-personalizado-20.jpg");
+                        background-size: cover;
+                        /*background-position: 30%;*/
+                        width: 180px;
+                        height: 240px;
+                    }
+                    & .slide2-14 {
+                        background-image: url("../../img/cortes-de-cabelo/cortes-personalizados/corte-personalizado-3.webp");
+                        background-size: cover;
+                        background-position: 10%;
+                        width: 180px;
+                        height: 240px;
+                    }
+                    & .slide2-15 {
+                        background-image: url("../../img/cortes-de-cabelo/cortes-personalizados/corte-personalizado-4.jpg");
+                        background-size: cover;
+                        background-position: 30%;
+                        width: 180px;
+                        height: 240px;
+                    }
+                    & .slide2-16 {
+                        background-image: url("../../img/cortes-de-cabelo/cortes-personalizados/corte-personalizado-5.jpg");
+                        background-size: cover;
+                        background-position: 40%;
+                        width: 180px;
+                        height: 240px;
+                    }
+                    & .slide2-17 {
+                        background-image: url("../../img/cortes-de-cabelo/cortes-personalizados/corte-personalizado-6.jpg");
+                        background-size: cover;
+                        background-position: 30%;
+                        width: 180px;
+                        height: 240px;
+                    }
+                    & .slide2-18 {
+                        background-image: url("../../img/cortes-de-cabelo/cortes-personalizados/corte-personalizado-7.jpg");
+                        background-size: cover;
+                        background-position: 30%;
+                        width: 180px;
+                        height: 240px;
+                    }
+                    & .slide2-19 {
+                        background-image: url("../../img/cortes-de-cabelo/cortes-personalizados/corte-personalizado-8.jpg");
+                        background-size: cover;
+                        background-position: 70%;
+                        width: 180px;
+                        height: 240px;
+                    }
+                    & .slide2-20 {
+                        background-image: url("../../img/cortes-de-cabelo/cortes-personalizados/corte-personalizado-9.jpg");
+                        background-size: cover;
+                        background-position: 50%;
+                        width: 180px;
+                        height: 240px;
+                    }
+    
+                    & #radio2-1:checked ~ .slide2-1 {
+                        width: 180px;
+                        height: 240px;
+                        margin-top: 50px;
+                    }
+                    & #radio2-2:checked ~ .slide2-2 {
+                        width: 180px;
+                        height: 240px;
+                        margin-top: 50px;
+                    }
+                    & #radio2-3:checked ~ .slide2-3 {
+                        width: 180px;
+                        height: 240px;
+                        margin-top: 50px;
+                    }
+                    & #radio2-4:checked ~ .slide2-4 {
+                        width: 180px;
+                        height: 240px;
+                        margin-top: 50px;
+                    }
+                    & #radio2-5:checked ~ .slide2-5 {
+                        width: 180px;
+                        height: 240px;
+                        margin-top: 50px;
+                    }
+                    & #radio2-6:checked ~ .slide2-6 {
+                        width: 180px;
+                        height: 240px;
+                        margin-top: 50px;
+                    }
+                    & #radio2-7:checked ~ .slide2-7 {
+                        width: 180px;
+                        height: 240px;
+                        margin-top: 50px;
+                    }
+                    & #radio2-8:checked ~ .slide2-8 {
+                        width: 180px;
+                        height: 240px;
+                        margin-top: 50px;
+                    }
+                    & #radio2-9:checked ~ .slide2-9 {
+                        width: 180px;
+                        height: 240px;
+                        margin-top: 50px;
+                    }
+                    & #radio2-10:checked ~ .slide2-10 {
+                        width: 180px;
+                        height: 240px;
+                        margin-top: 50px;
+                    }
+                    & #radio2-11:checked ~ .slide2-11 {
+                        width: 180px;
+                        height: 240px;
+                        margin-top: 50px;
+                    }
+                    & #radio2-12:checked ~ .slide2-12 {
+                        width: 180px;
+                        height: 240px;
+                        margin-top: 50px;
+                    }
+                    & #radio2-13:checked ~ .slide2-13 {
+                        width: 180px;
+                        height: 240px;
+                        margin-top: 50px;
+                    }
+                    & #radio2-14:checked ~ .slide2-14 {
+                        width: 180px;
+                        height: 240px;
+                        margin-top: 50px;
+                    }
+                    & #radio2-15:checked ~ .slide2-15 {
+                        width: 180px;
+                        height: 240px;
+                        margin-top: 50px;
+                    }
+                    & #radio2-16:checked ~ .slide2-16 {
+                        width: 180px;
+                        height: 240px;
+                        margin-top: 50px;
+                    }
+                    & #radio2-17:checked ~ .slide2-17 {
+                        width: 180px;
+                        height: 240px;
+                        margin-top: 50px;
+                    }
+                    & #radio2-18:checked ~ .slide2-18 {
+                        width: 180px;
+                        height: 240px;
+                        margin-top: 50px;
+                    }
+                    & #radio2-19:checked ~ .slide2-19 {
+                        width: 180px;
+                        height: 240px;
+                        margin-top: 50px;
+                    }
+                    & #radio2-20:checked ~ .slide2-20 {
+                        width: 180px;
+                        height: 240px;
+                        margin-top: 50px;
+                    }
+    
+    
+                    & #radio2-1:checked ~ .first2 {
+                        margin-left: 83px;
+                    }
+                    & #radio2-2:checked ~ .first2 {
+                        margin-left: -113px;
+                    }
+                    & #radio2-3:checked ~ .first2 {
+                        margin-left: -305px;
+                    }
+                    & #radio2-4:checked ~ .first2 {
+                        margin-left: -500px;
+                    }
+                    & #radio2-5:checked ~ .first2 {
+                        margin-left: -695px;
+                    }
+                    & #radio2-6:checked ~ .first2 {
+                        margin-left: -890px;
+                    }
+                    & #radio2-7:checked ~ .first2 {
+                        margin-left: -1083px;
+                    }
+                    & #radio2-8:checked ~ .first2 {
+                        margin-left: -1275px;
+                    }
+                    & #radio2-9:checked ~ .first2 {
+                        margin-left: -1470px;
+                    }
+                    & #radio2-10:checked ~ .first2 {
+                        margin-left: -1665px;
+                    }
+                    & #radio2-11:checked ~ .first2 {
+                        margin-left: -1860px;
+                    }
+                    & #radio2-12:checked ~ .first2 {
+                        margin-left: -2055px;
+                    }
+                    & #radio2-13:checked ~ .first2 {
+                        margin-left: -2245px;
+                    }
+                    & #radio2-14:checked ~ .first2 {
+                        margin-left: -2440px;
+                    }
+                    & #radio2-15:checked ~ .first2 {
+                        margin-left: -2635px;
+                    }
+                    & #radio2-16:checked ~ .first2 {
+                        margin-left: -2830px;
+                    }
+                    & #radio2-17:checked ~ .first2 {
+                        margin-left: -3025px;
+                    }
+                    & #radio2-18:checked ~ .first2 {
+                        margin-left: -3220px;
+                    }
+                    & #radio2-19:checked ~ .first2 {
+                        margin-left: -3415px;
+                    }
+                    & #radio2-20:checked ~ .first2 {
+                        margin-left: -3610px;
+                    }
+                    
+    
+                    & #radio2-1:checked ~ .auto-navigation .btn-auto1 {
+                        background-color: #858585;
+                    }
+                    & #radio2-2:checked ~ .auto-navigation .btn-auto2 {
+                        background-color: #858585;
+                    }
+                    & #radio2-3:checked ~ .auto-navigation .btn-auto3 {
+                        background-color: #858585;
+                    }
+                    & #radio2-4:checked ~ .auto-navigation .btn-auto4 {
+                        background-color: #858585;
+                    }
+                    & #radio2-5:checked ~ .auto-navigation .btn-auto5 {
+                        background-color: #858585;
+                    }
+                    & #radio2-6:checked ~ .auto-navigation .btn-auto6 {
+                        background-color: #858585;
+                    }
+                    & #radio2-7:checked ~ .auto-navigation .btn-auto7 {
+                        background-color: #858585;
+                    }
+                    & #radio2-8:checked ~ .auto-navigation .btn-auto8 {
+                        background-color: #858585;
+                    }
+                    & #radio2-9:checked ~ .auto-navigation .btn-auto9 {
+                        background-color: #858585;
+                    }
+                    & #radio2-10:checked ~ .auto-navigation .btn-auto10 {
+                        background-color: #858585;
+                    }
+                    & #radio2-11:checked ~ .auto-navigation .btn-auto11 {
+                        background-color: #858585;
+                    }
+                    & #radio2-12:checked ~ .auto-navigation .btn-auto12 {
+                        background-color: #858585;
+                    }
+                    & #radio2-13:checked ~ .auto-navigation .btn-auto13 {
+                        background-color: #858585;
+                    }
+                    & #radio2-14:checked ~ .auto-navigation .btn-auto14 {
+                        background-color: #858585;
+                    }
+                    & #radio2-15:checked ~ .auto-navigation .btn-auto15 {
+                        background-color: #858585;
+                    }
+                    & #radio2-16:checked ~ .auto-navigation .btn-auto16 {
+                        background-color: #858585;
+                    }
+                    & #radio2-17:checked ~ .auto-navigation .btn-auto17 {
+                        background-color: #858585;
+                    }
+                    & #radio2-18:checked ~ .auto-navigation .btn-auto18 {
+                        background-color: #858585;
+                    }
+                    & #radio2-19:checked ~ .auto-navigation .btn-auto19 {
+                        background-color: #858585;
+                    }
+                    & #radio2-20:checked ~ .auto-navigation .btn-auto20 {
+                        background-color: #858585;
+                    }
+                    
+    
+    
+                    & .auto-navigation {
+                        position: absolute;
+                        bottom: 90px;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        display: flex;
+                        flex-wrap: wrap;
+                        justify-content: center;
+                        width: calc(100% - 10px);
+                    }
+                    & .auto-navigation div {
+                        border: 2px solid #ffffff00;
+                        border-radius: 20px;
+                        padding: 5px;
+                        transition: 0.5s;
+                    }
+                    & .auto-navigation div:not(:last-child){
+                        margin-right: 10px;
+                    }
+                }   
+                
+                & .manual-navigation {
+                    position: relative;
+                    margin-top: -131px;
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                    width: 100%;
+    
+                    & .manual-btn2 {
+                        border: 2px solid #353535;
+                        padding: 5px;
+                        border-radius: 20px;
+                    }
+                    & .manual-btn2:not(:last-child) {
+                        margin-right: 10px;
+                    }
+                    & .manual-btn2:hover {
+                        cursor: pointer;
+                    }
+                }          
+            }
+    
+            & #btn-prev2 {
+                position: absolute;
+                left: 0px;
+                bottom:  20px;
+                background-color: transparent;
+                border: none;
+                outline: none;
+                height: 80px;
+                width: 80px;
+    
+                & img {
+                    width: 40px;
+                    transform: rotate(180deg);
+                }
+            }
+    
+            & #btn-next2 {
+                position: absolute;
+                right: 0px;
+                bottom: 20px;
+                background-color: transparent;
+                border: none;
+                outline: none;
+                height: 80px;
+                width: 80px;
+    
+                & img {
+                    width: 40px;
+                }
+            }
+    
+            & #btn-prev2:hover, #btn-next2:hover {
+                cursor: pointer;
+            } 
+        }
+    
+        & .consideracoes {
+            text-align: justify;
+            width: calc(100% - 40px);
+            margin: 50px 20px 0 20px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+    }
+}
+

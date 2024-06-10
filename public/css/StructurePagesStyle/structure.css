@@ -152,11 +152,70 @@
         } 
     }
 
+    .sandwich-hidden {
+        display: none;
+    }
+
     .open-menu {
         display: none;
     }
-    .sandwich {
+    .sandwich-light {
         display: none;
+    }
+
+
+    /*Estilo footer Light*/
+    & .footer-light {
+        text-align: center;
+    }
+    /*Estilo Footer Dark*/
+    & .footer-dark {
+        text-align: center;
+        color: white;
+    }
+
+
+    span {
+        font-weight: bold;
+    }
+
+    .body-style-light {
+        background-color: rgb(228, 238, 250);
+    }
+    .body-style-dark {
+        background-color: rgb(44, 44, 44);
+    }
+
+
+    /*Footer*/
+    & .logo-barbearia {
+        width: calc(100% - 80px);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-top: 1px solid rgb(214, 214, 214);
+        margin: 40px 40px 0 40px;
+
+        & #barber-simbol {
+            width: 100px;
+            -webkit-filter: drop-shadow(3px 3px 10px #fff);
+            filter: drop-shadow(3px 3px 10px #fff);
+        }
+
+        /*Estilo name light*/
+        & .name-barber-light {
+            font-size: 16px;
+            font-weight: 600;
+            font-family: "Oxanium", sans-serif;
+            color: #000000;
+        }
+        /*Estilo name dark*/
+        & .name-barber-dark {
+            font-size: 16px;
+            font-weight: 600;
+            font-family: "Oxanium", sans-serif;
+            color: #f7f7f7;
+        }
     }
 }
 
@@ -200,7 +259,6 @@
                 flex-direction: row;
 
                 & a {
-                    margin-right: 20px;
                     border-bottom: 2px solid rgb(85, 85, 85);
                     border-radius: 0 0 5px 5px;
                     width: 100px;
@@ -211,6 +269,9 @@
                     color: rgb(48, 48, 48);
                     font-family: Arial, Helvetica, sans-serif;
                     font-size: 14px;
+                }
+                & a:not(:last-child){
+                    margin-right: 20px;
                 }
                 & a:hover {
                     background-position: bottom;
@@ -229,16 +290,16 @@
     /*Estilo Dark*/
     .links_dark{
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         align-items: center;
         padding: 0 40px;
         width: calc(100% - 80px);
-        height: 70px;
+        height: 140px;
         background-color: #022F40;
         border-bottom: 3px solid rgb(124, 193, 233);
 
         & #logo{
-            width: 50%;
+            width: 100%;
             position: relative;
 
             & #led-light{
@@ -261,8 +322,8 @@
             display: flex;
             flex-direction: row;
             align-items: center;
-            justify-content: flex-end;
-            width: 50%;
+            justify-content: center;
+            width: 100%;
             position: relative;
 
             & .navigation {
@@ -270,7 +331,6 @@
                 flex-direction: row;
 
                 & a {
-                    margin-right: 20px;
                     border-bottom: 2px solid rgb(255, 255, 255);
                     border-radius: 0 0 5px 5px;
                     width: 100px;
@@ -281,6 +341,9 @@
                     color: rgb(216, 216, 216);
                     font-family: Arial, Helvetica, sans-serif;
                     font-size: 14px;
+                }
+                & a:not(:last-child){
+                    margin-right: 20px;
                 }
             }
 
@@ -310,36 +373,47 @@
         position: absolute;
         right: 0px;
         bottom: 0;
+        
     
         & img {
             width: 30px;
         }
     }
     
-    .sandwich {
-        background-color: rgb(7, 23, 77);
+
+    .sandwich-hidden {
+        display: none;
+    }
+    .sandwich-light {
+        background-color: #69707c;
+        box-shadow: 2px 2px 10px black;
         position: absolute;
         display: flex;
         flex-direction: column;
-        height: 100px;
+        height: 90px;
         width: 200px;
         padding-top: 20px;
         top: 70px;
         border-radius: 10px 0 0 10px;
         z-index: 1;
         right: -40px;
+        transition: .5s;
     
         & #light-dark-theme2 {
             display: flex;
             flex-direction: row;
             align-items: center;
             position: absolute;
+            top: 15px;
             left: 0;
-            width: 30px;
-            height: 30px;
+            width: 160px;
+            height: 40px;
             background-color: transparent;
             border: none;
-            margin-left: 20px;
+            margin-left: 22px;
+            padding-bottom: 10px;
+            padding-right: 20px;
+            border-bottom: 1px solid #9c9c9c;
 
             & img {
                 width: 30px
@@ -357,23 +431,84 @@
             flex-direction: row;
             align-items: center;
             position: absolute;
-            left: 0;
-            top: 70px;
-            width: 30px;
-            height: 30px;
             background-color: transparent;
+            left: 0;
+            top: 60px;
+            width: 160px;
+            height: 40px;
             border: none;
             margin-left: 20px;
 
             & img {
                 width: 30px;
+                padding-right: 125px;
+            }
+
+            & #link-user {
+                width: 160px;
             }
     
             & .p-perfil {
-                margin-left: 10px;
+                margin-left: -117px;
                 color: #fff;
                 font-size: 16px;
+                z-index: 1;
             }
+        }
+    }  
+    
+    
+    /*Estilo footer Light*/
+    & .footer-light {
+        text-align: center;
+    }
+    /*Estilo Footer Dark*/
+    & .footer-dark {
+        text-align: center;
+        color: white;
+    }
+
+
+    span {
+        font-weight: bold;
+    }
+
+    .body-style-light {
+        background-color: rgb(228, 238, 250);
+    }
+    .body-style-dark {
+        background-color: rgb(44, 44, 44);
+    }
+
+
+    /*Footer*/
+    & .logo-barbearia {
+        width: calc(100% - 80px);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-top: 1px solid rgb(214, 214, 214);
+        margin: 40px 40px 0 40px;
+
+        & #barber-simbol {
+            width: 100px;
+            -webkit-filter: drop-shadow(3px 3px 10px #fff);
+            filter: drop-shadow(3px 3px 10px #fff);
+        }
+
+        /*Estilo name light*/
+        & .name-barber-light {
+            font-size: 16px;
+            font-weight: 600;
+            font-family: "Oxanium", sans-serif;
+            color: #000000;
+        }
+        /*Estilo name dark*/
+        & .name-barber-dark {
+            font-size: 16px;
+            font-weight: 600;
+            font-family: "Oxanium", sans-serif;
+            color: #f7f7f7;
         }
     }
 }
@@ -446,16 +581,16 @@
     /*Estilo Dark*/
     .links_dark{
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         align-items: center;
-        padding: 0 40px;
-        width: calc(100% - 80px);
-        height: 70px;
+        padding: 0 20px;
+        width: calc(100% - 40px);
+        height: 140px;
         background-color: #022F40;
         border-bottom: 3px solid rgb(124, 193, 233);
 
         & #logo{
-            width: 50%;
+            width: 100%;
             position: relative;
 
             & #led-light{
@@ -478,8 +613,8 @@
             display: flex;
             flex-direction: row;
             align-items: center;
-            justify-content: flex-end;
-            width: 50%;
+            justify-content: center;
+            width: 100%;
             position: relative;
 
             & .navigation {
@@ -487,10 +622,9 @@
                 flex-direction: row;
 
                 & a {
-                    margin-right: 20px;
                     border-bottom: 2px solid rgb(255, 255, 255);
                     border-radius: 0 0 5px 5px;
-                    width: 50px;
+                    width: 80px;
                     height: 50px;
                     text-align: center;
                     line-height: 3.5;
@@ -498,6 +632,9 @@
                     color: rgb(216, 216, 216);
                     font-family: Arial, Helvetica, sans-serif;
                     font-size: 14px;
+                }
+                & a:not(:last-child) {
+                    margin-right: 20px;
                 }
             }
 
@@ -520,7 +657,7 @@
         } 
     }
 
-    .open-menu {
+    /*.open-menu-light {
         display: flex;
         background-color: transparent;
         border: none;
@@ -532,31 +669,40 @@
             width: 30px;
         }
     }
-    
-    .sandwich {
-        background-color: rgb(7, 23, 77);
+    */
+    .sandwich-hidden {
+        display: none;
+    }
+    .sandwich-light {
+        background-color: #69707c;
+        box-shadow: 2px 2px 10px black;
         position: absolute;
         display: flex;
         flex-direction: column;
-        height: 100px;
+        height: 90px;
         width: 200px;
         padding-top: 20px;
         top: 70px;
         border-radius: 10px 0 0 10px;
         z-index: 1;
         right: -40px;
+        transition: .5s;
     
         & #light-dark-theme2 {
             display: flex;
             flex-direction: row;
             align-items: center;
             position: absolute;
+            top: 15px;
             left: 0;
-            width: 30px;
-            height: 30px;
+            width: 160px;
+            height: 40px;
             background-color: transparent;
             border: none;
-            margin-left: 20px;
+            margin-left: 22px;
+            padding-bottom: 10px;
+            padding-right: 20px;
+            border-bottom: 1px solid #9c9c9c;
 
             & img {
                 width: 30px
@@ -574,25 +720,33 @@
             flex-direction: row;
             align-items: center;
             position: absolute;
-            left: 0;
-            top: 70px;
-            width: 30px;
-            height: 30px;
             background-color: transparent;
+            left: 0;
+            top: 60px;
+            width: 160px;
+            height: 40px;
             border: none;
             margin-left: 20px;
 
             & img {
                 width: 30px;
+                padding-right: 125px;
+            }
+
+            & #link-user {
+                width: 160px;
             }
     
             & .p-perfil {
-                margin-left: 10px;
+                margin-left: -117px;
                 color: #fff;
                 font-size: 16px;
+                z-index: 1;
             }
         }
-    }
+    }  
+    
+    
     
 
     .open-menu {
@@ -601,10 +755,79 @@
         border: none;
         position: absolute;
         right: -5px;
-        margin-bottom: 65px;
+        margin-bottom: 110px;
     
         & img {
             width: 30px;
+        }
+    }
+
+
+
+
+    span {
+        font-weight: bold;
+    }
+
+    .body-style-light {
+        background-color: rgb(228, 238, 250);
+    }
+    .body-style-dark {
+        background-color: rgb(44, 44, 44);
+    }
+
+
+
+    
+    /*Estilo footer Light*/
+    & .footer-light {
+        text-align: center;
+
+        & #copyright {
+            font-size: 12px;
+            margin-bottom: 20px;
+        }
+    }
+    /*Estilo Footer Dark*/
+    & .footer-dark {
+        text-align: center;
+        color: white;
+
+        & #copyright {
+            font-size: 12px;
+        }
+    }
+    /*Footer*/
+    & .logo-barbearia {
+        width: calc(100% - 80px);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-top: 1px solid rgb(214, 214, 214);
+        margin: 40px 40px 0 40px;
+
+
+        & #barber-simbol {
+            width: 100px;
+            -webkit-filter: drop-shadow(3px 3px 10px #fff);
+            filter: drop-shadow(3px 3px 10px #fff);
+        }
+
+        /*Estilo name light*/
+        & .name-barber-light {
+            font-size: 16px;
+            font-weight: 600;
+            font-family: "Oxanium", sans-serif;
+            color: #000000;
+            margin: 0;
+        }
+        /*Estilo name dark*/
+        & .name-barber-dark {
+            font-size: 16px;
+            font-weight: 600;
+            font-family: "Oxanium", sans-serif;
+            color: #f7f7f7;
+            margin: 0;
         }
     }
 }
@@ -615,61 +838,7 @@
 
 
 
-/*Footer*/
-& .logo-barbearia {
-    width: calc(100% - 80px);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border-top: 1px solid rgb(214, 214, 214);
-    margin: 40px 40px 0 40px;
-
-    & #barber-simbol {
-        width: 100px;
-        -webkit-filter: drop-shadow(3px 3px 10px #fff);
-        filter: drop-shadow(3px 3px 10px #fff);
-    }
-
-    /*Estilo name light*/
-    & .name-barber-light {
-        font-size: 16px;
-        font-weight: 600;
-        font-family: "Oxanium", sans-serif;
-        color: #000000;
-    }
-    /*Estilo name dark*/
-    & .name-barber-dark {
-        font-size: 16px;
-        font-weight: 600;
-        font-family: "Oxanium", sans-serif;
-        color: #f7f7f7;
-    }
-}
-
-
-
-/*Estilo footer Light*/
-& .footer-light {
-    text-align: center;
-}
-/*Estilo Footer Dark*/
-& .footer-dark {
-    text-align: center;
-    color: white;
-}
 
 
 
 
-
-
-span {
-    font-weight: bold;
-}
-
-.body-style-light {
-    background-color: rgb(228, 238, 250);
-}
-.body-style-dark {
-    background-color: rgb(44, 44, 44);
-}

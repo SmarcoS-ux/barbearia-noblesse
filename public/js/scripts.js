@@ -6,6 +6,9 @@ function themeColorHome(){
     const icon_user_dark = "public/img/user-black.png";
     const icon_user_light = "public/img/user-white.png";
 
+    const icon_menu_sandwich_dark = "public/img/menu-black.png";
+    const icon_menu_sandwich_light = "public/img/menu-white.png";
+
     //Área de navegação no topo da Home
     const div_links = document.getElementById("links");
     if(div_links != null){
@@ -33,8 +36,17 @@ function themeColorHome(){
     //Ícone do botão de Mudar Tema da Estrutura
     const icon = document.getElementById("icon-theme");
 
+    //Ícone do botão de Mudar Tema do Menu Sandwich
+    const icon2 = document.getElementById("icon-theme2");
+
     //Ícone do botão de Usuário da estrutura
     const icon_user = document.getElementById("img-user-profile");
+
+    //Ícone do botão de Usuário do Submenu Sandwich
+    const icon_user2 = document.getElementById("img-user-profile2");
+
+    //Ícone do botão abrir o submenu sandwich
+    const icon_menu_sandw = document.getElementById("icon-menu-sandwich");
 
     //Texto da breve descrição da Barbearia
     const text_description = document.getElementById("text-desc");
@@ -73,14 +85,26 @@ function themeColorHome(){
     }
     
     
-    if(icon.getAttribute("src") == icon_dark){
+    if(icon.getAttribute("src") == icon_dark || icon2.getAttribute("src") == icon_dark){
         icon.setAttribute("src", icon_light);
+        icon2.setAttribute("src", icon_light);
         icon_user.setAttribute("src", icon_user_light);
+        icon_user2.setAttribute("src", icon_user_light);
+        icon_menu_sandw.setAttribute("src", icon_menu_sandwich_light);
          
     } else{
         icon.setAttribute("src", icon_dark);
-        icon_user.setAttribute("src", icon_user_dark);           
+        icon2.setAttribute("src", icon_dark);
+        icon_user.setAttribute("src", icon_user_dark);   
+        icon_user2.setAttribute("src", icon_user_dark);   
+        icon_menu_sandw.setAttribute("src", icon_menu_sandwich_dark);     
     }
+}
+
+
+function openMenu(){
+    let menuDandwich = document.getElementById("menu-sandwich");
+    menuDandwich.classList.toggle("sandwich-light");
 }
 
 
@@ -147,9 +171,9 @@ function slider2(direction){
 
 
 setInterval(function(){
-    nextImageAutomatic();
-    nextImageAutomatic2();
-}, 6000);
+    /*nextImageAutomatic();
+    nextImageAutomatic2();*/
+}, 90000);
 
 let count = 4;
 function nextImageAutomatic(){
