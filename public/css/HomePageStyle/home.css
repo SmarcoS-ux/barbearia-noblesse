@@ -374,7 +374,10 @@ body {
                     }   
                 }
 
-                & .div-message-disponibilidade {
+                & .div-message-disponibilidade-hidden {
+                    display: none;
+                }
+                & .div-message-disponibilidade-show {
                     width: calc(100% - 10px);
                     height: 40px;
                     display: flex;
@@ -781,7 +784,10 @@ body {
                     }   
                 }
 
-                & .div-message-disponibilidade {
+                & .div-message-disponibilidade-hidden {
+                    display: none;
+                }
+                & .div-message-disponibilidade-show {
                     width: calc(100% - 10px);
                     height: 40px;
                     display: flex;
@@ -1191,7 +1197,11 @@ body {
                     }   
                 }
 
-                & .div-message-disponibilidade {
+
+                & .div-message-disponibilidade-hidden {
+                    display: none;
+                }
+                & .div-message-disponibilidade-show {
                     width: calc(100% - 10px);
                     height: 40px;
                     display: flex;

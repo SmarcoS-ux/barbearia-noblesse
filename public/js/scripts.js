@@ -9,6 +9,9 @@ function themeColorHome(){
     const icon_menu_sandwich_dark = "public/img/menu-black.png";
     const icon_menu_sandwich_light = "public/img/menu-white.png";
 
+    const icon_buttons_arrow_dark = "public/img/seta-direita.png";
+    const icon_buttons_arrow_light = "public/img/seta-direita-white.png"; 
+
     //Área de navegação no topo da Home
     const div_links = document.getElementById("links");
     if(div_links != null){
@@ -60,6 +63,18 @@ function themeColorHome(){
         link_sobre.classList.toggle("link-sobre-dark");    
     }
 
+    //Área da primeira imagem da View Sobre
+    const div_img_old_barber = document.getElementById("div-figure");
+    if(div_img_old_barber != null){
+        div_img_old_barber.classList.toggle("div-figure-old-barber-dark");
+    }
+    
+    //Área de texto da História da Barbearia Página Sobre
+    const text_history = document.getElementById("text-history-barber");
+    if(text_history != null){
+        text_history.classList.toggle("text-history-barber-dark");
+    }
+
     //Titulo da Página Sobre
     const title_h1 = document.getElementById("title-sobre");
     if(title_h1 != null){
@@ -84,38 +99,48 @@ function themeColorHome(){
         text_page_cortes.classList.toggle("text-dark");    
     }
 
+    //Estilo das considerações finais da View Cortes
+    const consideracoes_page_cortes = document.getElementById("consideracoes");
+    if(consideracoes_page_cortes != null){
+        consideracoes_page_cortes.classList.toggle("consideracoes-dark");    
+    }
+
+    const icon_btn_prev_imgs = document.getElementById("icon_btn_prev_imgs");
+    const icon_btn_next_imgs = document.getElementById("icon_btn_next_imgs");
+    const icon_btn_prev2_imgs = document.getElementById("icon_btn_prev_imgs2");
+    const icon_btn_next2_imgs = document.getElementById("icon_btn_next_imgs2");
+
+
     //Estilo do nome da Barbearia no Footer
     const name_barber = document.getElementById("name-barber");
     if(name_barber != null){
         name_barber.classList.toggle("name-barber-dark");    
     }
     
-    //Área da primeira imagem da View Sobre
-    const div_img_old_barber = document.getElementById("div-figure");
-    if(div_img_old_barber != null){
-        div_img_old_barber.classList.toggle("div-figure-old-barber-dark");
-    }
     
-    //Área de texto da História da Barbearia Página Sobre
-    const text_history = document.getElementById("text-history-barber");
-    if(text_history != null){
-        text_history.classList.toggle("text-history-barber-dark");
-    }
     
     
     if(icon.getAttribute("src") == icon_dark || icon2.getAttribute("src") == icon_dark){
-        icon.setAttribute("src", icon_light);
-        icon2.setAttribute("src", icon_light);
-        icon_user.setAttribute("src", icon_user_light);
-        icon_user2.setAttribute("src", icon_user_light);
-        icon_menu_sandw.setAttribute("src", icon_menu_sandwich_light);
-         
+        if(icon != null) icon.setAttribute("src", icon_light);
+        if(icon2 != null) icon2.setAttribute("src", icon_light);
+        if(icon_user != null) icon_user.setAttribute("src", icon_user_light);
+        if(icon_user2 != null) icon_user2.setAttribute("src", icon_user_light);
+        if(icon_menu_sandw != null) icon_menu_sandw.setAttribute("src", icon_menu_sandwich_light);
+        if(icon_btn_next_imgs != null) icon_btn_next_imgs.setAttribute("src", icon_buttons_arrow_light);
+        if(icon_btn_prev_imgs != null) icon_btn_prev_imgs.setAttribute("src", icon_buttons_arrow_light);
+        if(icon_btn_next2_imgs != null) icon_btn_next2_imgs.setAttribute("src", icon_buttons_arrow_light);
+        if(icon_btn_prev2_imgs != null) icon_btn_prev2_imgs.setAttribute("src", icon_buttons_arrow_light);
+           
     } else{
-        icon.setAttribute("src", icon_dark);
-        icon2.setAttribute("src", icon_dark);
-        icon_user.setAttribute("src", icon_user_dark);   
-        icon_user2.setAttribute("src", icon_user_dark);   
-        icon_menu_sandw.setAttribute("src", icon_menu_sandwich_dark);     
+        if(icon != null) icon.setAttribute("src", icon_dark);
+        if(icon2 != null) icon2.setAttribute("src", icon_dark);
+        if(icon_user != null) icon_user.setAttribute("src", icon_user_dark);   
+        if(icon_user2 != null) icon_user2.setAttribute("src", icon_user_dark);   
+        if(icon_menu_sandw != null) icon_menu_sandw.setAttribute("src", icon_menu_sandwich_dark);
+        if(icon_btn_next_imgs != null) icon_btn_next_imgs.setAttribute("src", icon_buttons_arrow_dark);
+        if(icon_btn_prev_imgs != null) icon_btn_prev_imgs.setAttribute("src", icon_buttons_arrow_dark);  
+        if(icon_btn_next2_imgs != null) icon_btn_next2_imgs.setAttribute("src", icon_buttons_arrow_dark);
+        if(icon_btn_prev2_imgs != null) icon_btn_prev2_imgs.setAttribute("src", icon_buttons_arrow_dark);   
     }
 }
 
