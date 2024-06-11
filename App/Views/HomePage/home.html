@@ -128,76 +128,87 @@
         <div class="agendamento">
             <h5>Faça seu agendamento abaixo:</h5>
             <div class="form-disponibilidade">
-                <div class="dia-horarios">
-                    <div class="dia">
-                        <label for="">Selecione a data:</label>
-                        <input id="inp-data" 
-                                type="date"
-                        />
+                <form id="form-disponibilidade">
+                    <div class="dia-horarios">
+                        <div class="dia">
+                            <label for="">Data:</label>
+                            <input id="inp-data" 
+                                   type="date"
+                                   name="data"
+                            />
+                        </div>
+                        <div class="horario">
+                            <label for="select-horarios">
+                                Horário:
+                            </label>
+                            <select name="select-horarios" 
+                                    id="select-horarios"
+                                    name="horario">
+                                <option value="08:00">08:00h da manhã</option>
+                                <option value="08:30">08:30h da manhã</option>
+                                <option value="09:00">09:00h da manhã</option>
+                                <option value="09:30">09:30h da manhã</option>
+                                <option value="10:00">10:00h da manhã</option>
+                                <option value="10:30">10:30h da manhã</option>
+                                <option value="11:00">11:00h da manhã</option>
+                                <option value="11:30">11:30h da manhã</option>
+                                <option value="12:00">12:00h da tarde</option>
+                                <option value="12:30">12:30h da tarde</option>
+                                <option value="13:00">13:00h da tarde</option>
+                                <option value="13:30">13:30h da tarde</option>
+                                <option value="14:00">14:00h da tarde</option>
+                                <option value="14:30">14:30h da tarde</option>
+                                <option value="15:00">15:00h da tarde</option>
+                                <option value="15:30">15:30h da tarde</option>
+                                <option value="16:00">16:00h da tarde</option>
+                                <option value="16:30">16:30h da tarde</option>
+                                <option value="17:00">17:00h da tarde</option>
+                                <option value="17:30">17:30h da tarde</option>
+                                <option value="18:00">18:00h da noite</option>
+                                <option value="18:30">18:30h da noite</option>
+                                <option value="19:00">19:00h da noite</option>
+                                <option value="19:30">19:30h da noite</option>
+                            </select>
+                        </div>
+                        <div class="dia-semana">
+                            <label for="dia-semana">
+                                Dia:
+                            </label>
+                            <select name="dia-semana" 
+                                    id="dia-semana"
+                                    name="dia">
+                                <option value="Segunda-Feira">Segunda-Feira</option>
+                                <option value="Terça-Feira">Terça-Feira</option>
+                                <option value="Quarta-Feira">Quarta-Feira</option>
+                                <option value="Quinta-Feira">Quinta-Feira</option>
+                                <option value="Sexta-Feira">Sexta-Feira</option>
+                                <option value="Sábado">Sábado</option>
+                            </select>
+                        </div>
                     </div>
-                    <div class="horario">
-                        <label for="select-horarios">Selecione o horário:</label>
-                        <select name="select-horarios" 
-                                id="select-horarios"
-                        >
-                            <option value="08:00">08:00h da manhã</option>
-                            <option value="08:30">08:30h da manhã</option>
-                            <option value="09:00">09:00h da manhã</option>
-                            <option value="09:30">09:30h da manhã</option>
-                            <option value="10:00">10:00h da manhã</option>
-                            <option value="10:30">10:30h da manhã</option>
-                            <option value="11:00">11:00h da manhã</option>
-                            <option value="11:30">11:30h da manhã</option>
-                            <option value="12:00">12:00h da tarde</option>
-                            <option value="12:30">12:30h da tarde</option>
-                            <option value="13:00">13:00h da tarde</option>
-                            <option value="13:30">13:30h da tarde</option>
-                            <option value="14:00">14:00h da tarde</option>
-                            <option value="14:30">14:30h da tarde</option>
-                            <option value="15:00">15:00h da tarde</option>
-                            <option value="15:30">15:30h da tarde</option>
-                            <option value="16:00">16:00h da tarde</option>
-                            <option value="16:30">16:30h da tarde</option>
-                            <option value="17:00">17:00h da tarde</option>
-                            <option value="17:30">17:30h da tarde</option>
-                            <option value="18:00">18:00h da noite</option>
-                            <option value="18:30">18:30h da noite</option>
-                            <option value="19:00">19:00h da noite</option>
-                            <option value="19:30">19:30h da noite</option>
-                        </select>
+                    <div class="comentario-obs">
+                        <div class="div-comentario">
+                            <textarea name="" 
+                                      id="textarea-comentario" 
+                                      name="observacao"
+                                      placeholder="Deixe uma observação aqui... ">
+                            </textarea>  
+                        </div>
+                        <div class="div-buttons">
+                            <button id="btn-verificar">
+                                Verificar disponibilidade
+                            </button>
+                            <button id="btn-agendar">
+                                Agendar
+                            </button>
+                        </div>     
                     </div>
-                    <div class="dia-semana">
-                        <label for="dia-semana">Selecione o dia:</label>
-                        <select name="dia-semana" 
-                                id="dia-semana">
-                            <option value="Segunda-Feira">Segunda-Feira</option>
-                            <option value="Terça-Feira">Terça-Feira</option>
-                            <option value="Quarta-Feira">Quarta-Feira</option>
-                            <option value="Quinta-Feira">Quinta-Feira</option>
-                            <option value="Sexta-Feira">Sexta-Feira</option>
-                            <option value="Sábado">Sábado</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="comentario-obs">
-                    <div class="div-comentario">
-                        <textarea name="" 
-                                    id="textarea-comentario" 
-                                    placeholder="Deixe uma observação aqui... "></textarea>  
-                    </div>
-                    <div class="div-buttons">
-                        <button id="btn-verificar">
-                            Verificar disponibilidade
-                        </button>
-                        <button id="btn-agendar">
-                            Agendar
-                        </button>
-                    </div>     
-                </div>
+                </form>
                 <div id="container-message-agendar" 
                      class="div-message-disponibilidade-hidden">
-                    <img id="icon-verify" src="public/img/verify.png" 
-                                            alt="Verificado"/>
+                    <img id="icon-verify"
+                         src="public/img/verify.png" 
+                         alt="Verificado"/>
                     <p id="message-disponibilidade-success">
                         Agendamento realizado com sucesso.
                     </p>                          

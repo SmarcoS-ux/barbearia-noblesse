@@ -853,7 +853,7 @@
     
             & #btn-prev2 {
                 position: absolute;
-                left: 20%;
+                left: 15%;
                 bottom:  50px;
                 background-color: transparent;
                 border: none;
@@ -869,7 +869,7 @@
     
             & #btn-next2 {
                 position: absolute;
-                right: 20%;
+                right: 15%;
                 bottom: 50px;
                 background-color: transparent;
                 border: none;
@@ -2142,7 +2142,7 @@
                     width: 40px;
                     transform: rotate(180deg);
                 }
-            }
+            } 
     
             & #btn-next {
                 position: absolute;

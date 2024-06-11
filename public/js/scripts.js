@@ -307,5 +307,21 @@ function editUserData(){
         input_senha2.setAttribute("disabled", "disabled");
         checkbox_info.setAttribute("disabled", "disabled");
         btn_clean.setAttribute("disabled", "disabled");   
-    }    
+    }   
+}
+
+
+
+function openFileImgProfile(){
+    let img_selected = document.getElementById("inp-img-profile");
+    img_selected.click();
+
+    let img_user = document.getElementById("img-user");
+
+    img_selected.onchange = evt => {
+        const [file] = img_selected.files;
+        if(file){
+            img_user.src = URL.createObjectURL(file);
+        }
+    }  
 }
