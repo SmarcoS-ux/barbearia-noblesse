@@ -7,6 +7,13 @@
     include_once("App/Controllers/LoginController/loginController.php");
     include_once("App/Controllers/RegisterController/registerController.php");
     include_once("App/Controllers/ProfileController/profileController.php");
+    include_once("App/SessionLogin/sessionLogin.php");
+
+    include_once("App/Models/RegisterModel/registerModel.php");
+    include_once("App/Models/LoginModel/loginModel.php");
+    include_once("App/Models/HomeModel/homeModel.php");
+
+    include_once("App/Lib/DataBase/db_connection.php");
 
     include_once("App/Core/core.php");
 

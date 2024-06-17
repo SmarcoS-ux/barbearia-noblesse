@@ -377,7 +377,8 @@ body {
                 & .div-message-disponibilidade-hidden {
                     display: none;
                 }
-                & .div-message-disponibilidade-show {
+                & .div-message-disponibilidade-agendado {
+                    font-family: Arial, Helvetica, sans-serif;
                     width: calc(100% - 10px);
                     height: 40px;
                     display: flex;
@@ -397,6 +398,52 @@ body {
                     & #message-disponibilidade-fail {
                         background-color: rgb(252, 129, 129);
                         color: rgb(105, 17, 11);
+                    }
+
+                    & #icon-verify {
+                        width: 20px;
+                    }
+                }
+                & .div-message-disponibilidade-disponivel {
+                    font-family: Arial, Helvetica, sans-serif;
+                    width: calc(100% - 10px);
+                    height: 40px;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    background-color: rgb(210, 248, 218);
+                    /*border: 1px solid green;*/
+                    margin-top: 10px;
+                    padding-left: 10px;
+                    border-radius: 5px;
+
+                    & #message-disponibilidade-success {
+                        padding: 10px 0 10px 10px;
+                        border-radius: 5px;
+                        color: rgb(8, 95, 8);
+                    }
+
+                    & #icon-verify {
+                        width: 20px;
+                    }
+                }
+                & .div-message-disponibilidade-indisponivel {
+                    font-family: Arial, Helvetica, sans-serif;
+                    width: calc(100% - 10px);
+                    height: 40px;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    background-color: rgb(252, 214, 214);
+                    /*border: 1px solid rgb(170, 90, 90);*/
+                    margin-top: 10px;
+                    padding-left: 10px;
+                    border-radius: 5px;
+
+                    & #message-disponibilidade-fail {
+                        /*background-color: rgb(252, 129, 129);*/
+                        color: rgb(139, 26, 18);
+                        margin-left: 10px;
                     }
 
                     & #icon-verify {
@@ -787,7 +834,8 @@ body {
                 & .div-message-disponibilidade-hidden {
                     display: none;
                 }
-                & .div-message-disponibilidade-show {
+                & .div-message-disponibilidade-agendado {
+                    font-family: Arial, Helvetica, sans-serif;
                     width: calc(100% - 10px);
                     height: 40px;
                     display: flex;
@@ -807,6 +855,53 @@ body {
                     & #message-disponibilidade-fail {
                         background-color: rgb(252, 129, 129);
                         color: rgb(105, 17, 11);
+                    }
+
+                    & #icon-verify {
+                        width: 20px;
+                    }
+                }
+                & .div-message-disponibilidade-disponivel {
+                    font-family: Arial, Helvetica, sans-serif;
+                    width: calc(100% - 10px);
+                    height: 40px;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    background-color: rgb(210, 248, 218);
+                    /*border: 1px solid green;*/
+                    margin-top: 10px;
+                    padding-left: 10px;
+                    border-radius: 5px;
+
+                    & #message-disponibilidade-success {
+                        padding: 10px 0 10px 10px;
+                        border-radius: 5px;
+                        color: rgb(8, 95, 8);
+                    }
+
+                    & #icon-verify {
+                        width: 20px;
+                    }
+                }
+                & .div-message-disponibilidade-indisponivel {
+                    font-family: Arial, Helvetica, sans-serif;
+                    width: calc(100% - 10px);
+                    height: 40px;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    background-color: rgb(252, 214, 214);
+                    /*border: 1px solid rgb(170, 90, 90);*/
+                    margin-top: 10px;
+                    padding-left: 10px;
+                    border-radius: 5px;
+
+                    & #message-disponibilidade-fail {
+                        /*background-color: rgb(252, 129, 129);*/
+                        font-size: 15px;
+                        color: rgb(139, 26, 18);
+                        margin-left: 10px;
                     }
 
                     & #icon-verify {
@@ -1116,7 +1211,7 @@ body {
                             border: 1px solid rgb(133, 133, 133);
                             outline: none;
                             border-radius: 5px;
-                            
+                            padding-left: 5px;
                         }
 
                         & #inp-data {
@@ -1139,14 +1234,15 @@ body {
                         width: calc(100% - 5px);
 
                         & #textarea-comentario {
-                            width: calc(100% - 5px);
+                            width: calc(100% - 10px);
                             height: 100px;
                             border: none;
                             border: 1px solid rgb(201, 201, 201);
                             border-radius: 4px;
                             resize: none;
                             outline: none;
-                            padding-left: 5px;
+                            padding-left: 10px;
+                            padding-top: 5px;
                             font-size: 12px;
                         }
                     }
@@ -1201,28 +1297,71 @@ body {
                 & .div-message-disponibilidade-hidden {
                     display: none;
                 }
-                & .div-message-disponibilidade-show {
+                & .div-message-disponibilidade-agendado {
+                    font-family: Arial, Helvetica, sans-serif;
                     width: calc(100% - 10px);
                     height: 40px;
                     display: flex;
                     flex-direction: row;
                     align-items: center;
                     background-color: rgb(193, 247, 205);
-                    margin-top: 20px;
+                    margin-top: 10px;
                     padding-left: 10px;
                     border-radius: 5px;
 
                     & #message-disponibilidade-success {
                         padding: 10px 0 10px 10px;
-                        font-size: 12px;
-                        font-family: Arial, Helvetica, sans-serif;
                         border-radius: 5px;
                         color: rgb(8, 95, 8);
+                        font-size: 14px;
                     }
 
+                    & #icon-verify {
+                        width: 20px;
+                    }
+                }
+                & .div-message-disponibilidade-disponivel {
+                    font-family: Arial, Helvetica, sans-serif;
+                    width: calc(100% - 10px);
+                    height: 40px;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    background-color: rgb(210, 248, 218);
+                    /*border: 1px solid green;*/
+                    margin-top: 10px;
+                    padding-left: 10px;
+                    border-radius: 5px;
+
+                    & #message-disponibilidade-success {
+                        padding: 10px 0 10px 10px;
+                        border-radius: 5px;
+                        color: rgb(8, 95, 8);
+                        font-size: 13px;
+                    }
+
+                    & #icon-verify {
+                        width: 20px;
+                    }
+                }
+                & .div-message-disponibilidade-indisponivel {
+                    font-family: Arial, Helvetica, sans-serif;
+                    width: calc(100% - 10px);
+                    height: 40px;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    background-color: rgb(252, 214, 214);
+                    /*border: 1px solid rgb(170, 90, 90);*/
+                    margin-top: 10px;
+                    padding-left: 10px;
+                    border-radius: 5px;
+
                     & #message-disponibilidade-fail {
-                        background-color: rgb(252, 129, 129);
-                        color: rgb(105, 17, 11);
+                        /*background-color: rgb(252, 129, 129);*/
+                        color: rgb(139, 26, 18);
+                        margin-left: 10px;
+                        font-size: 12px;
                     }
 
                     & #icon-verify {
