@@ -7,8 +7,38 @@
         </div>
         <div class="form-login">
             <div class="form">
-                <form id="form-login">
+                <form id="form-login" method="post" action="?page=login&method=verifyUser">
                     <h1>Login</h1>
+                    {% if logado == 'Logado' %}
+                        <div class="message-login">
+                            <img src="public/img/verify.png" 
+                                alt="Ok"
+                            />
+                            <p id="message">
+                                Logado com sucesso.
+                            </p>
+                        </div>
+                    {% endif %}
+                    {% if logado == 'NaoLogado' %}
+                        <div class="message-erro">
+                            <img src="public/img/erro.png" 
+                                alt="Ok"
+                            />
+                            <p id="message">
+                                E-mail ou Senha incorretos.
+                            </p>
+                        </div>
+                    {% endif %}
+                    {% if logado == 'ErroLogin' %}
+                        <div class="message-erro">
+                            <img src="public/img/erro.png" 
+                                alt="Ok"
+                            />
+                            <p id="message">
+                                Erro! Tente novamente mais tarde.
+                            </p>
+                        </div>
+                    {% endif %}
                     <div class ="container-email">
                         <input id="inp-email" 
                                type="email" 
@@ -20,7 +50,7 @@
                     <div class="container-senha">
                         <input id="inp-senha" 
                                type="password" 
-                               name="senha" 
+                               name="password" 
                                required
                         />
                         <label for="inp-senha">Senha</label>
@@ -35,7 +65,8 @@
                     </div>
                     
                     <div class="container-btn-entrar">
-                        <button id="btn-entrar">
+                        <button id="btn-entrar"
+                                type="submit">
                             Entrar
                         </button>
                     </div>

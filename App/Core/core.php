@@ -1,7 +1,12 @@
 <?php
     class Core {
         public function start($urlGet){
-            $method = "index";
+            if(isset($urlGet['method'])){
+                $method = $urlGet['method'];
+            } else{
+                $method = "index";
+            }
+            
             
             if(isset($urlGet['page'])){
                 $controller = ucfirst($urlGet['page'])."Controller";

@@ -5,14 +5,20 @@
 
         & .image-background-profile {
             width: 100%;
+            height: 105px;
             display: flex;
             justify-content: center;
             background-color: #cecece;
 
             & .img-profile {
                 position: relative;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
                 margin-top: 50px;
                 margin-bottom: 50px;
+                height: 100px;
+                width: 100px;
 
                 & #img-user {
                     width: 100px;
@@ -40,7 +46,7 @@
             display: flex;
             flex-direction: row;
             justify-content: center;
-            margin-top: 20px;
+            margin-top: 60px;
 
             & .title {
                 width: 1000px;
@@ -297,6 +303,67 @@
                             box-shadow: 1px 1px 5px rgb(97, 253, 97);
                             color: #fff;
                         }
+                }
+            }
+        }
+
+        & .agendamentos-salvos {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            margin-top: 50px;
+
+            & #table-agendamentos {
+                border: 1px solid rgb(133, 133, 133);
+                border-collapse: collapse;
+
+                & caption {
+                    border-left: 1px solid rgb(133, 133, 133);
+                    border-top: 1px solid rgb(133, 133, 133);
+                    border-right: 1px solid rgb(133, 133, 133);
+                    height: 40px;
+                    line-height: 2.5;
+                    background-color: #e6e6e6;
+                }
+
+                & th {
+                    width: 200px;
+                    background-color: #c5c5c5;
+                    border: 1px solid rgb(133, 133, 133);
+                    height: 35px;
+                }
+
+                & td {
+                    text-align: center;
+                    height: 30px;
+                    background-color: #ebf7ff;
+                    border: 1px solid rgb(133, 133, 133);
+                    position: relative;
+
+                    & .btn-delete-agendamento {
+                        width: 30px;
+                        height: 25px;
+                        text-align: center;
+                        font-weight: bold;
+                        color: rgb(117, 3, 3);
+                        background-color: rgb(255, 152, 152);
+                        border: none;
+                        outline: none;
+                        border: 1px solid rgb(117, 3, 3);
+                        border-radius: 5px;
+                        position: absolute;
+                        right: 5px;
+                        top: 4px;
+                    }
+                    & .btn-delete-agendamento:hover {
+                        cursor: pointer;
+                        background-color: rgb(255, 77, 77);
+                    }
+                }
+
+                & #column-dia {
+                    width: 250px;
                 }
             }
         }

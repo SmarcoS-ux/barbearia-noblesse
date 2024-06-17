@@ -28,15 +28,37 @@
         </div>
         <div class="container-form-register">
             <div class="form-register">
-                <div class="message-hidden">
-                    <img src="public/img/verify.png" 
-                         alt="Ok"
-                    />
-                    <p id="message">
-                        Cadastro realizado com sucesso.
-                    </p>
-                </div>
-                <form id="form-register-user">
+                {% if registerSuccess == 'Success' %}
+                    <div class="message-register">
+                        <img src="public/img/verify.png" 
+                            alt="Ok"
+                        />
+                        <p id="message">
+                            Cadastro realizado com sucesso.
+                        </p>
+                    </div>
+                {% endif %}
+                {% if registerSuccess == 'Failed' %}
+                    <div class="message-erro">
+                        <img src="public/img/erro.png" 
+                            alt="Erro"
+                        />
+                        <p id="message">
+                            Ocorreu um erro ao realizar o Cadastro. Tente novamente.
+                        </p>
+                    </div>
+                {% endif %}
+                {% if registerSuccess == 'RegisteredEmail' %}
+                    <div class="message-erro">
+                        <img src="public/img/erro.png" 
+                            alt="Erro"
+                        />
+                        <p id="message">
+                            Este e-mail já está em uso.
+                        </p>
+                    </div>
+                {% endif %}
+                <form id="form-register-user" method="post" action="?page=register&method=registerUserForm">
                     <div class="container-nome-dt-nascimento">
                         <div class="container-nome">
                             <label for="inp-nome">
@@ -107,6 +129,8 @@
                         <input id="info" 
                                type="checkbox"
                                name="info"
+                               valueDefault="false"
+                               value="1"
                         />
                         <label for="info">
                             Desejo receber informações e promoções por e-mail.
