@@ -388,17 +388,5 @@ function verifyAg(){
 }
 
 function enabledInputDiaSemana(){
-    document.getElementById("dia-semana").removeAttribute("disabled"); 
-    
-    let inpData = document.getElementById('inp-data');
-    let inpHorario = document.getElementById('select-horarios');
-
-    var date = new Date(inpData.value);
-    if(date.getDay() == 6){
-        alert("Ops...  Estamos descansando aos Domingos.");
-    }
+    document.getElementById("dia-semana").removeAttribute("disabled");  
 }
-
-
-
-

@@ -24,30 +24,20 @@
 
                 $result = $statement->fetchAll(PDO::FETCH_ASSOC);
 
-                $indisponivel = 'false';
-                if(!empty(self::$data) && !empty(self::$horario)){
-                    //print_r("Não está vazio");
-                    foreach($result as $obj){
-                        if($obj['data_agendamento'] == self::$data && $obj['horario'] == self::$horario){
-                            $indisponivel = 'true';
-                        }
+                $indisponivel = false;
+                foreach($result as $obj){
+                    if($obj['data_agendamento'] == self::$data && $obj['horario'] == self::$horario){
+                        $indisponivel = true;
                     }
-                } else{
-                    //print_r("Está vazio");
-                    $indisponivel = '';
                 }
-                
-                switch($indisponivel){
-                    case '':
-                        return 'vazio';
 
-                    case 'true':
-                        return 'indisponivel';
-                        
-                    case 'false':
-                        return 'disponivel';
+                if(!$indisponivel){
+                    return 'disponivel';
 
+                } else {
+                    return 'indisponivel';
                 }
+
             } catch(Exception $err){
                 echo "Erro ao verificar a Disponibilidade. ".$err->getMessage();
             }

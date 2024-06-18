@@ -20,47 +20,37 @@
 
             //print_r(self::$dadosDigitados);
 
-            if(self::$firstLoad === true){
+            if(self::$firstLoad){
                 echo $page; 
-            } 
-            
-            if(self::$firstLoad === false){
-                echo $page;
 
+            } else {
+                echo $page;
                 echo "<script>
-                        var element = document.getElementById('reserva-horarios');
-                        if(element){
-                            document.addEventListener('DOMContentLoaded', () => {
-                                element.scrollIntoView({ behavior: 'smooth' });                        
-                            });
-                        }
+                        document.addEventListener('DOMContentLoaded', () => {
+                            var section = 'reserva-horarios';
+                            if(section){
+                                document.getElementById(section).scrollIntoView();
+                            }
+                        })
                       </script>";
-            }          
+            }
+            
         }
 
         public function submitFormVerifyAg(){
-            self::$firstLoad = false;
-
             $dadosAgendamento = $_POST;
+
+            //print_r($dadosAgendamento);
 
             self::$dadosDigitados = $dadosAgendamento;
 
-            $timestamp = strtotime($dadosAgendamento['data']);
-            $date = getDate($timestamp);
-            $dayWeek = $date['wday'];
-
-
-            if(!empty($dadosAgendamento['data']) && !empty($dadosAgendamento['select-horarios']) && $dayWeek != 0){
-                HomeModel::setData($dadosAgendamento['data']);
-                HomeModel::sethorario(substr($dadosAgendamento['select-horarios'], 0, 5));
-            }
+            HomeModel::setData($dadosAgendamento['data']);
+            HomeModel::sethorario(substr($dadosAgendamento['select-horarios'], 0, 5));
 
             self::$isAvailableTime = HomeModel::verificarDisponibilidade();
-            if($dayWeek == 0){
-                self::$isAvailableTime = "";
-            }
-
     
+            self::$firstLoad = false;
+
             $this->index();  
         }
     } 
