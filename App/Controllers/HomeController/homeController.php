@@ -20,37 +20,47 @@
 
             //print_r(self::$dadosDigitados);
 
-            if(self::$firstLoad){
+            if(self::$firstLoad === true){
                 echo $page; 
-
-            } else {
-                echo $page;
-                echo "<script>
-                        document.addEventListener('DOMContentLoaded', () => {
-                            var section = 'reserva-horarios';
-                            if(section){
-                                document.getElementById(section).scrollIntoView();
-                            }
-                        })
-                      </script>";
-            }
+            } 
             
+            if(self::$firstLoad === false){
+                echo $page;
+
+                echo "<script>
+                        var element = document.getElementById('reserva-horarios');
+                        if(element){
+                            document.addEventListener('DOMContentLoaded', () => {
+                                element.scrollIntoView({ behavior: 'smooth' });                        
+                            });
+                        }
+                      </script>";
+            }          
         }
 
         public function submitFormVerifyAg(){
-            $dadosAgendamento = $_POST;
+            self::$firstLoad = false;
 
-            //print_r($dadosAgendamento);
+            $dadosAgendamento = $_POST;
 
             self::$dadosDigitados = $dadosAgendamento;
 
-            HomeModel::setData($dadosAgendamento['data']);
-            HomeModel::sethorario(substr($dadosAgendamento['select-horarios'], 0, 5));
+            $timestamp = strtotime($dadosAgendamento['data']);
+            $date = getDate($timestamp);
+            $dayWeek = $date['wday'];
+
+
+            if(!empty($dadosAgendamento['data']) && !empty($dadosAgendamento['select-horarios']) && $dayWeek != 0){
+                HomeModel::setData($dadosAgendamento['data']);
+                HomeModel::sethorario(substr($dadosAgendamento['select-horarios'], 0, 5));
+            }
 
             self::$isAvailableTime = HomeModel::verificarDisponibilidade();
-    
-            self::$firstLoad = false;
+            if($dayWeek == 0){
+                self::$isAvailableTime = "";
+            }
 
+    
             $this->index();  
         }
     } 

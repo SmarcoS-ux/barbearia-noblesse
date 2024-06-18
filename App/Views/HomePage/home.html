@@ -133,20 +133,20 @@
                     <div class="dia-horarios">
                         <div class="dia">
                             <label for="">Data:</label>
-                            <input id="inp-data" 
+                            <input id="inp-data"
+                                   class="{{message}}" 
                                    type="date"
                                    name="data"
                                    value="{{data}}"
                                    onchange="verifyAg()"
                             />
-                            <p id="msg-date-invalid" class="date-valid">Data inválida</p>
                         </div>
                         <div class="horario">
                             <label for="select-horarios">
                                 Horário:
                             </label>
-                            <select name="select-horarios" 
-                                    id="select-horarios">
+                            <select id="select-horarios"
+                                    name="select-horarios">
                                 <option value="{{horarios}}">{{horarios}}</option>
                                 <option value="08:00h">08:00h</option>
                                 <option value="08:30h">08:30h</option>
@@ -209,37 +209,48 @@
                     </div>
                 </form>
                 {% if message == 'disponivel' %}
-                <div id="container-message-agendar" 
-                     class="div-message-disponibilidade-disponivel">
-                    <img id="icon-verify"
-                         src="public/img/disponivel.png" 
-                         alt="Verificado"/>
-                    <p id="message-disponibilidade-success">
-                        Horário disponível. Clique em 'Agendar'.
-                    </p>                          
-                </div>
+                    <div id="container-message-agendar" 
+                        class="div-message-disponibilidade-disponivel">
+                        <img id="icon-verify"
+                             src="public/img/disponivel.png" 
+                             alt="Verificado"/>
+                        <p id="message-disponibilidade-success">
+                            Horário disponível. Clique em 'Agendar'.
+                        </p>                          
+                    </div>
                 {% endif %}
                 {% if message == 'agendado' %}
-                <div id="container-message-agendar" 
-                     class="div-message-disponibilidade-agendado">
-                    <img id="icon-verify"
-                         src="public/img/verify.png" 
-                         alt="Verificado"/>
-                    <p id="message-disponibilidade-success">
-                        Agendamento realizado com sucesso.
-                    </p>                          
-                </div>
+                    <div id="container-message-agendar" 
+                         class="div-message-disponibilidade-agendado">
+                        <img id="icon-verify"
+                             src="public/img/verify.png" 
+                             alt="Verificado"/>
+                        <p id="message-disponibilidade-success">
+                            Agendamento realizado com sucesso.
+                        </p>                          
+                    </div>
                 {% endif %}
                 {% if message == 'indisponivel' %}
-                <div id="container-message-agendar" 
-                     class="div-message-disponibilidade-indisponivel">
-                    <img id="icon-verify"
-                         src="public/img/indisponivel.png" 
-                         alt="Verificado"/>
-                    <p id="message-disponibilidade-fail">
-                        Horário indisponível nessa data! Tente outro horário.
-                    </p>                          
-                </div>
+                    <div id="container-message-agendar" 
+                         class="div-message-disponibilidade-indisponivel">
+                        <img id="icon-verify"
+                             src="public/img/indisponivel.png" 
+                             alt="Verificado"/>
+                        <p id="message-disponibilidade-indisponivel">
+                            Horário indisponível nessa data! Tente outro horário.
+                        </p>                          
+                    </div>
+                {% endif %}
+                {% if message == 'vazio' %}
+                    <div id="container-message-agendar" 
+                         class="div-message-disponibilidade-vazio">
+                        <img id="icon-verify"
+                             src="public/img/warning.png" 
+                             alt="Verificado"/>
+                        <p id="message-disponibilidade-vazio">
+                            Preencha os campos 'Data' e 'Horário'.
+                        </p>                          
+                    </div>
                 {% endif %}
             </div>
         </div>
