@@ -117,9 +117,6 @@ function themeColorHome(){
         name_barber.classList.toggle("name-barber-dark");    
     }
     
-    
-    
-    
     if(icon.getAttribute("src") == icon_dark || icon2.getAttribute("src") == icon_dark){
         if(icon != null) icon.setAttribute("src", icon_light);
         if(icon2 != null) icon2.setAttribute("src", icon_light);
@@ -151,7 +148,7 @@ function openMenu(){
 }
 
 
-
+//Função da View Cortes 
 function slider(direction){
     let slide = "inp4";
     slide = document.querySelector("input[name='radio-buttons']:checked").value;
@@ -212,11 +209,10 @@ function slider2(direction){
     }
 }
 
-
 setInterval(function(){
-    /*nextImageAutomatic();
-    nextImageAutomatic2();*/
-}, 90000);
+    nextImageAutomatic();
+    nextImageAutomatic2();
+}, 6000);
 
 let count = 4;
 function nextImageAutomatic(){
@@ -226,7 +222,10 @@ function nextImageAutomatic(){
         count = 1;
     }
 
-    document.getElementById("radio"+count).checked = true;
+    let radioChecked = document.getElementById("radio"+count);
+    if(radioChecked != null){
+        radioChecked.checked = true;
+    }
 }
 
 let count2 = 10;
@@ -237,7 +236,10 @@ function nextImageAutomatic2(){
         count2 = 1;
     }
 
-    document.getElementById("radio2-"+count2).checked = true;
+    let radioChecked = document.getElementById("radio"+count2);
+    if(radioChecked != null){
+        radioChecked.checked = true;
+    }
 }
 
 
@@ -310,8 +312,6 @@ function editUserData(){
     }   
 }
 
-
-
 function openFileImgProfile(){
     let img_selected = document.getElementById("inp-img-profile");
     img_selected.click();
@@ -325,3 +325,80 @@ function openFileImgProfile(){
         }
     }  
 }
+
+
+
+//Funções da View Profile
+function resetForm(){
+    let inpNome = document.getElementById("inp-nome");
+    inpNome.removeAttribute("value");
+
+    let inpDtNascimento = document.getElementById("dt-nascimento");
+    inpDtNascimento.removeAttribute("value");
+
+    let inpEmail1 = document.getElementById("inp-email1");
+    inpEmail1.removeAttribute("value");
+
+    let inpEmail2 = document.getElementById("inp-email2");
+    inpEmail2.removeAttribute("value");
+}
+
+
+
+//Funções do Formulário de Agendamentos da View Home
+function verifyAg(){
+    let dataSelected = document.getElementById("inp-data").value;
+    let diaSemana = document.getElementById("dia-semana");
+
+    let data = new Date(dataSelected);
+    let dia_semana = data.getDay();
+
+    switch(dia_semana){
+        case 0:
+            diaSemana.value = "Segunda-Feira";
+            break;
+        
+        case 1:
+            diaSemana.value = "Terça-Feira";
+            break;  
+            
+        case 2:
+            diaSemana.value = "Quarta-Feira";
+            break; 
+
+        case 3:
+            diaSemana.value = "Quinta-Feira";
+            break;
+
+        case 4:
+            diaSemana.value = "Sexta-Feira";
+            break; 
+
+        case 5:
+            diaSemana.value = "Sábado";
+            break; 
+
+        case 6:
+            diaSemana.value = "Domingo";
+            break; 
+        
+        default:
+            diaSemana.value = undefined;
+    }
+}
+
+function enabledInputDiaSemana(){
+    document.getElementById("dia-semana").removeAttribute("disabled"); 
+    
+    let inpData = document.getElementById('inp-data');
+    let inpHorario = document.getElementById('select-horarios');
+
+    var date = new Date(inpData.value);
+    if(date.getDay() == 6){
+        alert("Ops...  Estamos descansando aos Domingos.");
+    }
+}
+
+
+
+

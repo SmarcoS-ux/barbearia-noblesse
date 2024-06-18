@@ -124,78 +124,82 @@
             </div>
         </div>
     </article>
-    <div class="reservar-horarios">
+    <div id="reserva-horarios" 
+         class="reservar-horarios">
         <div class="agendamento">
             <h5>Faça seu agendamento abaixo:</h5>
             <div class="form-disponibilidade">
-                <form id="form-disponibilidade">
+                <form id="form-disponibilidade" method="post" action="?method=submitFormVerifyAg">
                     <div class="dia-horarios">
                         <div class="dia">
                             <label for="">Data:</label>
-                            <input id="inp-data" 
+                            <input id="inp-data"
+                                   class="{{message}}" 
                                    type="date"
                                    name="data"
+                                   value="{{data}}"
+                                   onchange="verifyAg()"
                             />
                         </div>
                         <div class="horario">
                             <label for="select-horarios">
                                 Horário:
                             </label>
-                            <select name="select-horarios" 
-                                    id="select-horarios"
-                                    name="horario">
-                                <option value="08:00">08:00h da manhã</option>
-                                <option value="08:30">08:30h da manhã</option>
-                                <option value="09:00">09:00h da manhã</option>
-                                <option value="09:30">09:30h da manhã</option>
-                                <option value="10:00">10:00h da manhã</option>
-                                <option value="10:30">10:30h da manhã</option>
-                                <option value="11:00">11:00h da manhã</option>
-                                <option value="11:30">11:30h da manhã</option>
-                                <option value="12:00">12:00h da tarde</option>
-                                <option value="12:30">12:30h da tarde</option>
-                                <option value="13:00">13:00h da tarde</option>
-                                <option value="13:30">13:30h da tarde</option>
-                                <option value="14:00">14:00h da tarde</option>
-                                <option value="14:30">14:30h da tarde</option>
-                                <option value="15:00">15:00h da tarde</option>
-                                <option value="15:30">15:30h da tarde</option>
-                                <option value="16:00">16:00h da tarde</option>
-                                <option value="16:30">16:30h da tarde</option>
-                                <option value="17:00">17:00h da tarde</option>
-                                <option value="17:30">17:30h da tarde</option>
-                                <option value="18:00">18:00h da noite</option>
-                                <option value="18:30">18:30h da noite</option>
-                                <option value="19:00">19:00h da noite</option>
-                                <option value="19:30">19:30h da noite</option>
+                            <select id="select-horarios"
+                                    name="select-horarios">
+                                <option value="{{horarios}}">{{horarios}}</option>
+                                <option value="08:00h">08:00h</option>
+                                <option value="08:30h">08:30h</option>
+                                <option value="09:00h">09:00h</option>
+                                <option value="09:30h">09:30h</option>
+                                <option value="10:00h">10:00h</option>
+                                <option value="10:30h">10:30h</option>
+                                <option value="11:00h">11:00h</option>
+                                <option value="11:30h">11:30h</option>
+                                <option value="13:00h">13:00h</option>
+                                <option value="13:30h">13:30h</option>
+                                <option value="14:00h">14:00h</option>
+                                <option value="14:30h">14:30h</option>
+                                <option value="15:00h">15:00h</option>
+                                <option value="15:30h">15:30h</option>
+                                <option value="16:00h">16:00h</option>
+                                <option value="16:30h">16:30h</option>
+                                <option value="17:00h">17:00h</option>
+                                <option value="17:30h">17:30h</option>
+                                <option value="18:00h">18:00h</option>
+                                <option value="18:30h">18:30h</option>
+                                <option value="19:00h">19:00h</option>
+                                <option value="19:30h">19:30h</option>
                             </select>
                         </div>
                         <div class="dia-semana">
                             <label for="dia-semana">
                                 Dia:
                             </label>
-                            <select name="dia-semana" 
-                                    id="dia-semana"
-                                    name="dia">
+                            <select id="dia-semana"
+                                    name="dia-semana" 
+                                    disabled>
+                                <option value="{{diaSemana}}">{{diaSemana}}</option>
                                 <option value="Segunda-Feira">Segunda-Feira</option>
                                 <option value="Terça-Feira">Terça-Feira</option>
                                 <option value="Quarta-Feira">Quarta-Feira</option>
                                 <option value="Quinta-Feira">Quinta-Feira</option>
                                 <option value="Sexta-Feira">Sexta-Feira</option>
                                 <option value="Sábado">Sábado</option>
+                                <option value="Domingo">Domingo</option>
                             </select>
                         </div>
                     </div>
                     <div class="comentario-obs">
                         <div class="div-comentario">
-                            <textarea name="" 
-                                      id="textarea-comentario" 
+                            <textarea id="textarea-comentario" 
                                       name="observacao"
-                                      placeholder="Deixe uma observação aqui... ">
-                            </textarea>  
+                                      placeholder="Deixe uma observação aqui... "></textarea>  
                         </div>
                         <div class="div-buttons">
-                            <button id="btn-verificar">
+                            <button id="btn-verificar"
+                                    onclick="enabledInputDiaSemana()" 
+                                    type="submit">
                                 Verificar disponibilidade
                             </button>
                             <button id="btn-agendar">
@@ -204,15 +208,50 @@
                         </div>     
                     </div>
                 </form>
-                <div id="container-message-agendar" 
-                     class="div-message-disponibilidade-hidden">
-                    <img id="icon-verify"
-                         src="public/img/verify.png" 
-                         alt="Verificado"/>
-                    <p id="message-disponibilidade-success">
-                        Agendamento realizado com sucesso.
-                    </p>                          
-                </div>
+                {% if message == 'disponivel' %}
+                    <div id="container-message-agendar" 
+                        class="div-message-disponibilidade-disponivel">
+                        <img id="icon-verify"
+                             src="public/img/disponivel.png" 
+                             alt="Verificado"/>
+                        <p id="message-disponibilidade-success">
+                            Horário disponível. Clique em 'Agendar'.
+                        </p>                          
+                    </div>
+                {% endif %}
+                {% if message == 'agendado' %}
+                    <div id="container-message-agendar" 
+                         class="div-message-disponibilidade-agendado">
+                        <img id="icon-verify"
+                             src="public/img/verify.png" 
+                             alt="Verificado"/>
+                        <p id="message-disponibilidade-success">
+                            Agendamento realizado com sucesso.
+                        </p>                          
+                    </div>
+                {% endif %}
+                {% if message == 'indisponivel' %}
+                    <div id="container-message-agendar" 
+                         class="div-message-disponibilidade-indisponivel">
+                        <img id="icon-verify"
+                             src="public/img/indisponivel.png" 
+                             alt="Verificado"/>
+                        <p id="message-disponibilidade-indisponivel">
+                            Horário indisponível nessa data! Tente outro horário.
+                        </p>                          
+                    </div>
+                {% endif %}
+                {% if message == 'vazio' %}
+                    <div id="container-message-agendar" 
+                         class="div-message-disponibilidade-vazio">
+                        <img id="icon-verify"
+                             src="public/img/warning.png" 
+                             alt="Verificado"/>
+                        <p id="message-disponibilidade-vazio">
+                            Preencha os campos 'Data' e 'Horário'.
+                        </p>                          
+                    </div>
+                {% endif %}
             </div>
         </div>
     </div>
