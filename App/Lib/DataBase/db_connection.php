@@ -13,7 +13,8 @@
                 return $conn;
 
             } catch(Exception $err){
-                echo "Erro ao se conectar ao Banco de Dados! ".$err->getMessage();
+                //echo "Erro ao se conectar ao Banco de Dados! ".$err->getMessage();
+                return 'erro';
             }          
         }
     }

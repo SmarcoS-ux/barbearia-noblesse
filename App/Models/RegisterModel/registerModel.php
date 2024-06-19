@@ -9,7 +9,7 @@
 
         public static function setNome($nome){
             self::$nome = $nome;
-        }
+        } 
 
         public static function setDtNascimento($dt_nascimento){
             self::$dt_nascimento = $dt_nascimento;
@@ -29,6 +29,10 @@
 
         static public function registerUser(){
             try {
+                if(DB_Connection::getConnection() == 'erro'){
+                    throw new Exception('Erro na conexão com a Base de Dados.');
+                }
+
                 $sql1 = "select email from users";
 
                 $statement1 = DB_Connection::getConnection()->prepare($sql1);

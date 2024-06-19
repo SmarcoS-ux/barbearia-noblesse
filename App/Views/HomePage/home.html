@@ -208,6 +208,17 @@
                         </div>     
                     </div>
                 </form>
+                {% if message == 'erro' %}
+                    <div id="container-message-agendar" 
+                        class="div-message-disponibilidade-erro">
+                        <img id="icon-verify"
+                             src="public/img/erro.png" 
+                             alt="Verificado"/>
+                        <p id="message-disponibilidade-erro">
+                            Ocorreu algum erro. Tente novamente mais tarde.
+                        </p>                          
+                    </div>
+                {% endif %}
                 {% if message == 'disponivel' %}
                     <div id="container-message-agendar" 
                         class="div-message-disponibilidade-disponivel">

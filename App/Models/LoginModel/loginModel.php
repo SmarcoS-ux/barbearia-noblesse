@@ -13,6 +13,10 @@
 
         public static function authenticationUser(){
             try {   
+                if(DB_connection::getConnection() == 'erro'){
+                    throw new Exception("Erro na conexão com a Base de Dados.");
+                }
+
                 $sql = "select email, password_hash from users";
 
                 $statement = DB_Connection::getConnection()->prepare($sql);
@@ -61,7 +65,7 @@
                     );
                 }
             } catch(Exception $err){
-                //print_r($err->getMessage());
+                //print_r("Erro ao realizar o Login. ".$err->getMessage());
                 $_SESSION['isLogged'] = false;
 
                 return array(

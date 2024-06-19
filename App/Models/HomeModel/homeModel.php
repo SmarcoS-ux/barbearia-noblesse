@@ -17,6 +17,10 @@
 
         public static function verificarDisponibilidade(){
             try {
+                if(DB_Connection::getConnection() == 'erro'){
+                    throw new Exception("Erro na conexão com a Base de Dados.");
+                }
+
                 $sql = "select data_agendamento, horario from agendamentos";
 
                 $statement = DB_Connection::getConnection()->prepare($sql);
@@ -49,7 +53,8 @@
 
                 }
             } catch(Exception $err){
-                echo "Erro ao verificar a Disponibilidade. ".$err->getMessage();
+                //echo "Erro ao verificar a Disponibilidade. ".$err->getMessage();
+                return 'erro';
             }
         }
     }
