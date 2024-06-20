@@ -1,5 +1,6 @@
 <?php
     class ProfileController {
+        private static $message;
         public function index(){
             $loader = new \Twig\Loader\FilesystemLoader('App/Views/ProfilePage');
             $twig = new \Twig\Environment($loader);
@@ -12,6 +13,7 @@
             $dataUser['email'] = Session::getVariableSession('email');
             $dataUser['dt_nascimento'] = Session::getVariableSession('dt_nascimento');
             $dataUser['firstName'] = $firstName[0];
+            $dataUser['message'] = self::$message;
 
 
             $template = $twig->load('profile.html');
@@ -26,7 +28,23 @@
         }
 
 
-        public function getUserData(){
+        public function updateUserData(){
+            $dadosProfile = $_POST;
 
+            if(!empty($dadosProfile['nome']) && !empty($dadosProfile['email2']) && !empty($dadosProfile['dt_nascimento'])){
+                ProfileModel::setNome($dadosProfile['nome']);
+                ProfileModel::setEmail($dadosProfile['email2']);
+                ProfileModel::setDtNascimento($dadosProfile['dt_nascimento']);
+                ProfileModel::setInfo(isset($dadosProfile['check_info']) ? $dadosProfile['check_info'] : 0);
+                ProfileModel::setPassword($dadosProfile['password2']);
+
+                self::$message = ProfileModel::userUpdate();
+            }
+
+            $this->index();
+        }
+
+        public function logout(){
+            
         }
     }

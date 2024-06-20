@@ -51,11 +51,30 @@
             & .title {
                 width: 1000px;
                 padding: 0 50px;
+                display: flex;
+                flex-direction: row;
+                position: relative;
 
                 & h1 {
                     font-size: 25px;
                 }
                 
+                & #btn_logout {
+                    border: none;
+                    outline: none;
+                    background: transparent;
+                    position: absolute;
+                    right: 40px;
+                    height: 100%;
+                    
+                    & img {
+                        width: 30px;
+                    }
+                }
+                & #btn_logout:hover{
+                    filter: drop-shadow(1px 1px 10px Black);
+                    cursor: pointer;
+                }
             }
         }
 
@@ -110,7 +129,7 @@
                         margin: 0;
                     }
                 }
-                & .message-error {
+                & .message-fail {
                     display: flex;
                     flex-direction: row;
                     align-items: center;
@@ -418,11 +437,29 @@
             & .title {
                 width: 1000px;
                 padding: 0 50px;
+                display: flex;
+                position: relative;
     
                 & h1 {
                     font-size: 25px;
                 }
                 
+                & #btn_logout {
+                    border: none;
+                    outline: none;
+                    background: transparent;
+                    position: absolute;
+                    right: 40px;
+                    height: 100%;
+                    
+                    & img {
+                        width: 30px;
+                    }
+                }
+                & #btn_logout:hover{
+                    filter: drop-shadow(1px 1px 10px Black);
+                    cursor: pointer;
+                }
             }
         }
     
@@ -477,7 +514,7 @@
                         margin: 0;
                     }
                 }
-                & .message-error {
+                & .message-fail {
                     display: flex;
                     flex-direction: row;
                     align-items: center;
@@ -728,9 +765,28 @@
             & .title {
                 width: calc(100% - 40px);
                 padding: 0 20px;
+                display: flex;
+                position: relative;
     
                 & h1 {
                     font-size: 20px;
+                }
+
+                & #btn_logout {
+                    border: none;
+                    outline: none;
+                    background: transparent;
+                    position: absolute;
+                    right: 20px;
+                    height: 100%;
+                    
+                    & img {
+                        width: 30px;
+                    }
+                }
+                & #btn_logout:hover{
+                    filter: drop-shadow(1px 1px 10px Black);
+                    cursor: pointer;
                 }
                 
             }
@@ -788,7 +844,7 @@
                         margin: 0;
                     }
                 }
-                & .message-error {
+                & .message-fail {
                     display: flex;
                     flex-direction: row;
                     align-items: center;

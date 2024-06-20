@@ -12,6 +12,7 @@
     include_once("App/Models/RegisterModel/registerModel.php");
     include_once("App/Models/LoginModel/loginModel.php");
     include_once("App/Models/HomeModel/homeModel.php");
+    include_once("App/Models/ProfileModel/profileModel.php");
 
     include_once("App/Lib/DataBase/db_connection.php");
 

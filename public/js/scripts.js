@@ -243,37 +243,7 @@ function nextImageAutomatic2(){
 }
 
 
-
-/*Formulário de alteração de dados do usuário*/
-function defaultAttributesFormEditUserData(){
-    let input_nome = document.getElementById("inp-nome");
-    let input_dt_nascimento = document.getElementById("dt-nascimento");
-    let input_email1 = document.getElementById("inp-email1");
-    let input_email2 = document.getElementById("inp-email2");
-    let input_senha1 = document.getElementById("senha1");
-    let input_senha2 = document.getElementById("senha2");
-    let checkbox_info = document.getElementById("info");
-    let btn_clean = document.getElementById("btn-clean");
-    let btn_edit = document.getElementById("btn-edit");
-
-    btn_edit.setAttribute("class", "btn-edit");
-    btn_edit.innerHTML = "Editar";
-
-    input_nome.setAttribute("disabled", "disabled");
-    input_dt_nascimento.setAttribute("disabled", "disabled");
-    input_email1.setAttribute("disabled", "disabled");
-    input_email2.setAttribute("disabled", "disabled");
-    input_senha1.setAttribute("disabled", "disabled");
-    input_senha2.setAttribute("disabled", "disabled");
-    checkbox_info.setAttribute("disabled", "disabled");
-    btn_clean.setAttribute("disabled", "disabled"); 
-}
-
 function editUserData(){
-    $('#form-edit-userdata').on("submit", function(e){
-        e.preventDefault();
-    });  
-
     let input_nome = document.getElementById("inp-nome");
     let input_dt_nascimento = document.getElementById("dt-nascimento");
     let input_email1 = document.getElementById("inp-email1");
@@ -297,19 +267,7 @@ function editUserData(){
         checkbox_info.removeAttribute("disabled");
         btn_clean.removeAttribute("disabled");   
 
-    } else{
-        btn_edit.setAttribute("class", "btn-edit");
-        btn_edit.innerHTML = "Editar";
-
-        input_nome.setAttribute("disabled", "disabled");
-        input_dt_nascimento.setAttribute("disabled", "disabled");
-        input_email1.setAttribute("disabled", "disabled");
-        input_email2.setAttribute("disabled", "disabled");
-        input_senha1.setAttribute("disabled", "disabled");
-        input_senha2.setAttribute("disabled", "disabled");
-        checkbox_info.setAttribute("disabled", "disabled");
-        btn_clean.setAttribute("disabled", "disabled");   
-    }   
+    }
 }
 
 function openFileImgProfile(){

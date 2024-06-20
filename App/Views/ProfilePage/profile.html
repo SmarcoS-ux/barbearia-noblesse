@@ -18,16 +18,28 @@
         <div class="container-title">
             <div class="title">
                 <h1>Bem-vindo Sr(a): {{firstName}}</h1>
+                <button id="btn_logout">
+                    <img src="public/img/sair.png" alt="Sair">
+                </button>
             </div>          
         </div>
         <div class="container-form-register">
             <div class="form-register">
-                <form id="form-edit-userdata">
-                    <div class="message-hidden">
-                        <img src="public/img/verify.png" 
-                             alt="Ok">
-                        <p>Dados alterados com sucesso.</p>
-                    </div>
+                <form id="form-edit-userdata" method="post" action="?page=profile&method=updateUserData">
+                    {% if message == 'success' %}
+                        <div class="message-success">
+                            <img src="public/img/verify.png" 
+                                alt="Ok">
+                            <p>Dados alterados com sucesso.</p>
+                        </div>
+                    {% endif %}
+                    {% if message == 'fail' %}
+                        <div class="message-fail">
+                            <img src="public/img/erro.png" 
+                                alt="Ok">
+                            <p>Ocorreu um erro. Tente novamente mais tarde.</p>
+                        </div>
+                    {% endif %}
                     <div class="container-nome-dt-nascimento">
                         <div class="container-nome">
                             <label for="inp-nome">
@@ -36,6 +48,7 @@
                             <input id="inp-nome" 
                                    value="{{nome}}" 
                                    type="text" 
+                                   name="nome"
                                    required 
                                    disabled="disabled"
                             >                      
@@ -47,6 +60,7 @@
                             <input id="dt-nascimento" 
                                    value="{{dt_nascimento}}" 
                                    type="date" 
+                                   name="dt_nascimento"
                                    required 
                                    disabled
                             >                           
@@ -59,7 +73,8 @@
                             </label>
                             <input id="inp-email1" 
                                    value="{{email}}" 
-                                   type="email" 
+                                   type="email"
+                                   name="email1" 
                                    required 
                                    disabled
                             />
@@ -71,6 +86,7 @@
                             <input id="inp-email2" 
                                    value="{{email}}" 
                                    type="email" 
+                                   name="email2"
                                    required 
                                    disabled
                             />                    
@@ -83,6 +99,7 @@
                             </label>
                             <input id="senha1" 
                                    type="password" 
+                                   name="password1"
                                    required 
                                    disabled
                             />                         
@@ -93,6 +110,7 @@
                             </label>
                             <input id="senha2" 
                                    type="password" 
+                                   name="password2"
                                    required 
                                    disabled
                             />                        
@@ -100,7 +118,8 @@
                     </div>
                     <div class="info-emails">
                         <input id="info" 
-                               type="checkbox" 
+                               type="checkbox"
+                               name="check_info" 
                                disabled
                         />
                         <label for="info">
@@ -116,8 +135,8 @@
                             </button>
                             <button id="btn-edit" 
                                     class="btn-edit" 
-                                    onclick="editUserData()" 
-                                    onload="defaultAttributesFormEditUserData()">
+                                    type="submit"
+                                    onclick="editUserData()">
                                     Editar
                             </button>
                         </div>
