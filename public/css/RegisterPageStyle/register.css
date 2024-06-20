@@ -415,7 +415,27 @@
                         margin: 0;
                         margin-left: 10px;
                     }
-                }    
+                }  
+                & .message-erro {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    background-color: rgb(253, 183, 183);
+                    border-radius: 10px;
+                    padding: 5px 0 5px 10px;
+                    margin-bottom: 10px;
+
+                    & img {
+                        width: 25px;
+                    }
+                    
+                    & #message {
+                        color: rgb(145, 22, 6);
+                        margin: 0;
+                        margin-left: 10px;
+                    }
+                }
+  
 
                 & input {
                     height: 30px;
@@ -711,7 +731,27 @@
                         margin: 0;
                         margin-left: 10px;
                     }
-                }    
+                }  
+                & .message-erro {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    background-color: rgb(253, 183, 183);
+                    border-radius: 10px;
+                    padding: 5px 0 5px 10px;
+                    margin-bottom: 10px;
+
+                    & img {
+                        width: 25px;
+                    }
+                    
+                    & #message {
+                        color: rgb(145, 22, 6);
+                        margin: 0;
+                        margin-left: 10px;
+                    }
+                }  
+                
                 
                 & input {
                     height: 40px;
