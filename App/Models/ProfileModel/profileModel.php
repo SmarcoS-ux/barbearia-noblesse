@@ -5,6 +5,7 @@
         private static $email;
         private static $password_hash;
         private static $info;
+        private static $id_agendamento;
         
         public static function setNome($nome){
             self::$nome = $nome;
@@ -24,6 +25,10 @@
 
         public static function setInfo($info){
             self::$info = $info;
+        }
+
+        public static function setIdAgendamento($id_ag){
+            self::$id_agendamento = $id_ag;
         }
 
         public static function userUpdate(){
@@ -61,12 +66,12 @@
 
         public static function getAgendamentos(){
             try {
-                $sql = "select registro, data_agendamento, horario from agendamentos where id_user=:id";
+                $sql = "select id, registro, data_agendamento, horario, dia_semana from agendamentos where id_user=:id_user";
 
                 Session::start_session();
 
                 $statement = DB_Connection::getConnection()->prepare($sql);
-                $statement->bindValue(":id", Session::getVariableSession('id'));
+                $statement->bindValue(":id_user", Session::getVariableSession('id'));
                 $statement->execute();
 
                 $result = $statement->fetchAll(PDO::FETCH_ASSOC);
@@ -75,6 +80,28 @@
 
             } catch(Exception $err){
                 print_r("Erro ao buscar os agendamentos. ".$err->getMessage());
+            }
+        }
+
+        public static function deleteAgendamento(){
+            try {
+                $sql = 'delete from agendamentos where id=:id_ag and id_user=:id_user';
+                
+                Session::start_session();
+
+                $statement = DB_Connection::getConnection()->prepare($sql);
+                $statement->bindValue("id_ag", self::$id_agendamento);
+                $statement->bindValue("id_user", Session::getVariableSession('id'));
+                $result = $statement->execute();
+
+                if($result){
+                    print_r("Agendamento deletado.");
+                } else{
+                    "Agendamento não deletado.";
+                }
+
+            } catch(Exception $err){
+                echo "Erro ao Deletar um agendamento. ".$err->getMessage();
             }
         }
     }

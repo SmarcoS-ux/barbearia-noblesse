@@ -3,7 +3,7 @@
         private static $host = "localhost";
         private static $db_name = "barber_noblesse";
         private static $user = "root";
-        private static $password = "Marcos----123andreeee";
+        private static $password = "";
 
         static public function getConnection(){
             try {

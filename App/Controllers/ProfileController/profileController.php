@@ -53,4 +53,17 @@
 
             header('location: http://localhost/Barbearia-Noblesse/');        
         }
+
+        public function deleteAgendamento(){
+            $id = $_POST;
+            
+            Session::start_session();
+            if(Session::getVariableSession('isLogged') == 'True'){
+                ProfileModel::setIdAgendamento($id['id_ag']);
+
+                ProfileModel::deleteAgendamento();
+            }
+
+            $this->index();
+        }
     }

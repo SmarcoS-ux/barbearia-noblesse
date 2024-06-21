@@ -4,7 +4,7 @@
         private static $data_atual;
         private static $horario;
         private static $observacoes;
-
+        private static $dia_semana;
 
         public static function setData($data){
             self::$data = $data;
@@ -17,6 +17,10 @@
         }
         public static function setObservacoes($observacoes){
             self::$observacoes = $observacoes;
+        }
+
+        public static function setDiaSemana($dia_semana){
+            self::$dia_semana = $dia_semana;
         }
 
         public static function verificarDisponibilidade(){
@@ -62,8 +66,8 @@
 
         public static function registerAgendamento(){
             try {
-                $sql = 'insert into agendamentos (id_user, registro, data_agendamento, horario, observacoes)
-                        values (:id_user, :registro, :data_agendamento, :horario, :observacoes)';
+                $sql = 'insert into agendamentos (id_user, registro, data_agendamento, horario, dia_semana, observacoes)
+                        values (:id_user, :registro, :data_agendamento, :horario, :dia_semana, :observacoes)';
 
                 Session::start_session();        
 
@@ -72,6 +76,7 @@
                 $statement->bindValue(":registro", self::$data_atual);
                 $statement->bindValue(":data_agendamento", self::$data);
                 $statement->bindValue(":horario", self::$horario);
+                $statement->bindValue(":dia_semana", self::$dia_semana);
                 $statement->bindValue(":observacoes", self::$observacoes);
                 $result = $statement->execute();
 
@@ -86,6 +91,7 @@
 
             } catch(Exception $err){
                 echo "Erro ao registrar o agendamento. ".$err->getMessage();
+                return 'erro';
             }
         }
     }

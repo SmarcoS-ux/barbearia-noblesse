@@ -80,14 +80,53 @@
                 $date = getDate($timestamp);
                 $dayWeek = $date['wday'];
 
+                $dia_semana = "";
+
+                switch($dayWeek){
+                    case 0:
+                        $dia_semana = 'Domingo';
+                        break;
+                    
+                    case 1:
+                        $dia_semana = 'Segunda-Feira';
+                        break;
+
+                    case 2:
+                        $dia_semana = 'Terça-Feira';
+                        break;
+
+                    case 3:
+                        $dia_semana = 'Quarta-Feira';
+                        break;
+
+                    case 4:
+                        $dia_semana = 'Quinta-Feira';
+                        break;
+
+                    case 5:
+                        $dia_semana = 'Sexta-Feira';
+                        break;
+
+                    case 6:
+                        $dia_semana = 'Sábado';
+                        break;
+
+                    default:
+                        $dia_semana = null;
+                }
+
                 $data_atual = new DateTime();
                 $fuso = new DateTimeZone('America/Sao_Paulo');
                 $data_atual->setTimezone($fuso);
 
+                $data_agendamento = new DateTime($dadosAgendamento['data']);
+                $dt_agendamento = $data_agendamento->format("d/m/Y");
+
                 if(!empty($dadosAgendamento['data']) && !empty($dadosAgendamento['select-horarios']) && $dayWeek != 0){
-                    HomeModel::setData($dadosAgendamento['data']);
+                    HomeModel::setData($dt_agendamento);
                     HomeModel::setDataAtual($data_atual->format("d/m/Y - H:i"));
                     HomeModel::sethorario(substr($dadosAgendamento['select-horarios'], 0, 5));
+                    HomeModel::setDiaSemana($dia_semana);  
                     HomeModel::setObservacoes($dadosAgendamento['observacao']);
 
                     self::$message = HomeModel::registerAgendamento();

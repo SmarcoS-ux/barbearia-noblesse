@@ -170,10 +170,15 @@
                                 <td>{{element.data_agendamento}}</td>
                                 <td>{{element.horario}}</td>
                                 <td>
-                                    null
-                                    <button class="btn-delete-agendamento">
-                                        x
-                                    </button>
+                                    {{element.dia_semana}}
+                                    <form method='post' action="?page=profile&method=deleteAgendamento">
+                                        <button class="btn-delete-agendamento"
+                                                type="submit"
+                                                name="id_ag"
+                                                value='{{element.id}}'>
+                                            x
+                                        </button>
+                                    </form>
                                 </td>
                             </tr>
                         {% endfor %}
