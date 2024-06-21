@@ -39,7 +39,7 @@
         }
 
         public function submitFormVerifyAg(){
-            self::$firstLoad = false;
+            self::$firstLoad = false; 
 
             $dadosAgendamento = $_POST;
 
@@ -53,14 +53,58 @@
             if(!empty($dadosAgendamento['data']) && !empty($dadosAgendamento['select-horarios']) && $dayWeek != 0){
                 HomeModel::setData($dadosAgendamento['data']);
                 HomeModel::sethorario(substr($dadosAgendamento['select-horarios'], 0, 5));
+
+                self::$message = HomeModel::verificarDisponibilidade();
+
+            } else{
+                self::$message = 'vazio';
             }
 
-            self::$message = HomeModel::verificarDisponibilidade();
+            
+
             if($dayWeek == 0){
                 self::$message = "";
             }
-
-    
+ 
             $this->index();  
+        }
+
+        public function registerAg(){
+            self::$firstLoad = false; 
+
+            $dadosAgendamento = $_POST;
+
+            Session::start_session();
+            if(Session::getVariableSession('isLogged') == 'True'){
+                $timestamp = strtotime($dadosAgendamento['data']);
+                $date = getDate($timestamp);
+                $dayWeek = $date['wday'];
+
+                $data_atual = new DateTime();
+                $fuso = new DateTimeZone('America/Sao_Paulo');
+                $data_atual->setTimezone($fuso);
+
+                if(!empty($dadosAgendamento['data']) && !empty($dadosAgendamento['select-horarios']) && $dayWeek != 0){
+                    HomeModel::setData($dadosAgendamento['data']);
+                    HomeModel::setDataAtual($data_atual->format("d/m/Y - H:i"));
+                    HomeModel::sethorario(substr($dadosAgendamento['select-horarios'], 0, 5));
+                    HomeModel::setObservacoes($dadosAgendamento['observacao']);
+
+                    self::$message = HomeModel::registerAgendamento();
+                } else{
+                    self::$message = 'vazio';
+                }
+
+                if($dayWeek == 0){
+                    self::$message = "";
+                }
+
+            } else{
+                self::$message = 'naoLogado';
+            }
+
+            
+
+            $this->index();
         }
     } 

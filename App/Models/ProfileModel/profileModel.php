@@ -58,4 +58,23 @@
                 return 'fail';
             }
         }
+
+        public static function getAgendamentos(){
+            try {
+                $sql = "select registro, data_agendamento, horario from agendamentos where id_user=:id";
+
+                Session::start_session();
+
+                $statement = DB_Connection::getConnection()->prepare($sql);
+                $statement->bindValue(":id", Session::getVariableSession('id'));
+                $statement->execute();
+
+                $result = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+                return $result;
+
+            } catch(Exception $err){
+                print_r("Erro ao buscar os agendamentos. ".$err->getMessage());
+            }
+        }
     }

@@ -202,12 +202,25 @@
                                     type="submit">
                                 Verificar disponibilidade
                             </button>
-                            <button id="btn-agendar">
+                            <button id="btn-agendar"
+                                    type="submit"
+                                    onclick='submitAgendamento()'>                                  
                                 Agendar
                             </button>
                         </div>     
                     </div>
                 </form>
+                {% if message == 'naoLogado' %}
+                <div id="container-message-agendar" 
+                    class="div-message-disponibilidade-logoff">
+                    <img id="icon-verify"
+                         src="public/img/danger.png" 
+                         alt="Verificado"/>
+                    <p id="message-disponibilidade-logoff">
+                        Para realizar o Agendamento é preciso realizar o <strong>Login</strong>.
+                    </p>                          
+                </div>
+                {% endif %}
                 {% if message == 'erro' %}
                     <div id="container-message-agendar" 
                         class="div-message-disponibilidade-erro">

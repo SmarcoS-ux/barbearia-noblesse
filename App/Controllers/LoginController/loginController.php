@@ -51,7 +51,7 @@
             $this->index();
             
             if(Session::getVariableSession('isLogged') == "True"){
-                $time = 3;
+                $time = 2;
                 header("Refresh: $time; url=http://localhost/Barbearia-Noblesse/?page=profile&id=".$logado['id']);          
             }        
         }

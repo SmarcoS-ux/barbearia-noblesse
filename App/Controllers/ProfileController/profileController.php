@@ -5,6 +5,9 @@
             $loader = new \Twig\Loader\FilesystemLoader('App/Views/ProfilePage');
             $twig = new \Twig\Environment($loader);
 
+            $agendamentos = ProfileModel::getAgendamentos();
+            //print_r($agendamentos);
+
             Session::start_session();
             $dataUser = array();
             $firstName = explode(" ", Session::getVariableSession('nome'));
@@ -14,7 +17,7 @@
             $dataUser['dt_nascimento'] = Session::getVariableSession('dt_nascimento');
             $dataUser['firstName'] = $firstName[0];
             $dataUser['message'] = self::$message;
-
+            $dataUser['agendamentos'] = $agendamentos;
 
             $template = $twig->load('profile.html');
             $page = $template->render($dataUser);
@@ -23,7 +26,7 @@
             if(Session::getVariableSession('isLogged') != "True"){
                 header("location: http://localhost/Barbearia-Noblesse/?page=login");     
             } 
-           
+
             echo $page;                      
         }
 
@@ -45,6 +48,9 @@
         }
 
         public function logout(){
-            
+            Session::start_session();
+            Session::destroySession();
+
+            header('location: http://localhost/Barbearia-Noblesse/');        
         }
     }

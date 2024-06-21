@@ -1,3 +1,5 @@
+
+
 @media screen and (min-width: 1025px) {
     .container-profile {
         font-family: Arial, Helvetica, sans-serif;
@@ -329,62 +331,105 @@
         & .agendamentos-salvos {
             width: 100%;
             display: flex;
-            flex-direction: row;
-            justify-content: center;
+            flex-direction: column;
+            align-items: center;
             margin-top: 50px;
+            height: 400px;
 
-            & #table-agendamentos {
-                border: 1px solid rgb(133, 133, 133);
-                border-collapse: collapse;
+            & .titles-table {
+                width: 848px;
+                text-align: center;
+                background-color: rgb(197, 197, 197);
+                border: 1px solid rgb(158, 158, 158);
+                box-shadow: 0px 2px 10px rgb(126, 126, 126);
 
-                & caption {
-                    border-left: 1px solid rgb(133, 133, 133);
-                    border-top: 1px solid rgb(133, 133, 133);
-                    border-right: 1px solid rgb(133, 133, 133);
-                    height: 40px;
-                    line-height: 2.5;
-                    background-color: #e6e6e6;
-                }
+                & .titles {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-around;
 
-                & th {
-                    width: 200px;
-                    background-color: #c5c5c5;
+                    & p {
+                        width: 25%;
+                        border-top: 1px solid rgb(158, 158, 158);
+                        margin: 0;
+                        height: 40px;
+                        line-height: 2.5;
+                        font-weight: 600;
+                    }
+                    & #p1, #p2, #p3{
+                        border-right: 1px solid rgb(158, 158, 158);
+                    }
+                } 
+                
+            }
+
+            & .div-table{
+                background-color: rgb(206, 206, 206);
+                border-bottom: 1px solid rgb(172, 172, 172);
+                overflow-y: scroll;
+                padding: 0px 0 10px 0;
+                width: 850px;
+                box-shadow: 2px 2px 10px -2px rgb(126, 126, 126);
+                height: 100%;
+
+
+                & .table-agendamentos {
                     border: 1px solid rgb(133, 133, 133);
-                    height: 35px;
-                }
+                    border-collapse: collapse;
+                    
+                    & #line-titles {
+                        background-color: #8d919b;
+                    }
 
-                & td {
-                    text-align: center;
-                    height: 30px;
-                    background-color: #ebf7ff;
-                    border: 1px solid rgb(133, 133, 133);
-                    position: relative;
+                    & th {
+                        width: 200px;
+                        background-color: #c5c5c5;
+                        border: 1px solid rgb(133, 133, 133);
+                        height: 35px;
+                    }
+                      
+                    & #title-table {
+                        border-left: 1px solid rgb(133, 133, 133);
+                        border-top: 1px solid rgb(133, 133, 133);
+                        border-right: 1px solid rgb(133, 133, 133);
+                        height: 40px;
+                        line-height: 2.5;
+                        background-color: #e6e6e6;
 
-                    & .btn-delete-agendamento {
-                        width: 30px;
-                        height: 25px;
+                    }
+
+                    & td {
+                        width: 210px;
                         text-align: center;
-                        font-weight: bold;
-                        color: rgb(117, 3, 3);
-                        background-color: rgb(255, 152, 152);
-                        border: none;
-                        outline: none;
-                        border: 1px solid rgb(117, 3, 3);
-                        border-radius: 5px;
-                        position: absolute;
-                        right: 5px;
-                        top: 4px;
+                        height: 30px;
+                        background-color: #ebf7ff;
+                        border: 1px solid rgb(133, 133, 133);
+                        position: relative;
+    
+                        & .btn-delete-agendamento {
+                            width: 30px;
+                            height: 25px;
+                            text-align: center;
+                            font-weight: bold;
+                            color: rgb(117, 3, 3);
+                            background-color: rgb(255, 152, 152);
+                            border: none;
+                            outline: none;
+                            border: 1px solid rgb(117, 3, 3);
+                            border-radius: 5px;
+                            position: absolute;
+                            right: 12px;
+                            top: 4px;
+                        }
+                        & .btn-delete-agendamento:hover {
+                            cursor: pointer;
+                            background-color: rgb(255, 77, 77);
+                        }
                     }
-                    & .btn-delete-agendamento:hover {
-                        cursor: pointer;
-                        background-color: rgb(255, 77, 77);
-                    }
-                }
-
-                & #column-dia {
-                    width: 250px;
                 }
             }
+
+            
         }
     }
 }
@@ -711,6 +756,112 @@
                             box-shadow: 1px 1px 5px rgb(97, 253, 97);
                             color: #fff;
                         }
+                }
+            }
+        }
+
+        & .agendamentos-salvos {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 50px;
+            height: 400px;
+
+            & .titles-table {
+                width: 548px;
+                text-align: center;
+                background-color: rgb(197, 197, 197);
+                border: 1px solid rgb(158, 158, 158);
+                box-shadow: 0px 2px 10px rgb(126, 126, 126);
+
+                & .titles {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-around;
+
+                    & p {
+                        width: 25%;
+                        border-top: 1px solid rgb(158, 158, 158);
+                        margin: 0;
+                        height: 40px;
+                        line-height: 2.5;
+                        font-weight: 600;
+                    }
+                    & #p1{
+                        width: 30%;
+                        border-right: 1px solid rgb(158, 158, 158);
+                    }
+                    & #p2 {
+                        width: 20%;
+                        border-right: 1px solid rgb(158, 158, 158);
+                    }
+                    & #p3 {
+                        width: calc(15% - 0.5px);
+                        border-right: 1px solid rgb(158, 158, 158);
+                    }
+                    & #p4 {
+                        width: calc(100% - 65%);
+                    }
+                } 
+                
+            }
+
+            & .div-table{
+                background-color: rgb(206, 206, 206);
+                border-bottom: 1px solid rgb(172, 172, 172);
+                overflow-y: scroll;
+                padding: 0px 0 10px 0;
+                width: 550px;
+                box-shadow: 2px 2px 10px -2px rgb(126, 126, 126);
+                font-size: 13px;
+
+                & .table-agendamentos {
+                    border: 1px solid rgb(133, 133, 133);
+                    border-collapse: collapse;
+                    width: 100%;
+
+                    & td {
+                        text-align: center;
+                        height: 30px;
+                        background-color: #ebf7ff;
+                        border: 1px solid rgb(133, 133, 133);
+                        position: relative;
+    
+                        & .btn-delete-agendamento {
+                            width: 30px;
+                            height: 25px;
+                            text-align: center;
+                            font-weight: bold;
+                            color: rgb(117, 3, 3);
+                            background-color: rgb(255, 152, 152);
+                            border: none;
+                            outline: none;
+                            border: 1px solid rgb(117, 3, 3);
+                            border-radius: 5px;
+                            position: absolute;
+                            right: 12px;
+                            top: 4px;
+                        }
+                        & .btn-delete-agendamento:hover {
+                            cursor: pointer;
+                            background-color: rgb(255, 77, 77);
+                        }
+                    }
+                }
+                & .table-agendamentos td:nth-child(1) {
+                    width: 30%;
+                }
+                & .table-agendamentos td:nth-child(2) {
+                    width: 20%;
+                }
+                & .table-agendamentos td:nth-child(3) {
+                    width: 15%;
+                }
+                & .table-agendamentos td:nth-child(4) {
+                    width: calc(100% - 65%);
+                    text-align: left;
+                    padding-left: 20px;
                 }
             }
         }
@@ -1053,6 +1204,112 @@
                             color: #fff;
                         }
                     }
+                }
+            }
+        }
+
+        & .agendamentos-salvos {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 50px;
+            height: 400px;
+
+            & .titles-table {
+                width: calc(100% - 20px);
+                text-align: center;
+                background-color: rgb(197, 197, 197);
+                border: 1px solid rgb(158, 158, 158);
+                box-shadow: 0px 2px 10px rgb(126, 126, 126);
+
+                & .titles {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-around;
+
+                    & p {
+                        border-top: 1px solid rgb(158, 158, 158);
+                        margin: 0;
+                        height: 40px;
+                        line-height: 2.5;
+                        font-weight: 600;
+                        font-size: 15px;
+                    }
+                    & #p1{
+                        border-right: 1px solid rgb(158, 158, 158);
+                        width: calc(30%);
+                    }
+                    & #p2 {
+                        width: 20%;
+                        border-right: 1px solid rgb(158, 158, 158);
+                    }
+                    & #p3 {
+                        width: calc(15%);
+                        border-right: 1px solid rgb(158, 158, 158);
+                    }
+                    & #p4 {
+                        width: calc(100% - 65%);
+                    }
+                } 
+                
+            }
+
+            & .div-table{
+                background-color: rgb(172, 118, 118);
+                border-bottom: 1px solid rgb(172, 172, 172);
+                overflow-y: scroll;
+                padding: 0px 0 10px 0;
+                width: calc(100% - 18px);
+                box-shadow: 2px 2px 10px -2px rgb(126, 126, 126);
+                font-size: 11px;
+
+                & .table-agendamentos {
+                    border: 1px solid rgb(133, 133, 133);
+                    border-collapse: collapse;
+                    width: 100%;          
+
+                    & td {
+                        text-align: center;
+                        height: 30px;
+                        background-color: #ebf7ff;
+                        border: 1px solid rgb(133, 133, 133);
+                        position: relative;
+    
+                        & .btn-delete-agendamento {
+                            width: 25px;
+                            height: 20px;
+                            text-align: center;
+                            font-weight: bold;
+                            color: rgb(117, 3, 3);
+                            background-color: rgb(255, 152, 152);
+                            border: none;
+                            outline: none;
+                            border: 1px solid rgb(117, 3, 3);
+                            border-radius: 5px;
+                            position: absolute;
+                            right: 5px;
+                            top: 4px;
+                        }
+                        & .btn-delete-agendamento:hover {
+                            cursor: pointer;
+                            background-color: rgb(255, 77, 77);
+                        }
+                    }
+                }
+                & .table-agendamentos td:nth-child(1) {
+                    width: 30%;
+                }
+                & .table-agendamentos td:nth-child(2) {
+                    width: 20%;
+                }
+                & .table-agendamentos td:nth-child(3) {
+                    width: 15%;
+                }
+                & .table-agendamentos td:nth-child(4) {
+                    width: calc(100% - 65%);
+                    text-align: left;
+                    padding-left: 10px;
                 }
             }
         }

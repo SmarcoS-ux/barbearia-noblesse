@@ -1,12 +1,16 @@
 <?php
     class HomeModel {
         private static $data;
+        private static $data_atual;
         private static $horario;
         private static $observacoes;
 
 
         public static function setData($data){
             self::$data = $data;
+        }
+        public static function setDataAtual($data_atual){
+            self::$data_atual = $data_atual;
         }
         public static function sethorario($horario){
             self::$horario = $horario;
@@ -30,14 +34,12 @@
 
                 $indisponivel = 'false';
                 if(!empty(self::$data) && !empty(self::$horario)){
-                    //print_r("Não está vazio");
                     foreach($result as $obj){
                         if($obj['data_agendamento'] == self::$data && $obj['horario'] == self::$horario){
                             $indisponivel = 'true';
                         }
                     }
                 } else{
-                    //print_r("Está vazio");
                     $indisponivel = '';
                 }
                 
@@ -55,6 +57,35 @@
             } catch(Exception $err){
                 //echo "Erro ao verificar a Disponibilidade. ".$err->getMessage();
                 return 'erro';
+            }
+        }
+
+        public static function registerAgendamento(){
+            try {
+                $sql = 'insert into agendamentos (id_user, registro, data_agendamento, horario, observacoes)
+                        values (:id_user, :registro, :data_agendamento, :horario, :observacoes)';
+
+                Session::start_session();        
+
+                $statement = DB_Connection::getConnection()->prepare($sql);
+                $statement->bindValue(":id_user", Session::getVariableSession('id'));
+                $statement->bindValue(":registro", self::$data_atual);
+                $statement->bindValue(":data_agendamento", self::$data);
+                $statement->bindValue(":horario", self::$horario);
+                $statement->bindValue(":observacoes", self::$observacoes);
+                $result = $statement->execute();
+
+                print_r($result);
+
+                if($result){
+                    return 'agendado';
+
+                } else{
+                    return 'erro';
+                }
+
+            } catch(Exception $err){
+                echo "Erro ao registrar o agendamento. ".$err->getMessage();
             }
         }
     }

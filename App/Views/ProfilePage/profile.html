@@ -18,25 +18,33 @@
         <div class="container-title">
             <div class="title">
                 <h1>Bem-vindo Sr(a): {{firstName}}</h1>
-                <button id="btn_logout">
-                    <img src="public/img/sair.png" alt="Sair">
-                </button>
+                <form method='post' 
+                      action="?page=profile&method=logout">
+                    <button id="btn_logout"
+                            type="submit">
+                        <img src="public/img/sair.png" 
+                             alt="Sair" 
+                             title="Sair">
+                    </button>
+                </form>
             </div>          
         </div>
         <div class="container-form-register">
             <div class="form-register">
-                <form id="form-edit-userdata" method="post" action="?page=profile&method=updateUserData">
+                <form id="form-edit-userdata" 
+                      method="post" 
+                      action="?page=profile&method=updateUserData">
                     {% if message == 'success' %}
                         <div class="message-success">
                             <img src="public/img/verify.png" 
-                                alt="Ok">
+                                 alt="Ok">
                             <p>Dados alterados com sucesso.</p>
                         </div>
                     {% endif %}
                     {% if message == 'fail' %}
                         <div class="message-fail">
                             <img src="public/img/erro.png" 
-                                alt="Ok">
+                                 alt="Ok">
                             <p>Ocorreu um erro. Tente novamente mais tarde.</p>
                         </div>
                     {% endif %}
@@ -145,48 +153,32 @@
             </div>
         </div>
         <div class="agendamentos-salvos">
-            <table id="table-agendamentos">
-                <caption>Meus agendamentos</caption>
-                <tr>
-                    <th>Registro</th>
-                    <th>Data</th>
-                    <th>Horário</th>
-                    <th id="column-dia">Dia</th>
-                </tr>
-                <tr>
-                    <td>15/06/2024 - 23:13</td>
-                    <td>16/06/2024</td>
-                    <td>16:30</td>
-                    <td>
-                        Segunda-Feira
-                        <button class="btn-delete-agendamento">
-                            x
-                        </button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>22/04/2024 - 09:11</td>
-                    <td>14/04/2024</td>
-                    <td>18:00</td>
-                    <td>
-                        Quinta-Feira
-                        <button class="btn-delete-agendamento">
-                            x
-                        </button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>01/05/2024 - 13:30</td>
-                    <td>02/05/2024</td>
-                    <td>15:30</td>
-                    <td>
-                        Sábado
-                        <button class="btn-delete-agendamento">
-                            x
-                        </button>
-                    </td>
-                </tr>
-            </table>
+            <div class="titles-table">
+                <h3>Meus agendamentos</h3>
+                <div class="titles">
+                    <p id="p1">Regitro</p>
+                    <p id="p2">Data</p>
+                    <p id="p3">Horário</p>
+                    <p id="p4">Dia</p>
+                </div>
+            </div>
+            <div class="div-table">
+                <table id="table-agendamentos" class="table-agendamentos"> 
+                        {% for element in agendamentos %}                
+                            <tr>
+                                <td>{{element.registro}}</td>
+                                <td>{{element.data_agendamento}}</td>
+                                <td>{{element.horario}}</td>
+                                <td>
+                                    null
+                                    <button class="btn-delete-agendamento">
+                                        x
+                                    </button>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                </table>
+            </div>          
         </div>
     </div>
 </main>

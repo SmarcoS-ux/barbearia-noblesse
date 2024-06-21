@@ -357,6 +357,13 @@ function enabledInputDiaSemana(){
     }
 }
 
+function submitAgendamento(){
+    let btn_agendar = document.getElementById('btn_agendar');
+    let formAg = document.getElementById('form-disponibilidade');
+
+    formAg.setAttribute("action", "?method=registerAg");
+}
+
 
 
 
