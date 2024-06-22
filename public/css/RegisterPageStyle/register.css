@@ -47,6 +47,10 @@
                         width: 20px;
                     }
                 }
+
+                & #btn-submit {
+                    display: none;
+                }
             }
         }
 

@@ -3,15 +3,22 @@
         <div class="image-background-profile">
             <div class="img-profile">
                 <img id="img-user" 
-                     src="public/img/user-black.png" 
+                     src='{{img_profile}}' 
                      alt="Usuário" 
+                     onclick="openFileImgProfile2()"
                      title="Usuário"
                 >
                 <button id="edit-img"> 
-                    <img src="public/img/lapis-color.png" 
+                    <input id='inp_img_profile' 
+                           name="img-profile"
+                           type="file"
+                    />
+                    <img id="load-img"
+                         src="public/img/lapis-color.png" 
                          alt="Editar"
                          title="Editar"
-                    >
+                         onclick="openFileImgProfile2()"
+                    />
                 </button>
             </div>
         </div>
@@ -162,7 +169,7 @@
                     <p id="p4">Dia</p>
                 </div>
             </div>
-            <div class="div-table">
+            <div id="container-table" class="div-table">
                 <table id="table-agendamentos" class="table-agendamentos"> 
                         {% for element in agendamentos %}                
                             <tr>

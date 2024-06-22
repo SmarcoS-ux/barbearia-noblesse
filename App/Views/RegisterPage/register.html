@@ -2,23 +2,30 @@
     <div class="container-register">
         <div class="image-background-profile">
             <div class="img-profile">
-                <img id="img-user" 
-                     onclick="openFileImgProfile()"
-                     src="public/img/user.png" 
-                     alt="Usuário" 
-                     title="Usuário"
-                />
-                <input id="inp-img-profile" 
-                       type="file"
-                       name="img-profile"
-                />
-                <button id="edit-img"> 
-                    <img src="public/img/lapis-color.png" 
-                         alt="Editar" 
+                <form id="form-register-user" 
+                      method="post" 
+                      action="?page=register&method=registerUserForm"
+                      enctype="multipart/form-data"
+                >
+                    <img id="img-user" 
                          onclick="openFileImgProfile()"
-                         title="Editar"
+                         src="public/img/user.png" 
+                         alt="Usuário" 
+                         title="Usuário"
                     />
-                </button>
+                    <input id="inp-img-profile" 
+                           type="file"
+                           name="img-profile"
+                    />
+                    <button id="edit-img"> 
+                        <img src="public/img/lapis-color.png" 
+                             alt="Editar" 
+                             onclick="openFileImgProfile()"
+                             title="Editar"
+                        />
+                    </button>
+                    
+                
             </div>
         </div>
         <div class="container-title">
@@ -58,7 +65,7 @@
                         </p>
                     </div>
                 {% endif %}
-                <form id="form-register-user" method="post" action="?page=register&method=registerUserForm">
+                
                     <div class="container-nome-dt-nascimento">
                         <div class="container-nome">
                             <label for="inp-nome">
@@ -148,7 +155,9 @@
                                     type="reset">
                                 Limpar
                             </button>
-                            <button id="btn-register">
+                            <button id="btn-register"
+                                    type="submit"
+                                    >
                                 Cadastrar
                             </button>
                         </div>

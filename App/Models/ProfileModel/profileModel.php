@@ -5,6 +5,7 @@
         private static $email;
         private static $password_hash;
         private static $info;
+        private static $img_profile;
         private static $id_agendamento;
         
         public static function setNome($nome){
@@ -23,6 +24,10 @@
             self::$password_hash = password_hash($password, PASSWORD_DEFAULT, array());
         }
 
+        public static function setImgProfile($img_profile){
+            self::$img_profile = $img_profile;
+        }
+
         public static function setInfo($info){
             self::$info = $info;
         }
@@ -33,7 +38,7 @@
 
         public static function userUpdate(){
             try {
-                $sql = "update users set nome=:nome, dt_nascimento=:dt_nascimento, email=:email, password_hash=:password_hash, info=:info where id=:id";
+                $sql = "update users set nome=:nome, dt_nascimento=:dt_nascimento, email=:email, password_hash=:password_hash, info=:info, img_profile=:img_profile where id=:id";
 
                 Session::start_session();
 
@@ -43,6 +48,7 @@
                 $statement->bindValue(":email", self::$email);
                 $statement->bindValue(":password_hash", self::$password_hash);
                 $statement->bindValue(":info", self::$info);
+                $statement->bindValue(":img_profile", self::$img_profile);
                 $statement->bindValue(":id", Session::getVariableSession('id'));
                 $result = $statement->execute();
 
@@ -51,6 +57,7 @@
                     Session::setVariableSession('nome', self::$nome);
                     Session::setVariableSession('email', self::$email);
                     Session::setVariableSession('dt_nascimento', self::$dt_nascimento);
+                    Session::setVariableSession('img_profile', self::$img_profile);
 
                     return 'success';
 
@@ -94,11 +101,11 @@
                 $statement->bindValue("id_user", Session::getVariableSession('id'));
                 $result = $statement->execute();
 
-                if($result){
+                /*if($result){
                     print_r("Agendamento deletado.");
                 } else{
                     "Agendamento não deletado.";
-                }
+                }*/
 
             } catch(Exception $err){
                 echo "Erro ao Deletar um agendamento. ".$err->getMessage();

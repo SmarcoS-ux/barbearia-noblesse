@@ -36,7 +36,7 @@
                 }
 
                 if($isLoggedIn){
-                    $sql = 'select id, nome, dt_nascimento, email from users where email = :email';
+                    $sql = 'select id, nome, dt_nascimento, email, img_profile from users where email = :email';
 
                     $statement = DB_Connection::getConnection()->prepare($sql);
                     $statement->bindValue(":email", self::$email);
@@ -50,6 +50,7 @@
                     Session::setVariableSession('nome', $result2[0]['nome']);
                     Session::setVariableSession('email', $result2[0]['email']);
                     Session::setVariableSession('dt_nascimento', $result2[0]['dt_nascimento']);
+                    Session::setVariableSession('img_profile', $result2[0]['img_profile']);
                    
                     return array(
                         "id" => $result2[0]['id'], 

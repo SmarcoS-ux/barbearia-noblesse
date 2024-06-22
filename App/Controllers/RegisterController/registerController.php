@@ -13,7 +13,36 @@
         }
 
         public function registerUserForm(){
+            function codGenerator($tamanho){
+                $caracter = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+                $qnt_caracter = strlen($caracter);
+
+                $cod = '';
+
+                for($i=0; $i<$tamanho; $i++){
+                    $id_aleatorio = random_int(0, $qnt_caracter -1);
+                    $cod .= $caracter[$id_aleatorio];
+                }
+
+                return $cod;
+            }
+
             try {
+                $photo = $_FILES['img-profile'];
+                //print_r($photo);
+
+                $dir_imgs = "public/img/img_users/";
+
+                $path = codGenerator(10);
+                $localDir = 'public/img/img_users/img_profile_id'.$path.'.jpeg';
+                
+                if(!empty($photo['name'])){
+                    move_uploaded_file($photo['tmp_name'], $dir_imgs."img_profile_id".$path.".jpeg");
+                    //echo 'upload success';
+                } else{
+                    $localDir = 'public/img/user.png';
+                }
+
                 $dados = $_POST;
 
                 if($dados != null && $dados !== ""){
@@ -38,6 +67,7 @@
                     }
 
                     RegisterModel::setInfo($info);
+                    RegisterModel::setImgProfile($localDir);
 
                     $register = RegisterModel::registerUser();
                     //echo $register;
@@ -54,6 +84,13 @@
             
             } catch(Exception $err){
                 echo "Erro ao cadastrar os Dados. ".$err->getMessage();
-            }          
+            }        
+        }
+
+        public function uploadIMGProfile(){
+            $photo = $_FILES;
+
+            print_r($photo);
+            print_r("Teste");
         }
     }

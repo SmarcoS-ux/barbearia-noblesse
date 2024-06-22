@@ -6,6 +6,7 @@
         private static $email;
         private static $password_hash;
         private static $info;
+        private static $img_profile;
 
         public static function setNome($nome){
             self::$nome = $nome;
@@ -25,6 +26,9 @@
 
         public static function setInfo($info){
             self::$info = $info;
+        }
+        public static function setImgProfile($img_profile){
+            self::$img_profile = $img_profile;
         }
 
         static public function registerUser(){
@@ -49,7 +53,7 @@
                 }
 
                 if(!$isRegistered){
-                    $sql2 = "insert into users (nome, dt_nascimento, email, password_hash, info) values (:nome, :dt_nascimento, :email, :password_hash, :info)";
+                    $sql2 = "insert into users (nome, dt_nascimento, email, password_hash, info, img_profile) values (:nome, :dt_nascimento, :email, :password_hash, :info, :img_profile)";
             
                     $statement2 = DB_Connection::getConnection()->prepare($sql2);
                     $statement2->bindValue(":nome", self::$nome);
@@ -57,6 +61,7 @@
                     $statement2->bindValue(":email", self::$email);
                     $statement2->bindValue(":password_hash", self::$password_hash);
                     $statement2->bindValue(":info", self::$info);
+                    $statement2->bindValue(":img_profile", self::$img_profile);
                     $statement2->execute();
 
                     return "Success";

@@ -142,8 +142,6 @@
                 self::$message = 'naoLogado';
             }
 
-            
-
             $this->index();
         }
     } 

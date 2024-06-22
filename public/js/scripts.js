@@ -284,6 +284,22 @@ function openFileImgProfile(){
     }  
 }
 
+function openFileImgProfile2(){
+    let img = document.getElementById('img-user');
+    let input_img = document.getElementById('inp_img_profile');
+    let btn_load = document.getElementById('load-img');
+
+    input_img.click();
+
+    input_img.onchange = evt => {
+        const[file] = input_img.files;
+        if(file){
+            img.src = URL.createObjectURL(file);
+        }
+    }
+}
+
+
 
 
 //Funções da View Profile
@@ -300,6 +316,7 @@ function resetForm(){
     let inpEmail2 = document.getElementById("inp-email2");
     inpEmail2.removeAttribute("value");
 }
+
 
 
 
@@ -362,6 +379,14 @@ function submitAgendamento(){
     let formAg = document.getElementById('form-disponibilidade');
 
     formAg.setAttribute("action", "?method=registerAg");
+}
+
+
+
+//Área da View Register User
+function uploadIMGProfile(){
+    $btn_photo = document.getElementById('btn-submit');
+    $btn_photo.click();
 }
 
 
