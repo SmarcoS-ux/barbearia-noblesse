@@ -7,3 +7,11 @@
 ◼ Link do projeto funcionando: https://barber-noblesse.000webhostapp.com
 
 <img src='https://i.imgur.com/hDPn8zG.png' alt='Home'>
+
+◼ Na área de agendamentos o usuário consegue selecionar uma data e horario para ser atendido. Se a data e horário estiver disponível, ele conseguirá realizar o agendamento, caso contrário receberá um aviso dizendo que aquele horário já foi reservado por outra pessoa.
+
+<img src='https://i.imgur.com/ZO97m9t.png' alt="Agendamentos">
+
+◼ Após realizar o agendamento o usuário poderá conferir na parte do Perfil se as informações estão corretas. O usuário poderá excluir caso a data e hora estejam incorretas. 
+
+<img src='https://i.imgur.com/Pz5TRBa.png' alt='Perfil do Usuário'>
