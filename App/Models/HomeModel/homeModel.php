@@ -80,7 +80,7 @@
                 $statement->bindValue(":observacoes", self::$observacoes);
                 $result = $statement->execute();
 
-                print_r($result);
+                //print_r($result);
 
                 if($result){
                     return 'agendado';

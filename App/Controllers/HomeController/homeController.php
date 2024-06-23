@@ -67,8 +67,7 @@
             } else{
                 self::$message = 'vazio';
             }
-
-            
+           
 
             if($dayWeek == 0){
                 self::$message = "";
@@ -108,7 +107,7 @@
                         break;
 
                     case 4:
-                        $dia_semana = 'Quinta-Feira';
+                        $dia_semana = 'Quinta-Feira'; 
                         break;
 
                     case 5:
@@ -156,6 +155,13 @@
             } else{
                 self::$message = 'naoLogado';
             }
+
+            $this->index();
+        }
+
+
+        public function goAgendamento(){
+            self::$firstLoad = false;
 
             $this->index();
         }

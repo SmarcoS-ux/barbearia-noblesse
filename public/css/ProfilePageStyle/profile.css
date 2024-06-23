@@ -1345,10 +1345,13 @@
                         border: 1px solid rgb(133, 133, 133);
                         position: relative;
     
-                        & .btn-delete-agendamento {
+                        & .btn-delete-agendamento { 
+                            /*display: inline-block;
                             width: 25px;
                             height: 20px;
+                            padding: 0;
                             text-align: center;
+                            line-height: 20px;
                             font-weight: bold;
                             color: rgb(117, 3, 3);
                             background-color: rgb(255, 152, 152);
@@ -1358,9 +1361,25 @@
                             border-radius: 5px;
                             position: absolute;
                             right: 5px;
-                            top: 6px;
+                            top: 6px; */
 
-                            
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            width: 30px;
+                            height: 20px;
+                            line-height: 20px;
+                            padding: 0;
+                            position: absolute;
+                            top: 6px;
+                            right: 5px;
+                            border-radius: 5px;
+                            border: none;
+                            outline: none;
+                            font-weight: bold;
+                            color: rgb(117, 3, 3);
+                            background-color: rgb(255, 152, 152);
+                            border: 1px solid rgb(117, 3, 3);
                         }
                         & .btn-delete-agendamento:hover {
                             cursor: pointer;

@@ -901,6 +901,28 @@
             color: #cccccc;
         }
     }
+
+    & .go-agendamento {
+        width: 100%;
+        text-align: center;
+        margin-top: 50px;
+
+        & #btn-agendar {
+            width: 500px;
+            height: 45px;
+            border: none;
+            border-radius: 5px;
+            outline: none;
+            color: #fff;
+            font-weight: 700;
+            font-size: 16px;
+            background-color: rgb(56, 187, 56);
+        }
+        & #btn-agendar:hover {
+            cursor: pointer;
+            background-color: rgb(45, 155, 45);
+        }
+    }
 }
 
 
@@ -1814,6 +1836,28 @@
             margin: 50px 50px 0 50px;
             font-family: Verdana, Geneva, Tahoma, sans-serif;
             color: #cccccc;
+        }
+    }
+
+    & .go-agendamento {
+        width: 100%;
+        text-align: center;
+        margin-top: 50px;
+
+        & #btn-agendar {
+            width: calc(100% - 80px);
+            height: 45px;
+            border: none;
+            border-radius: 5px;
+            outline: none;
+            color: #fff;
+            font-weight: 700;
+            font-size: 16px;
+            background-color: rgb(56, 187, 56);
+        }
+        & #btn-agendar:hover {
+            cursor: pointer;
+            background-color: rgb(45, 155, 45);
         }
     }
 }
@@ -2744,6 +2788,28 @@
             margin: 50px 20px 0 20px;
             font-family: Verdana, Geneva, Tahoma, sans-serif;
             color: #cccccc;
+        }
+    }
+
+    & .go-agendamento {
+        width: 100%;
+        text-align: center;
+        margin-top: 20px;
+
+        & #btn-agendar {
+            width: calc(100% - 40px);
+            height: 45px;
+            border: none;
+            border-radius: 5px;
+            outline: none;
+            color: #fff;
+            font-weight: 700;
+            font-size: 16px;
+            background-color: rgb(56, 187, 56);
+        }
+        & #btn-agendar:hover {
+            cursor: pointer;
+            background-color: rgb(45, 155, 45);
         }
     }
 }
