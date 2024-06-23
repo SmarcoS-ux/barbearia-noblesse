@@ -143,8 +143,28 @@ function themeColorHome(){
 
 
 function openMenu(){
-    let menuDandwich = document.getElementById("menu-sandwich");
-    menuDandwich.classList.toggle("sandwich-light");
+    let mediaQueryBig = window.matchMedia('(min-width: 1025px)');
+    let mediaQuerySm = window.matchMedia('(max-width: 1024px)');
+    let menuSandwich = document.getElementById("menu-sandwich");
+
+    if(mediaQuerySm){
+        menuSandwich.classList.toggle("sandwich-light");
+
+        if(menuSandwich.getAttribute('class') == 'sandwich-hidden'){
+            setTimeout(() => {
+                menuSandwich.style.display = 'none';
+            }, 100);
+        } 
+    }
+    
+
+    if(mediaQueryBig.matches){
+        if(menuSandwich.getAttribute('class') == 'sandwich-hidden' || menuSandwich.getAttribute('class') == 'sandwich-light'){     
+            menuSandwich.style.display = 'none';  
+        }
+    } else{
+        menuSandwich.style.display = 'flex';
+    }
 }
 
 
@@ -253,6 +273,7 @@ function editUserData(){
     let checkbox_info = document.getElementById("info");
     let btn_clean = document.getElementById("btn-clean");
     let btn_edit = document.getElementById("btn-edit");
+    let inp_img_profile = document.getElementById('inp_img_profile');
 
     if(btn_edit.classList == "btn-edit"){
         btn_edit.setAttribute("class", "btn-salvar");
@@ -266,7 +287,7 @@ function editUserData(){
         input_senha2.removeAttribute("disabled");
         checkbox_info.removeAttribute("disabled");
         btn_clean.removeAttribute("disabled");   
-
+        inp_img_profile.removeAttribute("disabled");
     }
 }
 

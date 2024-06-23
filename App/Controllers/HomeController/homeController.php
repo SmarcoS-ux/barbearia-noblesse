@@ -49,13 +49,21 @@
             $date = getDate($timestamp);
             $dayWeek = $date['wday'];
 
+            $data_atual = new DateTime();
+            $timestamp_atual = $data_atual->getTimestamp();
+
 
             if(!empty($dadosAgendamento['data']) && !empty($dadosAgendamento['select-horarios']) && $dayWeek != 0){
-                HomeModel::setData($dadosAgendamento['data']);
-                HomeModel::sethorario(substr($dadosAgendamento['select-horarios'], 0, 5));
+                if($timestamp >= $timestamp_atual){
+                    HomeModel::setData($dadosAgendamento['data']);
+                    HomeModel::sethorario(substr($dadosAgendamento['select-horarios'], 0, 5));
 
-                self::$message = HomeModel::verificarDisponibilidade();
+                    self::$message = HomeModel::verificarDisponibilidade();
 
+                } else{
+                    self::$message = 'invalidDate';
+                }
+                
             } else{
                 self::$message = 'vazio';
             }
@@ -118,18 +126,25 @@
                 $data_atual = new DateTime();
                 $fuso = new DateTimeZone('America/Sao_Paulo');
                 $data_atual->setTimezone($fuso);
+                $timestamp_atual = $data_atual->getTimestamp();
 
                 $data_agendamento = new DateTime($dadosAgendamento['data']);
                 $dt_agendamento = $data_agendamento->format("d/m/Y");
 
                 if(!empty($dadosAgendamento['data']) && !empty($dadosAgendamento['select-horarios']) && $dayWeek != 0){
-                    HomeModel::setData($dt_agendamento);
-                    HomeModel::setDataAtual($data_atual->format("d/m/Y - H:i"));
-                    HomeModel::sethorario(substr($dadosAgendamento['select-horarios'], 0, 5));
-                    HomeModel::setDiaSemana($dia_semana);  
-                    HomeModel::setObservacoes($dadosAgendamento['observacao']);
+                    if($timestamp >= $timestamp_atual){
+                        HomeModel::setData($dt_agendamento);
+                        HomeModel::setDataAtual($data_atual->format("d/m/Y - H:i"));
+                        HomeModel::sethorario(substr($dadosAgendamento['select-horarios'], 0, 5));
+                        HomeModel::setDiaSemana($dia_semana);  
+                        HomeModel::setObservacoes($dadosAgendamento['observacao']);
 
-                    self::$message = HomeModel::registerAgendamento();
+                        self::$message = HomeModel::registerAgendamento();
+
+                    } else{
+                        self::$message = 'invalidDate';
+                    }
+                    
                 } else{
                     self::$message = 'vazio';
                 }

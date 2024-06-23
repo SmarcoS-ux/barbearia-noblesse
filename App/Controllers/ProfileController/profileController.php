@@ -8,6 +8,9 @@
             $twig = new \Twig\Environment($loader);
 
             $agendamentos = ProfileModel::getAgendamentos();
+            /*if(empty($agendamentos)){
+                self::$message = 'vazio';
+            }*/
 
             Session::start_session();
             $dataUser = array();
@@ -18,7 +21,7 @@
             $dataUser['dt_nascimento'] = Session::getVariableSession('dt_nascimento');
             $dataUser['firstName'] = $firstName[0];
             $dataUser['message'] = self::$message;
-            $dataUser['agendamentos'] = $agendamentos;
+            $dataUser['agendamentos'] = !empty($agendamentos) ? $agendamentos : 'vazio';
             $dataUser['img_profile'] = Session::getVariableSession('img_profile');
 
             $template = $twig->load('profile.html');
@@ -36,7 +39,7 @@
             if(self::$firstLoad === false){
                 echo $page;
                 echo "<script>
-                        var table = document.getElementById('container-table');
+                        var table = document.getElementById('container-table'); 
 
                         if(table){
                             document.addEventListener('DOMContentLoaded', () => {
@@ -69,22 +72,35 @@
 
             $path = codGenerator(10);
             $localDir = 'public/img/img_users/img_profile_id'.$path.'.jpeg';
-            
+
+            Session::start_session();
+            $old_img_profile = Session::getVariableSession('img_profile');
+            $localIMGDefault = 'public/img/user.png';
+
             if(!empty($photo['name'])){
+                if(file_exists($old_img_profile) && $old_img_profile != $localIMGDefault){
+                    try {
+                        unlink($old_img_profile);
+
+                    } catch(Exception $err){
+                        print_r("Erro ao tentar remover o arquivo do servidor. ".$err->getMessage());
+                    }
+                }
+
                 move_uploaded_file($photo['tmp_name'], $dir_imgs."img_profile_id".$path.".jpeg");
-                //echo 'upload success';
+ 
             } else{
                 $localDir = 'public/img/user.png';
             }
 
-
+            //Dados do formulário de Update User
             $dadosProfile = $_POST;
 
             if(!empty($dadosProfile['nome']) && !empty($dadosProfile['email2']) && !empty($dadosProfile['dt_nascimento'])){
                 ProfileModel::setNome($dadosProfile['nome']);
                 ProfileModel::setEmail($dadosProfile['email2']);
                 ProfileModel::setDtNascimento($dadosProfile['dt_nascimento']);
-                ProfileModel::setInfo(isset($dadosProfile['check_info']) ? $dadosProfile['check_info'] : 0);
+                ProfileModel::setInfo(isset($dadosProfile['check_info']) ? intval($dadosProfile['check_info']) : 0);
                 ProfileModel::setPassword($dadosProfile['password2']);
                 ProfileModel::setImgProfile($localDir);
 

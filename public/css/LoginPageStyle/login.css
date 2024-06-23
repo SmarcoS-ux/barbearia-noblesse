@@ -1,233 +1,473 @@
-.container-login {
-    font-family: Arial, Helvetica, sans-serif;
-
-    & .text-initial {
-        width: calc(100% - 100px);
-        margin: 30px 50px 0 50px;
-        background-color: rgb(252, 215, 137);
-        padding: 10px 0;
-        text-align: center;
-        border-radius: 5px;
-
-        & p {
-            margin: 0;
-            padding: 0 10px;
-            font-family: Arial, Helvetica, sans-serif;
-            color: rgb(185, 105, 1);
-            font-size: 15px;
-        }
-    }
-
-    & .form-login {
-        display: flex;
-        justify-content: center;
-        width: 100%;
-
-        & .form {
-            background-image: linear-gradient(120deg, rgba(0,0,0,0.4), rgb(0, 10, 44));
-            margin-top: 50px;
-            padding: 40px;
-            border-radius: 20px;
-            box-shadow: 1px 1px 10px rgb(0, 10, 44);
-
-            & h1 {
+@media screen and (min-width: 551px){
+    .container-login {
+        font-family: Arial, Helvetica, sans-serif;
+    
+        & .text-initial {
+            width: calc(100% - 100px);
+            margin: 30px 50px 0 50px;
+            background-color: rgb(252, 215, 137);
+            padding: 10px 0;
+            text-align: center;
+            border-radius: 5px;
+    
+            & p {
                 margin: 0;
-                color: #fff;
+                padding: 0 10px;
+                font-family: Arial, Helvetica, sans-serif;
+                color: rgb(185, 105, 1);
+                font-size: 15px;
             }
-
-            & .message-login {
-                display: flex;
-                flex-direction: row;
-                align-items: center;
-                background-color: rgb(219, 255, 216);
-                border-radius: 10px;
-                padding: 5px 0 5px 10px;
-                margin-top: 20px;
-                margin-bottom: 10px;
-
-                & img {
-                    width: 20px;
-                }
-                
-                & #message {
-                    color: rgb(6, 121, 6);
+        }
+    
+        & .form-login {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+    
+            & .form {
+                background-image: linear-gradient(120deg, rgba(0,0,0,0.4), rgb(0, 10, 44));
+                margin-top: 50px;
+                padding: 40px;
+                border-radius: 20px;
+                box-shadow: 1px 1px 10px rgb(0, 10, 44);
+    
+                & h1 {
                     margin: 0;
-                    margin-left: 10px;
-                    font-size: 14px;
+                    color: #fff;
                 }
-            }    
-            & .message-erro {
-                display: flex;
-                flex-direction: row;
-                align-items: center;
-                background-color: rgb(253, 183, 183);
-                border-radius: 10px;
-                padding: 5px 0 5px 10px;
-                margin-top: 20px;
-                margin-bottom: 10px;
-
-                & img {
-                    width: 20px;
+    
+                & .message-login {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    background-color: rgb(219, 255, 216);
+                    border-radius: 10px;
+                    padding: 5px 0 5px 10px;
+                    margin-top: 20px;
+                    margin-bottom: 10px;
+    
+                    & img {
+                        width: 20px;
+                    }
+                    
+                    & #message {
+                        color: rgb(6, 121, 6);
+                        margin: 0;
+                        margin-left: 10px;
+                        font-size: 14px;
+                    }
+                }    
+                & .message-erro {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    background-color: rgb(253, 183, 183);
+                    border-radius: 10px;
+                    padding: 5px 0 5px 10px;
+                    margin-top: 20px;
+                    margin-bottom: 10px;
+    
+                    & img {
+                        width: 20px;
+                    }
+                    
+                    & #message {
+                        color: rgb(145, 22, 6);
+                        margin: 0;
+                        margin-left: 10px;
+                        font-size: 14px;
+                    }
                 }
+    
+                & .container-email {
+                    display: flex;
+                    width: 100%;
+                    position: relative;
+                    margin-top: 30px;
+    
+                    & #inp-email {
+                        width: 100%;
+                        height: 30px;
+                        outline: none;
+                        border: none;
+                        border-radius: 5px; 
+                        padding-left: 10px;                  
+                    }
+                    & #inp-email:focus {
+                        box-shadow: 1px 1px 10px #fff;
+                    }
+                    & #inp-email:focus ~ label {
+                        top: -20px;
+                        left: 0;
+                        color: #fff;
+                    }
+                    & #inp-email:not(:focus):valid  ~ label{
+                        top: -20px;
+                        left: 0;
+                        color: #fff;
+                    }
+    
+                    & label {
+                        position: absolute;
+                        color: rgb(168, 168, 168);
+                        top: 7px;
+                        left: 10px;
+                        transition: 0.2s;
+                    }
+                }
+    
+                & .container-senha {
+                    display: flex;
+                    width: 100%;
+                    position: relative;
+                    margin-top: 30px;
+    
+                    & #inp-senha {
+                        width: 100%;
+                        height: 30px;
+                        outline: none;
+                        border: none;
+                        border-radius: 5px;
+                        padding-left: 10px;
+                    }
+                    & #inp-senha:focus {
+                        box-shadow: 1px 1px 10px #fff;
+                    }
+                    & #inp-senha:focus ~ label {
+                        top: -20px;
+                        left: 0;
+                        color: #fff;
+                    }
+                    & #inp-senha:not(:focus):valid  ~ label{
+                        top: -20px;
+                        left: 0;
+                        color: #fff;
+                    }
+    
+                    & label {
+                        position: absolute;
+                        color: rgb(168, 168, 168);
+                        top: 7px;
+                        left: 10px;
+                        transition: 0.2s;
+                    }
+    
+                    & label {
+                        position: absolute;
+                        color: rgb(168, 168, 168);
+                        top: 7px;
+                        left: 10px;
+                    }
+                }
+    
+                & .conectado {
+                    width: 100%;
+                    height: 40px;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    margin-top: 10px;
+    
+                    & #conectado {
+                        width: 16px;
+                        height: 16px;
+                        accent-color: rgb(28, 253, 77);
+                    }
+                    & #conectado:focus {
+                        box-shadow: 1px 1px 10px #fff;
+                    }
+    
+                    & #label-conectado {
+                        color: #fff;
+                        font-size: 14px;
+                    }
+                }
+    
                 
-                & #message {
-                    color: rgb(145, 22, 6);
-                    margin: 0;
-                    margin-left: 10px;
-                    font-size: 14px;
+                & .container-btn-entrar {
+                    margin-top: 10px;
+    
+                    & #btn-entrar {
+                        width: 100%;
+                        height: 35px;
+                        font-size: 14px;
+                        background-color: rgb(9, 128, 226);
+                        border: none;
+                        border: 1px solid rgb(1, 63, 145);
+                        border-radius: 20px;
+                        outline: none;
+                        color: #fff;
+                        font-weight: 600;
+                    }
+                    & #btn-entrar:hover {
+                        background-color: rgb(3, 104, 187);
+                        box-shadow: 1px 1px 10px #64b4ff;
+                        cursor: pointer;
+                    }
                 }
-            }
-
-            & .container-email {
-                display: flex;
-                width: 100%;
-                position: relative;
-                margin-top: 30px;
-
-                & #inp-email {
+    
+                & .reset-senha {
                     width: 100%;
-                    height: 30px;
-                    outline: none;
-                    border: none;
-                    border-radius: 5px; 
-                    padding-left: 10px;                  
-                }
-                & #inp-email:focus {
-                    box-shadow: 1px 1px 10px #fff;
-                }
-                & #inp-email:focus ~ label {
-                    top: -20px;
-                    left: 0;
-                    color: #fff;
-                }
-                & #inp-email:not(:focus):valid  ~ label{
-                    top: -20px;
-                    left: 0;
-                    color: #fff;
-                }
-
-                & label {
-                    position: absolute;
-                    color: rgb(168, 168, 168);
-                    top: 7px;
-                    left: 10px;
-                    transition: 0.2s;
-                }
-            }
-
-            & .container-senha {
-                display: flex;
-                width: 100%;
-                position: relative;
-                margin-top: 30px;
-
-                & #inp-senha {
-                    width: 100%;
-                    height: 30px;
-                    outline: none;
-                    border: none;
-                    border-radius: 5px;
-                    padding-left: 10px;
-                }
-                & #inp-senha:focus {
-                    box-shadow: 1px 1px 10px #fff;
-                }
-                & #inp-senha:focus ~ label {
-                    top: -20px;
-                    left: 0;
-                    color: #fff;
-                }
-                & #inp-senha:not(:focus):valid  ~ label{
-                    top: -20px;
-                    left: 0;
-                    color: #fff;
-                }
-
-                & label {
-                    position: absolute;
-                    color: rgb(168, 168, 168);
-                    top: 7px;
-                    left: 10px;
-                    transition: 0.2s;
-                }
-
-                & label {
-                    position: absolute;
-                    color: rgb(168, 168, 168);
-                    top: 7px;
-                    left: 10px;
-                }
-            }
-
-            & .conectado {
-                width: 100%;
-                height: 40px;
-                display: flex;
-                flex-direction: row;
-                align-items: center;
-                margin-top: 10px;
-
-                & #conectado {
-                    width: 16px;
-                    height: 16px;
-                    accent-color: rgb(28, 253, 77);
-                }
-                & #conectado:focus {
-                    box-shadow: 1px 1px 10px #fff;
-                }
-
-                & #label-conectado {
-                    color: #fff;
-                    font-size: 14px;
-                }
-            }
-
-            
-            & .container-btn-entrar {
-                margin-top: 10px;
-
-                & #btn-entrar {
-                    width: 100%;
-                    height: 35px;
-                    font-size: 14px;
-                    background-color: rgb(9, 128, 226);
-                    border: none;
-                    border: 1px solid rgb(1, 63, 145);
-                    border-radius: 20px;
-                    outline: none;
-                    color: #fff;
-                    font-weight: 600;
-                }
-                & #btn-entrar:hover {
-                    background-color: rgb(3, 104, 187);
-                    box-shadow: 1px 1px 10px #64b4ff;
-                    cursor: pointer;
-                }
-            }
-
-            & .reset-senha {
-                width: 100%;
-                text-align: center;
-                margin-top: 20px;
-
-                & a {
-                    color: #95ccff;
-                }
-            }
-
-            & .link-cadastro {
-                width: 100%;
-                text-align: center;
-                margin-top: 20px;
-
-                & p {
-                    color: #fff;
-
+                    text-align: center;
+                    margin-top: 20px;
+    
                     & a {
                         color: #95ccff;
                     }
                 }
+    
+                & .link-cadastro {
+                    width: 100%;
+                    text-align: center;
+                    margin-top: 20px;
+    
+                    & p {
+                        color: #fff;
+    
+                        & a {
+                            color: #95ccff;
+                        }
+                    }
+                }
+            } 
+        }
+    }
+}
+
+
+@media screen and (max-width: 550px){
+    .container-login {
+        font-family: Arial, Helvetica, sans-serif;
+    
+        & .text-initial {
+            width: calc(100% - 100px);
+            margin: 30px 50px 0 50px;
+            background-color: rgb(252, 215, 137);
+            padding: 10px 0;
+            text-align: center;
+            border-radius: 5px;
+    
+            & p {
+                margin: 0;
+                padding: 0 10px;
+                font-family: Arial, Helvetica, sans-serif;
+                color: rgb(185, 105, 1);
+                font-size: 15px;
             }
-        } 
+        }
+    
+        & .form-login {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+    
+            & .form {
+                background-image: linear-gradient(120deg, rgba(0,0,0,0.4), rgb(0, 10, 44));
+                width: calc(100% - 100px);
+                margin-top: 50px;
+                padding: 40px;
+                border-radius: 20px;
+                box-shadow: 1px 1px 10px rgb(0, 10, 44);
+    
+                & h1 {
+                    margin: 0;
+                    color: #fff;
+                }
+    
+                & .message-login {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    background-color: rgb(219, 255, 216);
+                    border-radius: 10px;
+                    padding: 5px 0 5px 10px;
+                    margin-top: 20px;
+                    margin-bottom: 10px;
+    
+                    & img {
+                        width: 20px;
+                    }
+                    
+                    & #message {
+                        color: rgb(6, 121, 6);
+                        margin: 0;
+                        margin-left: 10px;
+                        font-size: 14px;
+                    }
+                }    
+                & .message-erro {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    background-color: rgb(253, 183, 183);
+                    border-radius: 10px;
+                    padding: 5px 0 5px 10px;
+                    margin-top: 20px;
+                    margin-bottom: 10px;
+    
+                    & img {
+                        width: 20px;
+                    }
+                    
+                    & #message {
+                        color: rgb(145, 22, 6);
+                        margin: 0;
+                        margin-left: 10px;
+                        font-size: 14px;
+                    }
+                }
+    
+                & .container-email {
+                    display: flex;
+                    width: 100%;
+                    position: relative;
+                    margin-top: 30px;
+    
+                    & #inp-email {
+                        width: 100%;
+                        height: 30px;
+                        outline: none;
+                        border: none;
+                        border-radius: 5px; 
+                        padding-left: 10px;                  
+                    }
+                    & #inp-email:focus {
+                        box-shadow: 1px 1px 10px #fff;
+                    }
+                    & #inp-email:focus ~ label {
+                        top: -20px;
+                        left: 0;
+                        color: #fff;
+                    }
+                    & #inp-email:not(:focus):valid  ~ label{
+                        top: -20px;
+                        left: 0;
+                        color: #fff;
+                    }
+    
+                    & label {
+                        position: absolute;
+                        color: rgb(168, 168, 168);
+                        top: 7px;
+                        left: 10px;
+                        transition: 0.2s;
+                    }
+                }
+    
+                & .container-senha {
+                    display: flex;
+                    width: 100%;
+                    position: relative;
+                    margin-top: 30px;
+    
+                    & #inp-senha {
+                        width: 100%;
+                        height: 30px;
+                        outline: none;
+                        border: none;
+                        border-radius: 5px;
+                        padding-left: 10px;
+                    }
+                    & #inp-senha:focus {
+                        box-shadow: 1px 1px 10px #fff;
+                    }
+                    & #inp-senha:focus ~ label {
+                        top: -20px;
+                        left: 0;
+                        color: #fff;
+                    }
+                    & #inp-senha:not(:focus):valid  ~ label{
+                        top: -20px;
+                        left: 0;
+                        color: #fff;
+                    }
+    
+                    & label {
+                        position: absolute;
+                        color: rgb(168, 168, 168);
+                        top: 7px;
+                        left: 10px;
+                        transition: 0.2s;
+                    }
+    
+                    & label {
+                        position: absolute;
+                        color: rgb(168, 168, 168);
+                        top: 7px;
+                        left: 10px;
+                    }
+                }
+    
+                & .conectado {
+                    width: 100%;
+                    height: 40px;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    margin-top: 10px;
+    
+                    & #conectado {
+                        width: 16px;
+                        height: 16px;
+                        accent-color: rgb(28, 253, 77);
+                    }
+                    & #conectado:focus {
+                        box-shadow: 1px 1px 10px #fff;
+                    }
+    
+                    & #label-conectado {
+                        color: #fff;
+                        font-size: 14px;
+                    }
+                }
+    
+                
+                & .container-btn-entrar {
+                    margin-top: 10px;
+    
+                    & #btn-entrar {
+                        width: 100%;
+                        height: 35px;
+                        font-size: 14px;
+                        background-color: rgb(9, 128, 226);
+                        border: none;
+                        border: 1px solid rgb(1, 63, 145);
+                        border-radius: 20px;
+                        outline: none;
+                        color: #fff;
+                        font-weight: 600;
+                    }
+                    & #btn-entrar:hover {
+                        background-color: rgb(3, 104, 187);
+                        box-shadow: 1px 1px 10px #64b4ff;
+                        cursor: pointer;
+                    }
+                }
+    
+                & .reset-senha {
+                    width: 100%;
+                    text-align: center;
+                    margin-top: 20px;
+    
+                    & a {
+                        color: #95ccff;
+                    }
+                }
+    
+                & .link-cadastro {
+                    width: 100%;
+                    text-align: center;
+                    margin-top: 20px;
+    
+                    & p {
+                        color: #fff;
+    
+                        & a {
+                            color: #95ccff;
+                        }
+                    }
+                }
+            } 
+        }
     }
 }

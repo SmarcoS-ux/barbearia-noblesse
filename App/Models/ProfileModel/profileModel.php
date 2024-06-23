@@ -33,7 +33,7 @@
         }
 
         public static function setIdAgendamento($id_ag){
-            self::$id_agendamento = $id_ag;
+            self::$id_agendamento = $id_ag; 
         }
 
         public static function userUpdate(){
@@ -66,7 +66,7 @@
                 }
 
             } catch(Exception $err){
-                //echo "Erro ao atualizar os dados do usuário. ".$err->getMessage();
+                echo "Erro ao atualizar os dados do usuário. ".$err->getMessage();
                 return 'fail';
             }
         }

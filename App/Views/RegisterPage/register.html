@@ -1,12 +1,12 @@
 <main>
     <div class="container-register">
-        <div class="image-background-profile">
-            <div class="img-profile">
-                <form id="form-register-user" 
-                      method="post" 
-                      action="?page=register&method=registerUserForm"
-                      enctype="multipart/form-data"
-                >
+        <form id="form-register-user" 
+              method="post" 
+              action="?page=register&method=registerUserForm"
+              enctype="multipart/form-data"
+        >
+            <div class="image-background-profile">
+                <div class="img-profile">               
                     <img id="img-user" 
                          onclick="openFileImgProfile()"
                          src="public/img/user.png" 
@@ -16,6 +16,7 @@
                     <input id="inp-img-profile" 
                            type="file"
                            name="img-profile"
+                           accept="image/*"
                     />
                     <button id="edit-img"> 
                         <img src="public/img/lapis-color.png" 
@@ -23,69 +24,66 @@
                              onclick="openFileImgProfile()"
                              title="Editar"
                         />
-                    </button>
-                    
-                
+                    </button>            
+                </div>
             </div>
-        </div>
-        <div class="container-title">
-            <div class="title">
-                <h1>Área de Cadastro</h1>
-            </div>          
-        </div>
-        <div class="container-form-register">
-            <div class="form-register">
-                {% if registerSuccess == 'Success' %}
-                    <div class="message-register">
-                        <img src="public/img/verify.png" 
-                            alt="Ok"
-                        />
-                        <p id="message">
-                            Cadastro realizado com sucesso.
-                        </p>
-                    </div>
-                {% endif %}
-                {% if registerSuccess == 'Failed' %}
-                    <div class="message-erro">
-                        <img src="public/img/erro.png" 
-                            alt="Erro"
-                        />
-                        <p id="message">
-                            Ocorreu um erro ao realizar o Cadastro. Tente novamente.
-                        </p>
-                    </div>
-                {% endif %}
-                {% if registerSuccess == 'RegisteredEmail' %}
-                    <div class="message-erro">
-                        <img src="public/img/erro.png" 
-                            alt="Erro"
-                        />
-                        <p id="message">
-                            Este e-mail já está em uso.
-                        </p>
-                    </div>
-                {% endif %}
-                
+            <div class="container-title">
+                <div class="title">
+                    <h1>Área de Cadastro</h1>
+                </div>          
+            </div>
+            <div class="container-form-register">
+                <div class="form-register">
+                    {% if registerSuccess == 'Success' %}
+                        <div class="message-register">
+                            <img src="public/img/verify.png" 
+                                 alt="Ok"
+                            />
+                            <p id="message">
+                                Cadastro realizado com sucesso.
+                            </p>
+                        </div>
+                    {% endif %}
+                    {% if registerSuccess == 'Failed' %}
+                        <div class="message-erro">
+                            <img src="public/img/erro.png" 
+                                 alt="Erro"
+                            />
+                            <p id="message">
+                                Ocorreu um erro ao realizar o Cadastro. Tente novamente.
+                            </p>
+                        </div>
+                    {% endif %}
+                    {% if registerSuccess == 'RegisteredEmail' %}
+                        <div class="message-erro">
+                            <img src="public/img/erro.png" 
+                                 alt="Erro"
+                            />
+                            <p id="message">
+                                Este e-mail já está em uso.
+                            </p>
+                        </div>
+                    {% endif %}
                     <div class="container-nome-dt-nascimento">
                         <div class="container-nome">
                             <label for="inp-nome">
                                 Nome:
                             </label>
                             <input id="inp-nome" 
-                                   type="text" 
-                                   name="nome"
-                                   required
-                                />                      
+                                    type="text" 
+                                    name="nome"
+                                    required
+                            />                      
                         </div> 
                         <div class="container-dt-nascimento">
                             <label for="dt-nascimento">
                                 Nascimento:
                             </label>
                             <input id="dt-nascimento" 
-                                   type="date" 
-                                   name="dt-nascimento"
-                                   required
-                                />                           
+                                    type="date" 
+                                    name="dt-nascimento"
+                                    required
+                            />                           
                         </div>
                     </div>
                     <div class="container-emails">
@@ -94,19 +92,19 @@
                                 E-mail:
                             </label>
                             <input id="inp-email1" 
-                                   type="email" 
-                                   name="email1"
-                                   required
-                                />
+                                    type="email" 
+                                    name="email1"
+                                    required
+                            />
                         </div>
                         <div class="container-email2">
                             <label for="inp-email2">
                                 Confirme o e-mail:
                             </label>
                             <input id="inp-email2" 
-                                   type="email" 
-                                   name="email2"
-                                   required
+                                type="email" 
+                                name="email2"
+                                required
                                 />                    
                         </div>
                     </div>                
@@ -116,28 +114,27 @@
                                 Senha:
                             </label>
                             <input id="senha1" 
-                                   type="password" 
-                                   name="password1"
-                                   required
-                                />                         
+                                    type="password" 
+                                    name="password1"
+                                    required
+                            />                         
                         </div>
                         <div class="container-senha2">
                             <label for="senha2">
                                 Confirme a senha:
                             </label>
                             <input id="senha2" 
-                                   type="password" 
-                                   name="password2"
-                                   required
+                                    type="password" 
+                                    name="password2"
+                                    required
                             />                        
                         </div>
                     </div>
                     <div class="info-emails">
                         <input id="info" 
-                               type="checkbox"
-                               name="info"
-                               valueDefault="false"
-                               value="1"
+                                type="checkbox"
+                                name="info"
+                                value="1"
                         />
                         <label for="info">
                             Desejo receber informações e promoções por e-mail.
@@ -146,8 +143,8 @@
                     <div class="container-btns">
                         <div class="btn-cancel">
                             <a id="btn-cancel" 
-                               href="http://localhost/Barbearia-Noblesse/?page=login">
-                               Cancelar
+                                href="http://localhost/Barbearia-Noblesse/?page=login">
+                                Cancelar
                             </a>
                         </div>
                         <div class="btn-clean-register">
@@ -162,8 +159,8 @@
                             </button>
                         </div>
                     </div>
-                </form>
+                </div>
             </div>
-        </div>
+        </form>
     </div>
 </main>

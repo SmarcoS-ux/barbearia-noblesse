@@ -522,6 +522,29 @@ body {
                         width: 30px;
                     }
                 }
+                & .div-message-disponibilidade-invalid {
+                    font-family: Arial, Helvetica, sans-serif;
+                    width: calc(100% - 10px);
+                    height: 40px;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    background-color: rgb(255, 247, 205);
+                    /*border: 1px solid rgb(170, 90, 90);*/
+                    margin-top: 10px;
+                    padding-left: 10px;
+                    border-radius: 5px;
+
+                    & #message-disponibilidade-invalid {
+                        /*background-color: rgb(252, 129, 129);*/
+                        color: rgb(190, 104, 6);
+                        margin-left: 10px;
+                    }
+
+                    & #icon-verify {
+                        width: 20px;
+                    }
+                }
             }
         }
     }
@@ -1050,6 +1073,29 @@ body {
                         width: 25px;
                     }
                 }
+                & .div-message-disponibilidade-invalid {
+                    font-family: Arial, Helvetica, sans-serif;
+                    width: calc(100% - 10px);
+                    height: 40px;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    background-color: rgb(255, 247, 205);
+                    /*border: 1px solid rgb(170, 90, 90);*/
+                    margin-top: 10px;
+                    padding-left: 10px;
+                    border-radius: 5px;
+
+                    & #message-disponibilidade-invalid {
+                        /*background-color: rgb(252, 129, 129);*/
+                        color: rgb(190, 104, 6);
+                        margin-left: 10px;
+                    }
+
+                    & #icon-verify {
+                        width: 20px;
+                    }
+                }
             }
         }
     }
@@ -1320,7 +1366,7 @@ body {
                 font-size: 18px;
                 font-family: Arial, Helvetica, sans-serif;
                 margin: 0;
-                padding: 40px 0 15px 0;
+                padding: 10px 0 15px 0;
             }
 
             & .form-disponibilidade {
@@ -1579,6 +1625,30 @@ body {
                         margin-left: 10px;
                         font-size: 14px;
                         text-align: center;
+                    }
+
+                    & #icon-verify {
+                        width: 30px;
+                    }
+                }
+                & .div-message-disponibilidade-invalid {
+                    font-family: Arial, Helvetica, sans-serif;
+                    width: calc(100% - 10px);
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    background-color: rgb(255, 247, 205);
+                    /*border: 1px solid rgb(170, 90, 90);*/
+                    margin-top: 10px;
+                    padding-left: 10px;
+                    padding-top: 10px;
+                    border-radius: 5px;
+                    text-align: center;
+
+                    & #message-disponibilidade-invalid {
+                        /*background-color: rgb(252, 129, 129);*/
+                        color: rgb(190, 104, 6);
+                        margin-left: 10px;
                     }
 
                     & #icon-verify {

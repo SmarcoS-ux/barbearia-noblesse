@@ -28,7 +28,7 @@
             }
 
             try {
-                $photo = $_FILES['img-profile'];
+                $photo = $_FILES['img-profile']; 
                 //print_r($photo);
 
                 $dir_imgs = "public/img/img_users/";
@@ -36,9 +36,10 @@
                 $path = codGenerator(10);
                 $localDir = 'public/img/img_users/img_profile_id'.$path.'.jpeg';
                 
-                if(!empty($photo['name'])){
+                if(!empty($photo['name'])){                
                     move_uploaded_file($photo['tmp_name'], $dir_imgs."img_profile_id".$path.".jpeg");
                     //echo 'upload success';
+                       
                 } else{
                     $localDir = 'public/img/user.png';
                 }

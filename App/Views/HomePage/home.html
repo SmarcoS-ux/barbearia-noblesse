@@ -211,15 +211,15 @@
                     </div>
                 </form>
                 {% if message == 'naoLogado' %}
-                <div id="container-message-agendar" 
-                    class="div-message-disponibilidade-logoff">
-                    <img id="icon-verify"
-                         src="public/img/danger.png" 
-                         alt="Verificado"/>
-                    <p id="message-disponibilidade-logoff">
-                        Para realizar o Agendamento é preciso realizar o <strong>Login</strong>.
-                    </p>                          
-                </div>
+                    <div id="container-message-agendar" 
+                        class="div-message-disponibilidade-logoff">
+                        <img id="icon-verify"
+                            src="public/img/danger.png" 
+                            alt="Verificado"/>
+                        <p id="message-disponibilidade-logoff">
+                            Para realizar o Agendamento é preciso realizar o <strong>Login</strong>.
+                        </p>                          
+                    </div>
                 {% endif %}
                 {% if message == 'erro' %}
                     <div id="container-message-agendar" 
@@ -273,6 +273,17 @@
                              alt="Verificado"/>
                         <p id="message-disponibilidade-vazio">
                             Preencha os campos 'Data' e 'Horário'.
+                        </p>                          
+                    </div>
+                {% endif %}
+                {% if message == 'invalidDate' %}
+                    <div id="container-message-agendar" 
+                         class="div-message-disponibilidade-invalid">
+                        <img id="icon-verify"
+                             src="public/img/warning.png" 
+                             alt="Verificado"/>
+                        <p id="message-disponibilidade-invalid">
+                            Data ou Horário <strong>menor</strong> que o atual. Verifique novamente...
                         </p>                          
                     </div>
                 {% endif %}

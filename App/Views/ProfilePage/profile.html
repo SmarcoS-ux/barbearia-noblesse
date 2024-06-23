@@ -1,17 +1,33 @@
 <main>
     <div class="container-profile">
         <div class="image-background-profile">
-            <div class="img-profile">
-                <img id="img-user" 
-                     src='{{img_profile}}' 
-                     alt="Usuário" 
-                     onclick="openFileImgProfile2()"
-                     title="Usuário"
-                >
-                <button id="edit-img"> 
+            <form method='post' 
+                  action="?page=profile&method=logout">
+                <button id="btn_logout"
+                        type="submit">
+                    <img src="public/img/sair.png" 
+                         alt="Sair" 
+                         title="Sair">
+                </button>
+            </form>
+        </div>
+        <form id="form-edit-userdata" 
+              method="post" 
+              action="?page=profile&method=updateUserData"
+              enctype="multipart/form-data">   
+            <div class="container-form-register">
+                <div class="img-profile">
+                    <img id="img-user" 
+                         src='{{img_profile}}' 
+                         alt="Usuário" 
+                         onclick="openFileImgProfile2()"
+                         title="Usuário"
+                    >               
                     <input id='inp_img_profile' 
                            name="img-profile"
                            type="file"
+                           accept="image/*"
+                           disabled
                     />
                     <img id="load-img"
                          src="public/img/lapis-color.png" 
@@ -19,39 +35,26 @@
                          title="Editar"
                          onclick="openFileImgProfile2()"
                     />
-                </button>
-            </div>
-        </div>
-        <div class="container-title">
-            <div class="title">
-                <h1>Bem-vindo Sr(a): {{firstName}}</h1>
-                <form method='post' 
-                      action="?page=profile&method=logout">
-                    <button id="btn_logout"
-                            type="submit">
-                        <img src="public/img/sair.png" 
-                             alt="Sair" 
-                             title="Sair">
-                    </button>
-                </form>
-            </div>          
-        </div>
-        <div class="container-form-register">
-            <div class="form-register">
-                <form id="form-edit-userdata" 
-                      method="post" 
-                      action="?page=profile&method=updateUserData">
+                    
+                </div>      
+                <div class="container-title">
+                    <div class="title">
+                        <h1>Bem-vindo Sr(a): {{firstName}}</h1>
+                        
+                    </div>          
+                </div>
+                <div class="form-register">
                     {% if message == 'success' %}
                         <div class="message-success">
                             <img src="public/img/verify.png" 
-                                 alt="Ok">
+                                alt="Ok">
                             <p>Dados alterados com sucesso.</p>
                         </div>
                     {% endif %}
                     {% if message == 'fail' %}
                         <div class="message-fail">
                             <img src="public/img/erro.png" 
-                                 alt="Ok">
+                                alt="Ok">
                             <p>Ocorreu um erro. Tente novamente mais tarde.</p>
                         </div>
                     {% endif %}
@@ -61,11 +64,11 @@
                                 Nome:
                             </label>
                             <input id="inp-nome" 
-                                   value="{{nome}}" 
-                                   type="text" 
-                                   name="nome"
-                                   required 
-                                   disabled="disabled"
+                                value="{{nome}}" 
+                                type="text" 
+                                name="nome"
+                                required 
+                                disabled="disabled"
                             >                      
                         </div>
                         <div class="container-dt-nascimento">
@@ -73,11 +76,11 @@
                                 Nascimento:
                             </label>
                             <input id="dt-nascimento" 
-                                   value="{{dt_nascimento}}" 
-                                   type="date" 
-                                   name="dt_nascimento"
-                                   required 
-                                   disabled
+                                value="{{dt_nascimento}}" 
+                                type="date" 
+                                name="dt_nascimento"
+                                required 
+                                disabled
                             >                           
                         </div>
                     </div>
@@ -87,11 +90,11 @@
                                 E-mail:
                             </label>
                             <input id="inp-email1" 
-                                   value="{{email}}" 
-                                   type="email"
-                                   name="email1" 
-                                   required 
-                                   disabled
+                                value="{{email}}" 
+                                type="email"
+                                name="email1" 
+                                required 
+                                disabled
                             />
                         </div>
                         <div class="container-email2">
@@ -99,11 +102,11 @@
                                 Confirme o e-mail:
                             </label>
                             <input id="inp-email2" 
-                                   value="{{email}}" 
-                                   type="email" 
-                                   name="email2"
-                                   required 
-                                   disabled
+                                value="{{email}}" 
+                                type="email" 
+                                name="email2"
+                                required 
+                                disabled
                             />                    
                         </div>
                     </div>                
@@ -113,10 +116,10 @@
                                 Senha:
                             </label>
                             <input id="senha1" 
-                                   type="password" 
-                                   name="password1"
-                                   required 
-                                   disabled
+                                type="password" 
+                                name="password1"
+                                required 
+                                disabled
                             />                         
                         </div>
                         <div class="container-senha2">
@@ -124,18 +127,19 @@
                                 Confirme a senha:
                             </label>
                             <input id="senha2" 
-                                   type="password" 
-                                   name="password2"
-                                   required 
-                                   disabled
+                                type="password" 
+                                name="password2"
+                                required 
+                                disabled
                             />                        
                         </div>
                     </div>
                     <div class="info-emails">
                         <input id="info" 
-                               type="checkbox"
-                               name="check_info" 
-                               disabled
+                            type="checkbox"
+                            name="check_info" 
+                            value="1"
+                            disabled
                         />
                         <label for="info">
                             Desejo receber informações e promoções por e-mail.
@@ -156,9 +160,9 @@
                             </button>
                         </div>
                     </div>
-                </form>
-            </div>
-        </div>
+                </div>    
+            </div>       
+        </form>         
         <div class="agendamentos-salvos">
             <div class="titles-table">
                 <h3>Meus agendamentos</h3>
@@ -171,24 +175,30 @@
             </div>
             <div id="container-table" class="div-table">
                 <table id="table-agendamentos" class="table-agendamentos"> 
-                        {% for element in agendamentos %}                
-                            <tr>
-                                <td>{{element.registro}}</td>
-                                <td>{{element.data_agendamento}}</td>
-                                <td>{{element.horario}}</td>
-                                <td>
-                                    {{element.dia_semana}}
-                                    <form method='post' action="?page=profile&method=deleteAgendamento">
-                                        <button class="btn-delete-agendamento"
-                                                type="submit"
-                                                name="id_ag"
-                                                value='{{element.id}}'>
-                                            x
-                                        </button>
-                                    </form>
-                                </td>
-                            </tr>
-                        {% endfor %}
+                        {% if agendamentos == 'vazio' %}
+                            <div class="empty-ag">
+                                <p>Não há agendamentos.</p>
+                            </div>
+                        {% else %}
+                            {% for element in agendamentos %}                
+                                <tr>
+                                    <td>{{element.registro}}</td>
+                                    <td>{{element.data_agendamento}}</td>
+                                    <td>{{element.horario}}</td>
+                                    <td>
+                                        {{element.dia_semana}}
+                                        <form method='post' action="?page=profile&method=deleteAgendamento">
+                                            <button class="btn-delete-agendamento"
+                                                    type="submit"
+                                                    name="id_ag"
+                                                    value='{{element.id}}'>
+                                                x
+                                            </button>
+                                        </form>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                        {% endif %}
                 </table>
             </div>          
         </div>
