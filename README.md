@@ -6,4 +6,4 @@
 
 ◼ Link do projeto funcionando: https://barber-noblesse.000webhostapp.com
 
-<img src='[img]https://i.imgur.com/hDPn8zG.png[/img]' alt='Home'>
+<img src='https://i.imgur.com/hDPn8zG.png' alt='Home'>
