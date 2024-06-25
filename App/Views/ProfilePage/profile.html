@@ -175,30 +175,30 @@
             </div>
             <div id="container-table" class="div-table">
                 <table id="table-agendamentos" class="table-agendamentos"> 
-                        {% if agendamentos == 'vazio' %}
-                            <div class="empty-ag">
-                                <p>Não há agendamentos.</p>
-                            </div>
-                        {% else %}
-                            {% for element in agendamentos %}                
-                                <tr>
-                                    <td>{{element.registro}}</td>
-                                    <td>{{element.data_agendamento}}</td>
-                                    <td>{{element.horario}}</td>
-                                    <td>
-                                        {{element.dia_semana}}
-                                        <form method='post' action="?page=profile&method=deleteAgendamento">
-                                            <button class="btn-delete-agendamento"
-                                                    type="submit"
-                                                    name="id_ag"
-                                                    value='{{element.id}}'>
-                                                x
-                                            </button>
-                                        </form>
-                                    </td>
-                                </tr>
-                            {% endfor %}
-                        {% endif %}
+                    {% if agendamentos == 'vazio' %}
+                        <div class="empty-ag">
+                            <p>Não há agendamentos.</p>
+                        </div>
+                    {% else %}
+                        {% for element in agendamentos %}                
+                            <tr>
+                                <td>{{element.registro}}</td>
+                                <td>{{element.data_agendamento}}</td>
+                                <td>{{element.horario}}</td>
+                                <td>
+                                    {{element.dia_semana}}
+                                    <form method='post' action="?page=profile&method=deleteAgendamento">
+                                        <button class="btn-delete-agendamento"
+                                                type="submit"
+                                                name="id_ag"
+                                                value='{{element.id}}'>
+                                            x
+                                        </button>
+                                    </form>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    {% endif %}
                 </table>
             </div>          
         </div>

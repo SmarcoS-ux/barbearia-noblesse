@@ -41,7 +41,7 @@
                     foreach($result as $obj){
                         if($obj['data_agendamento'] == self::$data && $obj['horario'] == self::$horario){
                             $indisponivel = 'true';
-                        }
+                        } 
                     }
                 } else{
                     $indisponivel = '';
@@ -50,14 +50,15 @@
                 switch($indisponivel){
                     case '':
                         return 'vazio';
-
+                           
                     case 'true':
                         return 'indisponivel';
-                        
+                       
                     case 'false':
                         return 'disponivel';
-
                 }
+
+
             } catch(Exception $err){
                 //echo "Erro ao verificar a Disponibilidade. ".$err->getMessage();
                 return 'erro';

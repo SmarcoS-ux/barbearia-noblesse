@@ -45,17 +45,21 @@
 
             self::$dadosDigitados = $dadosAgendamento;
 
-            $timestamp = strtotime($dadosAgendamento['data']);
+            //date_default_timezone_set('America/Sao_Paulo');
+            $timestamp = strtotime($dadosAgendamento['data'].substr($dadosAgendamento['select-horarios'], 0, 5));
             $date = getDate($timestamp);
             $dayWeek = $date['wday'];
 
             $data_atual = new DateTime();
+            $fuso = new DateTimeZone('America/Sao_Paulo');
+            $data_atual->setTimezone($fuso);
             $timestamp_atual = $data_atual->getTimestamp();
 
+            $data_informada_formatada = new DateTime($dadosAgendamento['data']); 
 
             if(!empty($dadosAgendamento['data']) && !empty($dadosAgendamento['select-horarios']) && $dayWeek != 0){
                 if($timestamp >= $timestamp_atual){
-                    HomeModel::setData($dadosAgendamento['data']);
+                    HomeModel::setData($data_informada_formatada->format("d/m/Y"));
                     HomeModel::sethorario(substr($dadosAgendamento['select-horarios'], 0, 5));
 
                     self::$message = HomeModel::verificarDisponibilidade();
@@ -83,7 +87,7 @@
 
             Session::start_session();
             if(Session::getVariableSession('isLogged') == 'True'){
-                $timestamp = strtotime($dadosAgendamento['data']);
+                $timestamp = strtotime($dadosAgendamento['data'].substr($dadosAgendamento['select-horarios'], 0, 5));
                 $date = getDate($timestamp);
                 $dayWeek = $date['wday'];
 
@@ -127,8 +131,10 @@
                 $data_atual->setTimezone($fuso);
                 $timestamp_atual = $data_atual->getTimestamp();
 
-                $data_agendamento = new DateTime($dadosAgendamento['data']);
+                $data_agendamento = new DateTime($dadosAgendamento['data'].substr($dadosAgendamento['select-horarios'], 0, 5));
+                $data_agendamento->setTimezone($fuso);
                 $dt_agendamento = $data_agendamento->format("d/m/Y");
+
 
                 if(!empty($dadosAgendamento['data']) && !empty($dadosAgendamento['select-horarios']) && $dayWeek != 0){
                     if($timestamp >= $timestamp_atual){
