@@ -1,9 +1,14 @@
 <?php
+    header('Access-Control-Allow-Origin: http://barber-noblesse.exaltaicifra.com.br/');
+    header('Access-Control-Allow-Credentials: true');
+
     class ProfileController {
         private static $message;
 
         private static $firstLoad = true;
         public function index(){
+            Session::start_session();
+
             $loader = new \Twig\Loader\FilesystemLoader('App/Views/ProfilePage');
             $twig = new \Twig\Environment($loader);
 
@@ -12,7 +17,10 @@
                 self::$message = 'vazio';
             }*/
 
-            Session::start_session();
+            if(Session::getVariableSession('isLogged') != "True"){
+                header("location: http://localhost/barbearia-noblesse-local/?page=login");     
+            } 
+            
             $dataUser = array();
             $firstName = explode(" ", Session::getVariableSession('nome'));
 
@@ -25,12 +33,8 @@
             $dataUser['img_profile'] = Session::getVariableSession('img_profile');
 
             $template = $twig->load('profile.html');
-            $page = $template->render($dataUser);
+            $page = $template->render($dataUser); 
           
-            Session::start_session();
-            if(Session::getVariableSession('isLogged') != "True"){
-                header("location: http://localhost/Barbearia-Noblesse/?page=login");     
-            } 
 
             if(self::$firstLoad === true){
                 echo $page; 
@@ -52,6 +56,8 @@
 
 
         public function updateUserData(){
+            Session::start_session();
+
             $photo = $_FILES['img-profile'];
 
             function codGenerator($tamanho){
@@ -73,7 +79,6 @@
             $path = codGenerator(10);
             $localDir = 'public/img/img_users/img_profile_id'.$path.'.jpeg';
 
-            Session::start_session();
             $old_img_profile = Session::getVariableSession('img_profile');
             $localIMGDefault = 'public/img/user.png';
 
@@ -114,15 +119,16 @@
             Session::start_session();
             Session::destroySession();
 
-            header('location: http://localhost/Barbearia-Noblesse/');        
+            header('location: http://localhost/barbearia-noblesse-local/');        
         }
 
         public function deleteAgendamento(){
+            Session::start_session();
+            
             self::$firstLoad = false;
             
             $id = $_POST;
             
-            Session::start_session();
             if(Session::getVariableSession('isLogged') == 'True'){
                 ProfileModel::setIdAgendamento($id['id_ag']);
 

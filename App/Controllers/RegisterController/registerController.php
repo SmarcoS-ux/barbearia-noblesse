@@ -78,7 +78,7 @@
                     switch($register){
                         case 'Success':
                             $time = 3;
-                            header("Refresh: $time, url='http://localhost/Barbearia-Noblesse/?page=login'");
+                            header("Refresh: $time, url='http://localhost/barbearia-noblesse-local/?page=login'");
                             
                     }
                 }

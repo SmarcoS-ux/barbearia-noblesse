@@ -1,4 +1,7 @@
 <?php
+    header('Access-Control-Allow-Origin: http://barber-noblesse.exaltaicifra.com.br/');
+    header('Access-Control-Allow-Credentials: true');
+    
     include_once("App/Controllers/HomeController/homeController.php");
     include_once("App/Controllers/ErroController/erroController.php");
     include_once("App/Controllers/SobreController/sobreController.php");

@@ -14,7 +14,7 @@
                 $controller = "HomeController";
             }
 
-            if(!class_exists($controller)){
+            if(!class_exists($controller)){ 
                 $controller = "ErroController";
             }
 
