@@ -668,7 +668,7 @@ body {
                 text-align: justify;
                 font-size: 18px;
                 padding: 0 40px;
-                width: calc(50% - 40px);
+                width: calc(100% - 80px);
             }
 
             /*Estilo light*/

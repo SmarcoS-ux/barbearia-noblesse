@@ -6,6 +6,15 @@
 
             $template = $twig->load('contato.html');
             $page = $template->render();
+
+            /*echo "
+                <script>
+                    document.addEventListener('DOMContentLoaded', () => {
+                        themeToggle();
+                    })
+                </script>
+            ";*/
+
             echo $page;
         }
     }

@@ -7,6 +7,15 @@
 
             $template = $twig->load('cortes.html');
             $page = $template->render();
+
+            /*echo "
+                <script>
+                    document.addEventListener('DOMContentLoaded', () => {
+                        themeToggle();
+                    })
+                </script>
+            ";*/
+
             echo $page; 
         }
     }

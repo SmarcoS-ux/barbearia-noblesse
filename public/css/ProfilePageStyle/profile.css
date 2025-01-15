@@ -1,6 +1,10 @@
 
 
 @media screen and (min-width: 1025px) {
+    & .input_dark {
+        color: #acacac !important;
+    }
+
     .container-profile {
         font-family: Arial, Helvetica, sans-serif;
         width: 100%;
@@ -457,6 +461,10 @@
 
 
 @media screen and (min-width: 551px) and (max-width: 1024px) {
+    & .input_dark {
+        color: #acacac !important;
+    }
+    
     .container-profile {
         font-family: Arial, Helvetica, sans-serif;
         width: 100%;
@@ -554,6 +562,8 @@
                 padding: 20px;
                 border-radius: 20px;
                 box-shadow: 2px 2px 10px rgb(0, 10, 44);
+
+                
     
                 & input {
                     height: 30px;
@@ -635,9 +645,9 @@
                         flex-direction: column;   
                         width: 150px;
 
-                        & #dt-nascimento:disabled {
-                            background-color: #989da5;
-                        }
+                        /*& #dt-nascimento:disabled {
+                            background-color: #70737a !important;
+                        }*/
     
                         & label {
                             margin-bottom: 5px;
@@ -917,6 +927,10 @@
 
 
 @media screen and (max-width: 550px) {
+    & .input_dark {
+        color: #acacac !important;
+    }
+    
     .container-profile {
         font-family: Arial, Helvetica, sans-serif;
         width: 100%;
@@ -1100,8 +1114,9 @@
                         & #dt-nascimento {
                             width: calc(100% - 20px);
                         }
+
                         & #dt-nascimento:disabled {
-                            background-color: #8d919b;
+                            background-color: #56585e !important;
                         }
     
                         & label {

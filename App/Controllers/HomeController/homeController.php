@@ -2,11 +2,19 @@
     class HomeController {
         private static $firstLoad = true;
         private static $message;
-        private static $dadosDigitados;
+        private static $dadosDigitados; 
 
         public function index(){
             $loader = new \Twig\Loader\FilesystemLoader('App/Views/HomePage');
             $twig = new \Twig\Environment($loader);
+
+            /*echo "
+                <script>
+                    document.addEventListener('DOMContentLoaded', () => {
+                        themeToggle();
+                    })
+                </script>
+            ";*/
 
             $dataHome = array();
             $dataHome['titulo'] = "Home";

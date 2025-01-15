@@ -34,6 +34,14 @@
 
             $template = $twig->load('profile.html');
             $page = $template->render($dataUser); 
+
+            /*echo "
+                <script>
+                    document.addEventListener('DOMContentLoaded', () => {
+                        themeToggle();
+                    })
+                </script>
+            ";*/
           
 
             if(self::$firstLoad === true){

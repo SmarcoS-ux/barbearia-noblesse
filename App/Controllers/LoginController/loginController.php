@@ -29,6 +29,14 @@
                 header("location: http://localhost/barbearia-noblesse-local/?page=profile");
             } 
 
+            /*echo "
+                <script>
+                    document.addEventListener('DOMContentLoaded', () => {
+                        themeToggle();
+                    })
+                </script>
+            ";*/
+
             echo $page;
         }
 
@@ -45,7 +53,7 @@
             
             $dados = $_POST;
 
-            $email = $dados['email'];
+            $email = strtolower($dados['email']);
             $password = $dados['password'];
 
             LoginModel::setEmail($email);
@@ -62,6 +70,5 @@
                 $time = 1;
                 header("refresh: $time, url=http://localhost/barbearia-noblesse-local/?page=profile");          
             } 
-
         }
     }

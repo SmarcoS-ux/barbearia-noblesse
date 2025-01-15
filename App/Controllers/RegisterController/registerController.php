@@ -9,6 +9,15 @@
 
             $template = $twig->load('register.html');
             $page = $template->render($objectData);
+
+            /*echo "
+                <script>
+                    document.addEventListener('DOMContentLoaded', () => {
+                        themeToggle();
+                    })
+                </script>
+            ";*/
+
             echo $page; 
         }
 

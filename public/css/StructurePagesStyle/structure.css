@@ -88,9 +88,9 @@
 
         & #logo{
             width: 50%;
-            position: relative;
+            /*position: relative;*/
 
-            & #led-light{
+            /*& #led-light{
                 position: absolute;
                 left: 0;
                 bottom: -18px;
@@ -99,10 +99,12 @@
                 height: 100%;
                 transform: perspective(200px) rotateX(60deg);
             
-            }
+            }*/
 
             img {
                 width: 130px;
+                -webkit-filter: drop-shadow(2px 2px 10px #fff);
+                filter: drop-shadow(4px 4px 10px #fff); 
             }
         }
 
@@ -130,6 +132,12 @@
                     color: rgb(216, 216, 216);
                     font-family: Arial, Helvetica, sans-serif;
                     font-size: 14px;
+                }
+                & a:hover {
+                    background-position: bottom;
+                    border-radius: 5px 5px 0 0;
+                    transition: 0.1s;
+                    font-size: 15px;
                 }
             }
 
@@ -225,7 +233,7 @@
 
 
 
-@media screen and (min-width: 551px) and (max-width: 1024px) {
+@media screen and (min-width: 651px) and (max-width: 1024px) {
     /*Estilo Light*/
     .links_light {
         display: flex;
@@ -303,9 +311,10 @@
 
         & #logo{
             width: 100%;
-            position: relative;
+            text-align: center;
+            padding-top: 20px;
 
-            & #led-light{
+            /*& #led-light{
                 position: absolute;
                 left: 0;
                 bottom: -18px;
@@ -314,10 +323,12 @@
                 height: 100%;
                 transform: perspective(200px) rotateX(60deg);
             
-            }
+            }*/
 
             img {
                 width: 130px;
+                -webkit-filter: drop-shadow(2px 2px 10px #fff);
+                filter: drop-shadow(4px 4px 10px #fff); 
             }
         }
 
@@ -340,7 +351,7 @@
                     height: 50px;
                     text-align: center;
                     line-height: 3.5;
-                    /*text-decoration: none;*/
+                    text-decoration: none;
                     color: rgb(216, 216, 216);
                     font-family: Arial, Helvetica, sans-serif;
                     font-size: 14px;
@@ -351,6 +362,7 @@
             }
 
             & #light-dark-theme, #user-profile {
+                display: none;
                 background: transparent;
                 border: none;
                 margin-left: 20px;
@@ -361,6 +373,8 @@
             }
 
             & #user-profile {
+                display: none;
+
                 img {
                     height: 35px;
                     width: 35px;
@@ -585,7 +599,7 @@
     }
 }
 
-@media screen and (max-width: 550px){
+@media screen and (max-width: 650px){
     /*Estilo Light*/
     .links_light {
         display: flex;
@@ -663,7 +677,9 @@
 
         & #logo{
             width: 100%;
-            position: relative;
+            text-align: center;
+            /*position: relative;*/
+            padding-top: 20px;
 
             & #led-light{
                 position: absolute;
@@ -678,6 +694,8 @@
 
             img {
                 width: 130px;
+                -webkit-filter: drop-shadow(2px 2px 10px #fff);
+                filter: drop-shadow(4px 4px 10px #fff); 
             }
         }
 
@@ -700,7 +718,7 @@
                     height: 50px;
                     text-align: center;
                     line-height: 3.5;
-                    /*text-decoration: none;*/
+                    text-decoration: none;
                     color: rgb(216, 216, 216);
                     font-family: Arial, Helvetica, sans-serif;
                     font-size: 14px;
@@ -711,6 +729,8 @@
             }
 
             & #light-dark-theme, #user-profile {
+                display: none;
+
                 background: transparent;
                 border: none;
                 margin-left: 20px;
@@ -721,6 +741,8 @@
             }
 
             & #user-profile {
+                display: none;
+
                 img {
                     height: 35px;
                     width: 35px;

@@ -6,6 +6,16 @@
 
             $template = $twig->load('sobre.html');
             $page = $template->render();
+
+           /* echo "
+                <script>
+                    document.addEventListener('DOMContentLoaded', () => {
+                        themeToggle();
+                    })
+                </script>
+            ";*/
+
+            
             echo $page;
         }
     }
