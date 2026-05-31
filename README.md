@@ -5,7 +5,7 @@
 
 ◼ A proposta do site é a realização de agendamentos e reserva de horários em uma barbearia onde o usuário consegue realizar um cadastro e fazer os agendamentos. É um projeto simples mas que contém a base CRUD de um site onde o usuário consegue inserir, deletar, atualizar e recuperar informações da Base de Dados. 
 
-◼ Link do projeto funcionando: https://barber-noblesse.000webhostapp.com
+◼ Link do projeto funcionando: http://barber-noblesse.exaltaicifra.com.br/barber-noblesse/
 
 <img src='https://i.imgur.com/hDPn8zG.png' alt='Home'>
 
